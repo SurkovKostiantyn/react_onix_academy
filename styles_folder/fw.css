@@ -1,0 +1,162 @@
+[class^=firework-] {
+  position: absolute;
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+}
+
+.firework-1 {
+  animation: firework-sm 1.2s both infinite;
+  animation-delay: 0.5s;
+  top: 65%;
+  left: 90%;
+  z-index: 100;
+}
+
+.firework-2 {
+  animation: firework-lg 1.2s both infinite;
+  animation-delay: 0.15s;
+  top: 85%;
+  left: 30%;
+  z-index: 100;
+}
+
+.firework-3 {
+  animation: firework-lg 1.2s both infinite;
+  animation-delay: 0.65s;
+  top: 65%;
+  left: 25%;
+  z-index: 100;
+}
+
+.firework-4 {
+  animation: firework-md 1.2s both infinite;
+  animation-delay: 0.55s;
+  top: 90%;
+  left: 60%;
+  z-index: 100;
+}
+
+.firework-5 {
+  animation: firework-md 1.2s both infinite;
+  animation-delay: 0.65s;
+  top: 75%;
+  left: 15%;
+  z-index: 100;
+}
+
+.firework-6 {
+  animation: firework-sm 1.2s both infinite;
+  animation-delay: 0.55s;
+  top: 80%;
+  left: 30%;
+  z-index: 100;
+}
+
+.firework-7 {
+  animation: firework-lg 1.2s both infinite;
+  animation-delay: 0.65s;
+  top: 70%;
+  left: 30%;
+  z-index: 100;
+}
+
+.firework-8 {
+  animation: firework-lg 1.2s both infinite;
+  animation-delay: 0.2s;
+  top: 80%;
+  left: 80%;
+  z-index: 100;
+}
+
+.firework-9 {
+  animation: firework-md 1.2s both infinite;
+  animation-delay: 0.4s;
+  top: 20%;
+  left: 60%;
+  z-index: 100;
+}
+
+.firework-10 {
+  animation: firework-lg 1.2s both infinite;
+  animation-delay: 0.15s;
+  top: 50%;
+  left: 25%;
+  z-index: 100;
+}
+
+.firework-11 {
+  animation: firework-lg 1.2s both infinite;
+  animation-delay: 0.2s;
+  top: 75%;
+  left: 25%;
+  z-index: 100;
+}
+
+.firework-12 {
+  animation: firework-lg 1.2s both infinite;
+  animation-delay: 0.25s;
+  top: 15%;
+  left: 80%;
+  z-index: 100;
+}
+
+.firework-13 {
+  animation: firework-sm 1.2s both infinite;
+  animation-delay: 0.5s;
+  top: 20%;
+  left: 90%;
+  z-index: 100;
+}
+
+.firework-14 {
+  animation: firework-sm 1.2s both infinite;
+  animation-delay: 0.45s;
+  top: 50%;
+  left: 85%;
+  z-index: 100;
+}
+
+.firework-15 {
+  animation: firework-lg 1.2s both infinite;
+  animation-delay: 0.25s;
+  top: 40%;
+  left: 85%;
+  z-index: 100;
+}
+
+@keyframes firework-sm {
+  0%, 100% {
+    opacity: 0;
+  }
+  10%, 70% {
+    opacity: 1;
+  }
+  100% {
+    box-shadow: -4.5rem 0rem 0 #000, 4.5rem 0rem 0 #000, 0rem -4.5rem 0 #000, 0rem 4.5rem 0 #000, 3.15rem -3.15rem 0 #000, 3.15rem 3.15rem 0 #000, -3.15rem -3.15rem 0 #000, -3.15rem 3.15rem 0 #000;
+  }
+}
+@keyframes firework-md {
+  0%, 100% {
+    opacity: 0;
+  }
+  10%, 70% {
+    opacity: 1;
+  }
+  100% {
+    box-shadow: -4.7rem 0rem 0 #000, 4.7rem 0rem 0 #000, 0rem -4.7rem 0 #000, 0rem 4.7rem 0 #000, 3.29rem -3.29rem 0 #000, 3.29rem 3.29rem 0 #000, -3.29rem -3.29rem 0 #000, -3.29rem 3.29rem 0 #000;
+  }
+}
+@keyframes firework-lg {
+  0%, 100% {
+    opacity: 0;
+  }
+  10%, 70% {
+    opacity: 1;
+  }
+  100% {
+    box-shadow: -4.9rem 0rem 0 #000, 4.9rem 0rem 0 #000, 0rem -4.9rem 0 #000, 0rem 4.9rem 0 #000, 3.43rem -3.43rem 0 #000, 3.43rem 3.43rem 0 #000, -3.43rem -3.43rem 0 #000, -3.43rem 3.43rem 0 #000;
+  }
+}
+
+/*# sourceMappingURL=fw.css.map */
