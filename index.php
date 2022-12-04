@@ -25,6 +25,6 @@
     <script src="https://kit.fontawesome.com/a7c1eeb7ad.js" crossorigin="anonymous"></script>
 </head>
 <body>
-</body>
 <script src="js/sudoku.min.js"></script>
+</body>
 </html>
