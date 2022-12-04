@@ -18,6 +18,6 @@
 
 
 основной файл index.php, index.html создан для github pages.
-
+https://surkovkostiantyn.github.io/react_onix_academy/
 так же сайт работает на
 https://webportfolio.com.ua/
