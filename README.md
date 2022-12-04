@@ -19,4 +19,5 @@
 
 основной файл index.php, index.html создан для github pages.
 
-так же сайт работает на https://webportfolio.com.ua/
+так же сайт работает на
+https://webportfolio.com.ua/
