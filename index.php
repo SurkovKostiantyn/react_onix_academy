@@ -12,16 +12,13 @@
         header('Cache-Control: no-cache, no-store, must-revalidate'); // HTTP 1.1.
         header('Pragma: no-cache'); // HTTP 1.0.
         header('Expires: 0'); // Proxies.
-        echo "<link rel='stylesheet' href='styles_folder/frameworkw3.css?v=$version'>";
-        echo "<link rel='stylesheet' href='styles_folder/default.css?v=$version'>";
-        echo "<link rel='stylesheet' href='styles_folder/fw.css?v=$version'>";
+        echo "<link rel='stylesheet' href='style/main.css?v=$version'>";
         echo "<link rel='stylesheet' href='js/sudoku.min.js?v=$version'>";
     ?>
     <link rel="icon" href="files/ico.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Averia+Gruesa+Libre&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Codystar&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Averia+Libre&family=Hanalei+Fill&family=Patrick+Hand&family=Source+Sans+Pro:ital,wght@0,200;0,400;1,400&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a7c1eeb7ad.js" crossorigin="anonymous"></script>
 </head>
 <body>
