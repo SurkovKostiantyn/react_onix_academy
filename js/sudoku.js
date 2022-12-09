@@ -39,10 +39,12 @@
         buildControlPanel();
         buildFooter();
         drawBorder(0);
+        changeCursor(1);
     }
 
     buildHtml = () =>{
         let body = document.getElementsByTagName("body")[0];
+        body.id = 'body';
 
         // create header
         header = document.createElement('header');
@@ -259,7 +261,7 @@
         }
         let style = document.createElement('style');
         style.innerHTML = `#sudoku:before {clip-path: polygon(${pathABCD}); margin: ${-25 - level}px;}; }`;
-        document.getElementById("sudoku").appendChild(style);
+        sudoku.appendChild(style);
     }
 
     showHint = () => {
@@ -327,9 +329,21 @@
             allLinks[i].classList.add(levels[level]);
         }
 
+        changeCursor(range.value - range.min + 1);
         changeBackgroundImage(level);
         changeBackgroundColor(level);
         drawBorder(level);
+    }
+
+    changeCursor = (level) => {
+        let body = document.getElementsByTagName("body")[0];
+
+        while(body.getElementsByTagName("style").length !== 0) {
+            body.getElementsByTagName("style")[0].remove();
+        }
+        let style = document.createElement('style');
+        style.innerHTML = `* {cursor: url('files/cursor/${level}.png'), auto !important;}`;
+        body.appendChild(style);
     }
 
     changeBackgroundImage = (level) => sudoku.style.backgroundImage = `url(files/bg/${level+1}.png)`;

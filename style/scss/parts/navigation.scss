@@ -6,11 +6,11 @@
     text-align: center;
     font: var.$linkFont;
     color: var.$headerTextColor;
-    cursor: pointer;
     > .active{
         @include mixins.linearTextColor;
     }
     > a{
+        cursor: inherit;
         display: inline-block;
         height: 100%;
         padding: 0 10px;

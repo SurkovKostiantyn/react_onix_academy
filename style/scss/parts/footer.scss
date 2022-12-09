@@ -6,8 +6,8 @@
   text-align: center;
   font: var.$linkFont;
   color: var.$headerTextColor;
-  cursor: pointer;
   > a{
+    cursor: inherit;
     display: inline-block;
     height: 100%;
     @include mixins.transition(background-color 0.5s);

@@ -15,7 +15,7 @@
   flex-direction: row;
   gap: 10px;
   > a{
-    cursor: pointer;
+    cursor: inherit;
     padding: 0 8px;
     font: var.$linkFont;
     background-color:  var.$mainBgColor;
@@ -49,6 +49,7 @@
 }
 
 #sudoku{
+  cursor: inherit;
   background-color: var.$headerTextColor;
   height: 300px;
   width: 300px;
@@ -74,6 +75,7 @@
     @include mixins.transition(clip-path 2s);
   }
   input{
+    cursor: inherit;
     background: none;
     box-shadow: 0 0 0 1px var.$mainBgColor inset;
     box-sizing: border-box;
@@ -87,6 +89,12 @@
     outline: none;
     border: none;
     text-align: center;
+    //&:disabled{
+    //  cursor: default;
+    //}
+    //&:read-only{
+    //  cursor: default;
+    //}
     &::-webkit-outer-spin-button, &::-webkit-inner-spin-button {
       -webkit-appearance: none;
       margin: 0;
@@ -127,13 +135,13 @@
     width: 30px;
     height: 30px;
     background: var.$mainBgColor;
-    cursor: pointer;
+    cursor: inherit;
   }
   &::-moz-range-thumb {
     width: 40px;
     height: 40px;
     background: var.$mainBgColor;
-    cursor: pointer;
+    cursor: inherit;
   }
 }
 
