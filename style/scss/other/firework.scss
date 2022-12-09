@@ -5,14 +5,12 @@
   border-radius: 50%;
 }
 
-$count: 15;
+$count: 20;
 $frame-list: firework-sm, firework-md, firework-lg;
 @for $i from 1 through $count {
   .firework-#{$i} {
     animation: nth($frame-list, random(3)) 1.2s both infinite;
     animation-delay: #{random($count) * 0.05}s;
-    top: random(16) * 5% + 10%;
-    left: random(16) * 5% + 10%;
     z-index: 100;
   }
 }

@@ -1,13 +1,36 @@
-    const menuItems = ["Home", "Play", "Rules"];
+    // sudoku.js
+    const navMenuItems = ["Home", "Play", "Rules"];
     const footerLinks = new Map([
         ['Github', 'https://github.com/SurkovKostiantyn/react_onix_academy'],
         ['Instagram', 'https://www.instagram.com/constantin296'],
         ['Telegram', 'https://t.me/iplague']]
     );
+    let x = 0;
     const levels = ['Easy', 'Medium', 'Hard', 'Harder', 'Insane', 'Extreme', 'God', 'Impossible', 'Unsolvable'];
-    const colors = ['#3cdc64cc', '#50c864cc', '#64b464cc', '#78a064cc', '#8c8c64cc', '#a07864cc', '#b46464cc', '#c85064cc', '#dc3c64cc']
-    let timerCounter = null, seconds = 0;
+    const colors = [
+        '#3cdc64cc',
+        '#50c864cc',
+        '#64b464cc',
+        '#78a064cc',
+        '#8c8c64cc',
+        '#a07864cc',
+        '#b46464cc',
+        '#c85064cc',
+        '#dc3c64cc'];
+
+    const fColors = [
+        '#0a5a0a',
+        '#14500a',
+        '#1e460a',
+        '#283c0a',
+        '#32320a',
+        '#3c2823',
+        '#461e1f',
+        '#501422',
+        '#5a0a0a'];
+    let timerCounter = null, seconds = 0, isGameStarted = false;
     let sGameField = [], sGameFieldSolved = [], iZeroCellsNum = 0, iHintsUsedNum = 0;
+    let header, nav, container, sudoku, footer, container_Play, container_Rules, container_Home, range, p_info_timer,p_info_cells,p_info_level;
 
     window.onload = () => {
         buildHtml();
@@ -22,33 +45,33 @@
         let body = document.getElementsByTagName("body")[0];
 
         // create header
-        let header = document.createElement('header');
+        header = document.createElement('header');
         header.id = 'header';
         header.innerHTML = 'SUDOKU';
         header.onclick = () => location.reload();
         body.appendChild(header);
 
         // create navigation
-        let nav = document.createElement('nav');
+        nav = document.createElement('nav');
         nav.id = 'nav';
         body.appendChild(nav);
 
         // container
-        let container = document.createElement('div');
+        container = document.createElement('div');
         container.id = 'container';
         container.style.backgroundColor = colors[0];
         body.appendChild(container);
 
         // footer
-        let footer = document.createElement('footer');
+        footer = document.createElement('footer');
         footer.id = 'footer';
         body.appendChild(footer);
     }
 
     buildMenu = () => {
-        let nav = document.getElementById('nav');
+        //let nav = document.getElementById('nav');
         // create items
-        for (let item of menuItems) {
+        for (let item of navMenuItems) {
             // create a
             let a = document.createElement('a');
             a.className = 'btn zoom Easy';
@@ -56,14 +79,14 @@
             a.href = '#';
             a.innerHTML = item;
             a.onclick = () => {
-                let header = document.getElementById('header');
+                //let header = document.getElementById('header');
                 if(item !== 'Play'){
                     header.classList.remove("hidden");
                 }else{
                     header.classList.add("hidden");
                 }
                 document.getElementById('container_'+item).style.display = 'block';
-                let previousId = document.getElementById('container').children;
+                let previousId = container.children;
                 for (let j = 0; j < previousId.length; j++) {
                     if(previousId[j].style.display === 'block' && previousId[j].id !== 'container_'+item) {
                         previousId[j].style.display = 'none';
@@ -75,19 +98,18 @@
     }
 
     buildBlocks = () => {
-        let container = document.getElementById('container');
-        for (let i = 0; i < menuItems.length; i++) {
-            let div = document.createElement('div');
-            container.appendChild(div);
-            div.id = 'container_' + menuItems[i];
-            div.style.display = menuItems[i] === 'Home' ? 'block' : 'none';
-            div.className = 'w3-container';
-            buildContent(menuItems[i]);
+        //let container = document.getElementById('container');
+        for (let i = 0; i < navMenuItems.length; i++) {
+            window[`container_${navMenuItems[i]}`] = document.createElement('div');
+            container.appendChild(window[`container_${navMenuItems[i]}`]);
+            window[`container_${navMenuItems[i]}`].id = 'container_' + navMenuItems[i];
+            window[`container_${navMenuItems[i]}`].style.display = navMenuItems[i] === 'Home' ? 'block' : 'none';
+            buildContent(navMenuItems[i]);
         }
     }
 
-    buildContent = (menuItems) => {
-        switch (menuItems) {
+    buildContent = (navMenuItems) => {
+        switch (navMenuItems) {
             case 'Home':
                 buildHome();
                 break;
@@ -101,39 +123,37 @@
     }
 
     buildHome = () => {
-        let container = document.getElementById('container_Home');
+        container_Home = document.getElementById('container_Home');
         let h1 = document.createElement('h1');
-        container.appendChild(h1);
+        container_Home.appendChild(h1);
         h1.innerHTML = 'Hi!';
 
         let p = document.createElement('p');
-        container.appendChild(p);
+        container_Home.appendChild(p);
         p.innerHTML = 'Welcome to my portfolio project. This is a simple game, where you have to solve sudoku. You can choose between 7 levels of difficulty. Good luck!';
     }
 
     buildRules = () => {
-        let container = document.getElementById('container_Rules');
+        container_Rules = document.getElementById('container_Rules');
         let h1 = document.createElement('h1');
-        container.appendChild(h1);
+        container_Rules.appendChild(h1);
         h1.innerHTML = 'Rules';
         let p = document.createElement('p');
-        container.appendChild(p);
+        container_Rules.appendChild(p);
         p.innerHTML = 'The objective of Sudoku is to fill a 9×9 grid with numbers so that each row, column and 3×3 section contain all of the digits between 1 and 9. As a logic puzzle, Sudoku is also an excellent brain game. If you play Sudoku daily, you will soon start to see improvements in your concentration and overall brain power. Start a game now.  ';
     }
 
     buildGame = () => {
-        // create container
-        let sudoku = document.createElement('div');
-        let container = document.getElementById('container_Play');
+        sudoku = document.createElement('div');
+        sudoku.id = 'sudoku';
+        container_Play = document.getElementById('container_Play');
+        container_Play.appendChild(sudoku);
 
         // timer field
-        let timer = document.createElement('p');
-        timer.id = 'p_info_timer';
-        timer.innerHTML = 'Time: 00:00:00';
-        container.appendChild(timer);
-
-        sudoku.id = 'sudoku';
-        container.appendChild(sudoku);
+        p_info_timer = document.createElement('p');
+        p_info_timer.id = 'p_info_timer';
+        p_info_timer.innerHTML = 'Time: 00:00:00';
+        container_Play.appendChild(p_info_timer);
 
         // create 81 blocks
         for (let i = 0; i < 81; i++) {
@@ -144,40 +164,39 @@
             input.pattern = '[1-9]{1}';
             input.id = 'input' + i;
             input.value = '';
+            input.readOnly = true;
             sudoku.appendChild(input);
         }
     }
 
     buildControlPanel = () => {
         // create lever range
-        let container = document.getElementById('container_Play');
-
         let controlPanel = document.createElement('div');
         controlPanel.id = 'controlPanel';
-        container.appendChild(controlPanel);
+        container_Play.appendChild(controlPanel);
 
         let changeLevel = document.createElement('div');
         changeLevel.id = 'changeLevel';
         controlPanel.appendChild(changeLevel);
 
-        let range = document.createElement('input');
+        range = document.createElement('input');
         range.id = 'range';
         range.type = 'range';
         range.min = '7';
         range.max = '15';
         range.value = '7';
-        range.oninput = () => showLevel(range);
+        range.oninput = () => showLevel();
         changeLevel.appendChild(range);
 
-        let p2 = document.createElement('p');
-        p2.id = 'p_info_cells';
-        p2.innerHTML = `Cells: 0, Hints used: 0`;
-        changeLevel.appendChild(p2);
+        p_info_cells = document.createElement('p');
+        p_info_cells.id = 'p_info_cells';
+        p_info_cells.innerHTML = `Cells: 0, Hints used: 0`;
+        changeLevel.appendChild(p_info_cells);
 
-        let p = document.createElement('p');
-        p.id = 'p_info_level';
-        p.innerHTML = `Level: ${levels[range.value - 7]}`;
-        changeLevel.appendChild(p);
+        p_info_level = document.createElement('p');
+        p_info_level.id = 'p_info_level';
+        p_info_level.innerHTML = `Level: ${levels[range.value - range.min]}`;
+        changeLevel.appendChild(p_info_level);
 
         let buttonsBlock = document.createElement('div');
         buttonsBlock.id = 'buttonsBlock';
@@ -194,14 +213,14 @@
         // create button show hint
         let btnHint = document.createElement('a');
         btnHint.className   = 'Easy zoom';
-        btnHint.innerHTML = 'Show hint';
+        btnHint.innerHTML = 'Show Hint';
         btnHint.id = 'btnHint';
         buttonsBlock.appendChild(btnHint);
     }
 
     drawBorder = (level) => {
         ++level;
-        let sudoku = document.getElementById('sudoku');
+        //let sudoku = document.getElementById('sudoku');
         let pathABCD = [];
         let x = Math.floor(Math.random() * (level+2 - 2) + 2), y = 0;
         for (x, y; x < 100 - level; x += Math.floor(Math.random() * (level+2 - 2) + 2), y=~y) {
@@ -235,8 +254,8 @@
         }
         pathABCD = pathABCD.map(item => item.join(' ')).join(',');
 
-        if(document.getElementById("sudoku").querySelector("style") !== null){
-            document.getElementById("sudoku").querySelector("style").remove();
+        if(sudoku.querySelector("style") !== null){
+            sudoku.querySelector("style").remove();
         }
         let style = document.createElement('style');
         style.innerHTML = `#sudoku:before {clip-path: polygon(${pathABCD}); margin: ${-25 - level}px;}; }`;
@@ -256,25 +275,24 @@
         input.value = sGameFieldSolved[x][y];
         sGameField[x][y] = sGameFieldSolved[x][y];
         input.style.backgroundColor = 'lightcoral';
-        input.style.transition = 'all 0.5s';
+        input.style.transition = 'all 0.2s';
+        setTimeout(() => {  input.style.backgroundColor = '#FAEBD7FF'; }, 200);
         input.readOnly = true;
         checkInput(input);
         iHintsUsedNum++;
-        let p2 = document.getElementById('p_info_cells');
-        p2.innerHTML = `Cells: ${iZeroCellsNum}, Hints used: ${iHintsUsedNum}`;
+        p_info_cells.innerHTML = `Cells: ${iZeroCellsNum}, Hints used: ${iHintsUsedNum}`;
     }
 
     showTimer = () => {
         seconds++;
-        let p = document.getElementById('p_info_timer');
         let h = Math.floor(seconds / 3600);
         let m = Math.floor(seconds / 60);
         let sec = seconds % 60;
-        p.innerHTML = `Time: ${h < 10 ? '0' + h : h}:${m < 10 ? '0' + m : m}:${sec < 10 ? '0' + sec : sec}`;
+        p_info_timer.innerHTML = `Time: ${h < 10 ? '0' + h : h}:${m < 10 ? '0' + m : m}:${sec < 10 ? '0' + sec : sec}`;
     }
 
     buildFooter = () => {
-        let footer = document.getElementById('footer');
+        //let footer = document.getElementById('footer');
         // create items
         for (let item of footerLinks.entries()) {
             let a = document.createElement('a');
@@ -290,16 +308,15 @@
         footer.appendChild(p);
     }
 
-    showLevel = (range) => {
+    showLevel = () => {
         const level = range.value - range.min;
-        let p = document.getElementById('p_info_level');
-        p.innerHTML = `Level: ${levels[level]}`;
+        p_info_level.innerHTML = `Level: ${levels[level]}`;
 
         let allLinks = document.getElementsByClassName('btn');
 
         for(let i = 0; i < 81; i++) {
             let input = document.getElementById('input' + i);
-            input.style.background = 'none';
+            input.style.backgroundColor = 'none';
             input.value = '';
         }
 
@@ -310,35 +327,19 @@
             allLinks[i].classList.add(levels[level]);
         }
 
-        const sudoku = document.getElementById('sudoku');
-        sudoku.style.backgroundImage = `url(files/bg/${level+1}.png)`;
-
-        changeBackground(level);
+        changeBackgroundImage(level);
+        changeBackgroundColor(level);
         drawBorder(level);
     }
 
-    changeBackground = (index) => {
-        let container = document.getElementById('container');
-        container.style.background = colors[index];
-    }
+    changeBackgroundImage = (level) => sudoku.style.backgroundImage = `url(files/bg/${level+1}.png)`;
+
+    changeBackgroundColor = (index) => container.style.backgroundColor = colors[index];
 
     showWinMessage = () => {
-        let p = document.getElementById('p_info_cells');
-        p.style.display = 'none';
+        p_info_cells.style.display = 'none';
         clearInterval(timerCounter);
 
-        let btnHint = document.getElementById('btnHint');
-        btnHint.onclick = null;
-
-        let range = document.getElementById('range');
-        range.style.display = 'block';
-        range.removeAttribute('disabled');
-
-        let btn = document.getElementById('btn');
-        btn.innerHTML = 'New Game';
-        btn.onclick = () => startGame();
-
-        let sudoku = document.getElementById('sudoku');
         let winMessageBlock = document.createElement('div');
         winMessageBlock.id = 'winMessageBlock';
         setTimeout(() => {
@@ -353,12 +354,12 @@
    }
 
     createFireworks = () => {
-        let container = document.getElementById('container_Play');
-
-        for(let firework = 1; firework <= 10; firework++) {
+        for(let firework = 1; firework <= 20; firework++) { // MAX 20
             let div = document.createElement('div');
             div.className = `firework-${firework}`;
-            container.appendChild(div);
+            div.style.left = Math.floor(Math.random() * (90 - 10) + 10) + '%';
+            div.style.top = Math.floor(Math.random() * (90 - 10) + 10) + '%';
+            container_Play.appendChild(div);
             setTimeout((div) => {
                 div.remove();
             }, 5000, div);
@@ -366,6 +367,7 @@
     }
 
     startGame = () => {
+
         let sVal = new Array(9).fill(null).map(()=> (new Array(9).fill(0)));
         getSolvedField(sVal);
         iHintsUsedNum = 0;
@@ -384,50 +386,52 @@
         btn.innerHTML = 'End Game';
         btn.onclick = () => endGame();
 
-        let range = document.getElementById('range');
         range.disabled = true;
         range.style.display = 'none';
 
-        let p = document.getElementById('p_info_cells');
-        p.style.display = 'block';
+        p_info_cells.style.display = 'block';
+
+        sudoku.style.backgroundColor = '#FAEBD7FF';
+        sudoku.style.backgroundImage = 'none';
+        isGameStarted = true;
     }
 
-    endGame = () => {
+    endGame = (showWinMsg = false) => {
+        if(showWinMsg)
+            showWinMessage();
+
         let btn = document.getElementById('btn');
         btn.onclick = null;
         let hint = document.getElementById('btnHint');
         hint.onclick = null;
-        let range = document.getElementById('range');
         clearInterval(timerCounter);
         timerCounter = null;
         seconds = 0;
-        let p = document.getElementById('p_info_timer');
-        p.innerHTML = `Time: 00:00:00`;
+        p_info_timer.innerHTML = `Time: 00:00:00`;
         for(let i = 0; i < 81; i++) {
             let input = document.getElementById('input' + i);
             setTimeout(() => {
                 if(sGameField[Math.floor(i / 9)][i % 9] === 0) {
-                    input.style.color = colors[range.value - range.min];
+                    input.style.color = fColors[range.value - range.min];
                 }else
-                    input.style.color = 'black';
+                    input.style.color = '#000';
                 input.readOnly = false;
                 input.value = sGameFieldSolved[Math.floor(i / 9)][i % 9];
-                input.style.backgroundColor = colors[range.value - range.min];
-                input.value = sGameFieldSolved[Math.floor(i / 9)][i % 9];
+                input.style.transition = 'all 0.05s';
+                input.style.backgroundColor = fColors[range.value - range.min];
                 setTimeout(() => {
-                    input.style.backgroundColor = 'white';
-                }, 50);
-                }
-                , 50 * i);
+                    input.style.backgroundColor = 'rgba(255,255,255,0)';
+                }, 50);}, 50 * i);
         }
         setTimeout(() => {
             range.disabled = false;
             range.style.display = 'block';
-            let p = document.getElementById('p_info_cells');
-            p.style.display = 'none';
+            p_info_cells.style.display = 'none';
             btn.innerHTML = 'New Game';
             btn.onclick = () => startGame();
+            changeBackgroundColor(range.value - range.min);
         }, 50 * 81);
+        isGameStarted = false;
     }
 
     isCorrectValue = (x, y, num, sVal) => {
@@ -449,7 +453,7 @@
                 for(let n = 0; n < 9; n++){
                     if(isCorrectValue(x, y, numbers[n], sVal)){
                         sVal[y][x] = numbers[n];
-                        let status = getSolvedField(sVal);
+                        let status = getSolvedField(sVal); // рекурсия
                         if(status === 1)return 1;
                         else if(status === 2)sVal[y][x] = 0;
                     }
@@ -471,33 +475,31 @@
     createField = (sValSolved) => {
         sGameFieldSolved = sValSolved.map(el => el.slice());
         sGameField = sValSolved.map(el => el.slice());
-        let level = document.getElementById('range').value;
-        // random range
-
         for (let i = 0; i < 81; i++) {
             let indexX = Math.floor(i / 9);
             let indexY = i % 9;
-            let chance = Math.floor(Math.random() * level);
+            let chance = Math.floor(Math.random() * range.value);
             if(chance > 5) {
                 sGameField[indexX][indexY] = 0;
                 iZeroCellsNum++;
             }
             let input = document.getElementById('input' + i);
-            input.style.backgroundColor = 'white';
+            input.style.backgroundColor = '#FAEBD7FF';
             if(sGameField[indexX][indexY] !== 0) {
                 input.readOnly = true;
                 input.value = sGameField[indexX][indexY];
-                input.style.color = 'blue';
-                input.removeAttribute('onchange');
+                    input.style.color = fColors[range.value - range.min];
+                    input.removeAttribute('onchange');
+                input.removeAttribute('onclick');
             }else {
                 input.removeAttribute('readonly');
                 input.value = '';
-                input.onchange = function() {checkInput(this)};
+                input.onchange = function(){checkInput(this)};
                 input.style.color = 'black';
+                input.onclick = () => showHighlight();
             }
         }
-        let p2 = document.getElementById('p_info_cells');
-        p2.innerHTML = `Cells: ${iZeroCellsNum}, Hints used: ${iHintsUsedNum}`;
+        p_info_cells.innerHTML = `Cells: ${iZeroCellsNum}, Hints used: ${iHintsUsedNum}`;
     }
 
     checkInput = (i) => {
@@ -507,7 +509,7 @@
         let indexY = idx % 9;
         sGameField[indexX][indexY] = +i.value;
         if(checkSudoku(sGameField.map(el => el.slice())) === true)
-            showWinMessage();
+            endGame(true);
     }
 
     checkSudoku = (copy) => {
@@ -523,3 +525,38 @@
         for(let row = 0; row < 9; row++)if (copy[row].sort().join('') !== '123456789')return false;
         return true;
     }
+
+    showHighlight = () => {
+        if(!isGameStarted)return;
+        let colorID = range.value - range.min;
+        let input = document.activeElement;
+        let idx = +input.id.replace('input', '');
+        let indexX = Math.floor(idx / 9);
+        let indexY = idx % 9;
+        let blockX = Math.floor(indexX/3);let blockY = Math.floor(indexY/3);
+        for(let i = 0; i < 81; i++) {
+            let prevInput = document.getElementById('input' + i);
+            prevInput.style.backgroundColor = '#FAEBD7FF';
+            prevInput.style.transition = 'background 0.5s';
+        }
+        for(let i = 0; i < 9; i++) {
+            let rowInput = document.getElementById('input' + (indexX * 9 + i));
+            rowInput.style.backgroundColor = colors[colorID];
+            let columnInput = document.getElementById('input' + (indexY + i * 9));
+            columnInput.style.backgroundColor = colors[colorID];
+        }
+        for(let i = blockX*3; i < blockX*3+3; i++)for(let j = blockY*3; j < blockY*3+3; j++) {
+            let input = document.getElementById('input' + (i * 9 + j));
+            input.style.backgroundColor = colors[colorID];
+        }
+    }
+
+    window.addEventListener('focusout', (event) => {
+        if(event.target.tagName === 'INPUT') {
+            for(let i = 0; i < 81; i++) {
+                let prevInput = document.getElementById('input' + i);
+                prevInput.style.backgroundColor = 'rgba(0, 0, 0, 0)';
+                prevInput.style.transition = 'background 0.5s';
+            }
+        }
+    });

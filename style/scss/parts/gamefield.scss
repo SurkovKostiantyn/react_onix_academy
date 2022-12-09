@@ -1,5 +1,4 @@
-@use "sass:math";
-
+@use "sass:list";
 @use '../common/var.scss';
 @use '../common/mixins.scss';
 
@@ -55,7 +54,7 @@
   width: 300px;
   margin: 40px auto;
   display: grid;
-  grid-template: math.div(repeat(9, 1fr), repeat(9, 1fr));
+  grid-template: list.slash(repeat(9, 1fr), repeat(9, 1fr));
   position: relative;
   background-size: 80% auto;
   background-repeat: no-repeat;

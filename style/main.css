@@ -244,7 +244,7 @@ a {
   width: 300px;
   margin: 40px auto;
   display: grid;
-  grid-template: repeat(9, 1fr)/repeat(9, 1fr);
+  grid-template: repeat(9, 1fr) / repeat(9, 1fr);
   position: relative;
   background-size: 80% auto;
   background-repeat: no-repeat;
@@ -400,122 +400,122 @@ a {
 }
 
 .firework-1 {
-  animation: firework-lg 1.2s both infinite;
-  animation-delay: 0.45s;
-  top: 90%;
-  left: 40%;
+  animation: firework-md 1.2s both infinite;
+  animation-delay: 1s;
   z-index: 100;
 }
 
 .firework-2 {
-  animation: firework-lg 1.2s both infinite;
-  animation-delay: 0.55s;
-  top: 80%;
-  left: 30%;
+  animation: firework-sm 1.2s both infinite;
+  animation-delay: 0.95s;
   z-index: 100;
 }
 
 .firework-3 {
-  animation: firework-md 1.2s both infinite;
-  animation-delay: 0.05s;
-  top: 15%;
-  left: 20%;
+  animation: firework-lg 1.2s both infinite;
+  animation-delay: 1s;
   z-index: 100;
 }
 
 .firework-4 {
-  animation: firework-sm 1.2s both infinite;
+  animation: firework-lg 1.2s both infinite;
   animation-delay: 0.7s;
-  top: 90%;
-  left: 30%;
   z-index: 100;
 }
 
 .firework-5 {
   animation: firework-lg 1.2s both infinite;
-  animation-delay: 0.1s;
-  top: 70%;
-  left: 15%;
+  animation-delay: 0.95s;
   z-index: 100;
 }
 
 .firework-6 {
   animation: firework-lg 1.2s both infinite;
-  animation-delay: 0.75s;
-  top: 60%;
-  left: 15%;
+  animation-delay: 0.35s;
   z-index: 100;
 }
 
 .firework-7 {
-  animation: firework-md 1.2s both infinite;
-  animation-delay: 0.15s;
-  top: 30%;
-  left: 20%;
+  animation: firework-sm 1.2s both infinite;
+  animation-delay: 0.25s;
   z-index: 100;
 }
 
 .firework-8 {
   animation: firework-sm 1.2s both infinite;
   animation-delay: 0.2s;
-  top: 60%;
-  left: 90%;
   z-index: 100;
 }
 
 .firework-9 {
-  animation: firework-md 1.2s both infinite;
-  animation-delay: 0.5s;
-  top: 65%;
-  left: 25%;
+  animation: firework-lg 1.2s both infinite;
+  animation-delay: 0.3s;
   z-index: 100;
 }
 
 .firework-10 {
-  animation: firework-lg 1.2s both infinite;
-  animation-delay: 0.6s;
-  top: 40%;
-  left: 60%;
+  animation: firework-sm 1.2s both infinite;
+  animation-delay: 0.05s;
   z-index: 100;
 }
 
 .firework-11 {
   animation: firework-lg 1.2s both infinite;
-  animation-delay: 0.5s;
-  top: 35%;
-  left: 15%;
+  animation-delay: 0.2s;
   z-index: 100;
 }
 
 .firework-12 {
   animation: firework-md 1.2s both infinite;
-  animation-delay: 0.3s;
-  top: 30%;
-  left: 80%;
+  animation-delay: 0.2s;
   z-index: 100;
 }
 
 .firework-13 {
   animation: firework-md 1.2s both infinite;
-  animation-delay: 0.1s;
-  top: 55%;
-  left: 60%;
+  animation-delay: 0.6s;
   z-index: 100;
 }
 
 .firework-14 {
-  animation: firework-lg 1.2s both infinite;
-  animation-delay: 0.55s;
-  top: 70%;
-  left: 75%;
+  animation: firework-sm 1.2s both infinite;
+  animation-delay: 0.1s;
   z-index: 100;
 }
 
 .firework-15 {
   animation: firework-sm 1.2s both infinite;
-  animation-delay: 0.45s;
-  top: 30%;
-  left: 20%;
+  animation-delay: 0.05s;
+  z-index: 100;
+}
+
+.firework-16 {
+  animation: firework-sm 1.2s both infinite;
+  animation-delay: 0.55s;
+  z-index: 100;
+}
+
+.firework-17 {
+  animation: firework-md 1.2s both infinite;
+  animation-delay: 0.75s;
+  z-index: 100;
+}
+
+.firework-18 {
+  animation: firework-sm 1.2s both infinite;
+  animation-delay: 0.95s;
+  z-index: 100;
+}
+
+.firework-19 {
+  animation: firework-md 1.2s both infinite;
+  animation-delay: 0.7s;
+  z-index: 100;
+}
+
+.firework-20 {
+  animation: firework-sm 1.2s both infinite;
+  animation-delay: 0.7s;
   z-index: 100;
 }
 

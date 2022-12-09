@@ -21,6 +21,5 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hanalei+Fill&family=Montserrat:wght@100;300;500;700&family=Rubik&display=swap" rel="stylesheet"></head>
 <body>
-<script src="js/sudoku.min.js"></script>
 </body>
 </html>
