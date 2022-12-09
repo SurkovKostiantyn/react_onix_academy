@@ -1,0 +1,73 @@
+// colors
+@use "sass:math";
+@use "sass:list";
+
+$emptyColor: rgba(0,0,0,0);
+$mainBgColor: #000;
+$mainTextColor: #000;
+$headerTextColor: #FAEBD7FF;
+
+//list of colors used in the project
+$colorEasy: #3cdc64;
+$colorHard: #dc3c64;
+
+// font family
+$fontFamilyLogo: 'Hanalei Fill', cursive;
+$fontFamilyText: 'Montserrat', sans-serif;
+$fontFamilyDigits: 'Rubik', sans-serif;
+
+// font weight
+$fontWeightExtraLight: 100;
+$fontWeightLight: 300;
+$fontWeightRegular: 500;
+$fontWeightBold: 700;
+
+// font size
+$fontSizeLogo: max(7vw, 35px);
+$fontSizeHeader: 150%;
+$fontSizeLink: 140%;
+$fontSizeNormal: 120%;
+$fontSizeSmall: 80%;
+$fontSizeExtraSmall: 60%;
+$fontSizeDigits: 24px;
+
+// line height
+$lineHeightLogo: max(10vw,50px);
+$lineHeightSmall: 80%;
+$lineHeightMiddle: 150%;
+$lineHeightNormal: 100%;
+$lineHeightBig: 200%;
+$lineHeightInfo: 30px;
+
+// fonts
+$font_LOGO: $fontWeightRegular list.slash($fontSizeLogo, $lineHeightLogo) $fontFamilyLogo;
+$textFont: $fontWeightLight list.slash($fontSizeNormal,  $lineHeightNormal) $fontFamilyText;
+$textHeaderFont: $fontWeightBold list.slash($fontSizeHeader, $lineHeightNormal) $fontFamilyText;
+$footerFont: $fontWeightExtraLight list.slash($fontSizeExtraSmall,  $lineHeightSmall)  $fontFamilyText;
+$linkFont: $fontWeightLight list.slash($fontSizeLink,  $lineHeightBig)  $fontFamilyText;
+$infoFont: $fontWeightBold list.slash($fontSizeNormal,  $lineHeightInfo)  $fontFamilyText;
+$infoLevelFont: $fontWeightBold list.slash($fontSizeNormal,  $lineHeightBig)  $fontFamilyText;
+$fontAwesome: FontAwesome, sans-serif;
+
+// sizes
+$maxContainerWidth: 1200px;
+$minContainerWidth: 300px;
+
+$screen-min: 320px;
+$screen-min-s: 400px;
+$screen-xxs: 565px;
+$screen-xs: 767px;
+$screen-sm: 991px;
+$screen-md: 1199px;
+$screen-lg: 1400px;
+
+// @media #{$tablets}{}
+$phones-mini: 'only screen and (max-width: #{$screen-min-s})';
+$phones: 'only screen and (max-width: #{$screen-min-s})';
+$phones-big: 'only screen and (max-width: #{$screen-xxs})';
+$tablets: 'only screen and (max-width: #{$screen-xs})';
+$tablets-big: 'only screen and (max-width: #{$screen-sm})';
+$desktop: 'only screen and (max-width: #{$screen-md})';
+$full-hd: 'only screen and (max-width: #{$screen-lg})';
+
+$sizes: $full-hd, $desktop, $tablets-big, $tablets, $phones-big, $phones, $phones-mini;
