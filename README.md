@@ -15,9 +15,8 @@
 Тестовое задание нужно отправить ссылкой на github при подаче заявок. 
 
 
-
-
-основной файл index.php, index.html создан для github pages.
+github pages:
 https://surkovkostiantyn.github.io/react_onix_academy/
-так же сайт работает на
+
+так же сайт работает тут:
 https://webportfolio.com.ua/
