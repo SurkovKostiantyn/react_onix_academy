@@ -169,6 +169,7 @@
             input.readOnly = true;
             sudoku.appendChild(input);
         }
+        sudoku.style.backgroundImage = 'url("files/bg/1.png")';
     }
 
     buildControlPanel = () => {
