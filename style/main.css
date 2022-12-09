@@ -135,7 +135,7 @@ a {
   margin: 0 auto;
   padding: 0;
   text-align: center;
-  font: 500 140% / 200% "Averia Gruesa Libre", cursive;
+  font: 300 140% / 200% "Montserrat", sans-serif;
   color: antiquewhite;
   cursor: pointer;
 }
@@ -186,11 +186,11 @@ a {
   width: clamp(300px, 80%, 1000px);
 }
 #container #container_Home > h1, #container #container_Rules > h1 {
-  font: 400 150% / 100% "Source Sans Pro", sans-serif;
+  font: 700 150% / 100% "Montserrat", sans-serif;
   margin-bottom: 10px;
 }
 #container #container_Home > p, #container #container_Rules > p {
-  font: 400 120% / 100% "Source Sans Pro", sans-serif;
+  font: 300 120% / 100% "Montserrat", sans-serif;
 }
 
 #controlPanel, #buttonsBlock, #changeLevel {
@@ -208,7 +208,7 @@ a {
 #buttonsBlock > a {
   cursor: pointer;
   padding: 0 8px;
-  font: 500 140% / 200% "Averia Gruesa Libre", cursive;
+  font: 300 140% / 200% "Montserrat", sans-serif;
   background-color: #000;
   color: antiquewhite;
   box-sizing: border-box;
@@ -222,20 +222,20 @@ a {
 #p_info_timer {
   margin: 0;
   padding: 0;
-  font: 500 140% / 200% "Averia Gruesa Libre", cursive;
+  font: 700 120% / 30px "Montserrat", sans-serif;
 }
 
 #p_info_cells {
   margin: 0;
   padding: 0;
-  font: 700 120% / 30px "Averia Gruesa Libre", cursive;
+  font: 700 120% / 30px "Montserrat", sans-serif;
   display: none;
 }
 
 #p_info_level {
   margin: 0;
   padding: 0;
-  font: 700 120% / 200% "Averia Gruesa Libre", cursive;
+  font: 700 120% / 200% "Montserrat", sans-serif;
 }
 
 #sudoku {
@@ -273,7 +273,7 @@ a {
   box-shadow: 0 0 0 1px #000 inset;
   box-sizing: border-box;
   font-size: 24px;
-  font-family: "Averia Gruesa Libre", cursive;
+  font-family: "Rubik", sans-serif;
   width: 100%;
   height: 100%;
   padding: 0;
@@ -361,7 +361,7 @@ a {
   margin: 0 auto;
   padding: 0;
   text-align: center;
-  font: 500 140% / 200% "Averia Gruesa Libre", cursive;
+  font: 300 140% / 200% "Montserrat", sans-serif;
   color: antiquewhite;
   cursor: pointer;
 }
@@ -388,7 +388,7 @@ a {
   margin: 0 20px;
 }
 #footer_text {
-  font: 300 60% / 80% "Source Sans Pro", sans-serif;
+  font: 100 60% / 80% "Montserrat", sans-serif;
   margin: 10px auto;
 }
 
@@ -400,122 +400,122 @@ a {
 }
 
 .firework-1 {
-  animation: firework-sm 1.2s both infinite;
-  animation-delay: 0.65s;
-  top: 55%;
-  left: 30%;
+  animation: firework-lg 1.2s both infinite;
+  animation-delay: 0.45s;
+  top: 90%;
+  left: 40%;
   z-index: 100;
 }
 
 .firework-2 {
-  animation: firework-sm 1.2s both infinite;
-  animation-delay: 0.05s;
-  top: 25%;
-  left: 15%;
+  animation: firework-lg 1.2s both infinite;
+  animation-delay: 0.55s;
+  top: 80%;
+  left: 30%;
   z-index: 100;
 }
 
 .firework-3 {
-  animation: firework-lg 1.2s both infinite;
-  animation-delay: 0.7s;
-  top: 75%;
-  left: 40%;
+  animation: firework-md 1.2s both infinite;
+  animation-delay: 0.05s;
+  top: 15%;
+  left: 20%;
   z-index: 100;
 }
 
 .firework-4 {
   animation: firework-sm 1.2s both infinite;
   animation-delay: 0.7s;
-  top: 80%;
-  left: 50%;
+  top: 90%;
+  left: 30%;
   z-index: 100;
 }
 
 .firework-5 {
   animation: firework-lg 1.2s both infinite;
-  animation-delay: 0.45s;
-  top: 25%;
-  left: 90%;
+  animation-delay: 0.1s;
+  top: 70%;
+  left: 15%;
   z-index: 100;
 }
 
 .firework-6 {
   animation: firework-lg 1.2s both infinite;
-  animation-delay: 0.6s;
-  top: 65%;
-  left: 15%;
-  z-index: 100;
-}
-
-.firework-7 {
-  animation: firework-sm 1.2s both infinite;
-  animation-delay: 0.45s;
-  top: 25%;
-  left: 35%;
-  z-index: 100;
-}
-
-.firework-8 {
-  animation: firework-sm 1.2s both infinite;
-  animation-delay: 0.55s;
-  top: 35%;
-  left: 70%;
-  z-index: 100;
-}
-
-.firework-9 {
-  animation: firework-sm 1.2s both infinite;
-  animation-delay: 0.35s;
+  animation-delay: 0.75s;
   top: 60%;
   left: 15%;
   z-index: 100;
 }
 
-.firework-10 {
+.firework-7 {
+  animation: firework-md 1.2s both infinite;
+  animation-delay: 0.15s;
+  top: 30%;
+  left: 20%;
+  z-index: 100;
+}
+
+.firework-8 {
   animation: firework-sm 1.2s both infinite;
-  animation-delay: 0.65s;
-  top: 85%;
-  left: 15%;
+  animation-delay: 0.2s;
+  top: 60%;
+  left: 90%;
+  z-index: 100;
+}
+
+.firework-9 {
+  animation: firework-md 1.2s both infinite;
+  animation-delay: 0.5s;
+  top: 65%;
+  left: 25%;
+  z-index: 100;
+}
+
+.firework-10 {
+  animation: firework-lg 1.2s both infinite;
+  animation-delay: 0.6s;
+  top: 40%;
+  left: 60%;
   z-index: 100;
 }
 
 .firework-11 {
   animation: firework-lg 1.2s both infinite;
-  animation-delay: 0.3s;
-  top: 30%;
-  left: 75%;
+  animation-delay: 0.5s;
+  top: 35%;
+  left: 15%;
   z-index: 100;
 }
 
 .firework-12 {
-  animation: firework-sm 1.2s both infinite;
-  animation-delay: 0.45s;
-  top: 80%;
-  left: 75%;
+  animation: firework-md 1.2s both infinite;
+  animation-delay: 0.3s;
+  top: 30%;
+  left: 80%;
   z-index: 100;
 }
 
 .firework-13 {
   animation: firework-md 1.2s both infinite;
-  animation-delay: 0.75s;
-  top: 20%;
-  left: 15%;
+  animation-delay: 0.1s;
+  top: 55%;
+  left: 60%;
   z-index: 100;
 }
 
 .firework-14 {
   animation: firework-lg 1.2s both infinite;
   animation-delay: 0.55s;
-  top: 60%;
-  left: 60%;
+  top: 70%;
+  left: 75%;
   z-index: 100;
 }
 
 .firework-15 {
-  animation: firework-md 1.2s both infinite;
-  animation-delay: 0.65s;
-  top: 40%;
-  left: 85%;
+  animation: firework-sm 1.2s both infinite;
+  animation-delay: 0.45s;
+  top: 30%;
+  left: 20%;
   z-index: 100;
 }
 

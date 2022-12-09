@@ -19,8 +19,7 @@
     <link rel="icon" href="files/ico.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Averia+Libre&family=Hanalei+Fill&family=Patrick+Hand&family=Source+Sans+Pro:ital,wght@0,200;0,400;1,400&display=swap" rel="stylesheet">
-</head>
+    <link href="https://fonts.googleapis.com/css2?family=Hanalei+Fill&family=Montserrat:wght@100;300;500;700&family=Rubik&display=swap" rel="stylesheet"></head>
 <body>
 <script src="js/sudoku.min.js"></script>
 </body>

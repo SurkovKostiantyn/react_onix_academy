@@ -10,37 +10,42 @@ $headerTextColor: #FAEBD7FF;
 $colorEasy: #3cdc64;
 $colorHard: #dc3c64;
 
+// font family
+$fontFamilyLogo: 'Hanalei Fill', cursive;
+$fontFamilyText: 'Montserrat', sans-serif;
+$fontFamilyDigits: 'Rubik', sans-serif;
+
 // font weight
-$fontWeightBold: 700;
+$fontWeightExtraLight: 100;
+$fontWeightLight: 300;
 $fontWeightRegular: 500;
-$fontWeightLight: 400;
-$fontWeightExtraLight: 300;
+$fontWeightBold: 700;
+
 // font size
-$fontSizeHeader: max(7vw, 35px);
-$fontSizeHeader2: 150%;
+$fontSizeLogo: max(7vw, 35px);
+$fontSizeHeader: 150%;
 $fontSizeLink: 140%;
 $fontSizeNormal: 120%;
 $fontSizeSmall: 80%;
 $fontSizeExtraSmall: 60%;
 $fontSizeDigits: 24px;
+
 // line height
-$lineHeightHeader: max(10vw,50px);
-$lineHeightBig: 200%;
+$lineHeightLogo: max(10vw,50px);
+$lineHeightSmall: 80%;
 $lineHeightMiddle: 150%;
 $lineHeightNormal: 100%;
-$lineHeightSmall: 80%;
+$lineHeightBig: 200%;
 $lineHeightInfo: 30px;
+
 // fonts
-$pageHeaderFont: $fontWeightRegular list.slash($fontSizeHeader, $lineHeightHeader) 'Hanalei Fill', cursive;
-
-$textFont: $fontWeightLight list.slash($fontSizeNormal,  $lineHeightNormal) 'Source Sans Pro', sans-serif;
-$textHeaderFont: $fontWeightLight list.slash($fontSizeHeader2, $lineHeightNormal) 'Source Sans Pro', sans-serif;
-$footerFont: $fontWeightExtraLight list.slash($fontSizeExtraSmall,  $lineHeightSmall) 'Source Sans Pro', sans-serif;
-
-$linkFont: $fontWeightRegular list.slash($fontSizeLink,  $lineHeightBig) 'Averia Gruesa Libre', cursive;
-$infoFont: $fontWeightBold list.slash($fontSizeNormal,  $lineHeightInfo) 'Averia Gruesa Libre', cursive;
-$infoLevelFont: $fontWeightBold list.slash($fontSizeNormal,  $lineHeightBig) 'Averia Gruesa Libre', cursive;
-
+$font_LOGO: $fontWeightRegular list.slash($fontSizeLogo, $lineHeightLogo) $fontFamilyLogo;
+$textFont: $fontWeightLight list.slash($fontSizeNormal,  $lineHeightNormal) $fontFamilyText;
+$textHeaderFont: $fontWeightBold list.slash($fontSizeHeader, $lineHeightNormal) $fontFamilyText;
+$footerFont: $fontWeightExtraLight list.slash($fontSizeExtraSmall,  $lineHeightSmall)  $fontFamilyText;
+$linkFont: $fontWeightLight list.slash($fontSizeLink,  $lineHeightBig)  $fontFamilyText;
+$infoFont: $fontWeightBold list.slash($fontSizeNormal,  $lineHeightInfo)  $fontFamilyText;
+$infoLevelFont: $fontWeightBold list.slash($fontSizeNormal,  $lineHeightBig)  $fontFamilyText;
 $fontAwesome: FontAwesome, sans-serif;
 
 // sizes
