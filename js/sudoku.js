@@ -339,10 +339,14 @@
     changeCursor = (level) => {
         let body = document.getElementsByTagName("body")[0];
 
-        while(body.getElementsByTagName("style").length !== 0) {
-            body.getElementsByTagName("style")[0].remove();
+        let styles = body.getElementsByTagName("style");
+        for (let style of styles) {
+            if(style.id === 'cursor') {
+                style.remove();
+            }
         }
         let style = document.createElement('style');
+        style.id = 'cursor';
         style.innerHTML = `* {cursor: url('files/cursor/${level}.png'), auto !important;}`;
         body.appendChild(style);
     }

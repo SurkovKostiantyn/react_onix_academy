@@ -34,14 +34,14 @@ $fontSizeDigits: 24px;
 // line height
 $lineHeightLogo: max(10vw,50px);
 $lineHeightSmall: 80%;
-$lineHeightMiddle: 150%;
 $lineHeightNormal: 100%;
+$lineHeightMiddle: 150%;
 $lineHeightBig: 200%;
 $lineHeightInfo: 30px;
 
 // fonts
 $font_LOGO: $fontWeightRegular list.slash($fontSizeLogo, $lineHeightLogo) $fontFamilyLogo;
-$textFont: $fontWeightLight list.slash($fontSizeNormal,  $lineHeightNormal) $fontFamilyText;
+$textFont: $fontWeightLight list.slash($fontSizeNormal,  $lineHeightMiddle) $fontFamilyText;
 $textHeaderFont: $fontWeightBold list.slash($fontSizeHeader, $lineHeightNormal) $fontFamilyText;
 $footerFont: $fontWeightExtraLight list.slash($fontSizeExtraSmall,  $lineHeightSmall)  $fontFamilyText;
 $linkFont: $fontWeightLight list.slash($fontSizeLink,  $lineHeightBig)  $fontFamilyText;
