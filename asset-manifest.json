@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/SurkovKostiantyn/react_onix_academy/static/css/main.cf40b6ff.css",
+    "main.js": "/SurkovKostiantyn/react_onix_academy/static/js/main.eb94c814.js",
+    "static/js/787.70431f3b.chunk.js": "/SurkovKostiantyn/react_onix_academy/static/js/787.70431f3b.chunk.js",
+    "static/media/1.png": "/SurkovKostiantyn/react_onix_academy/static/media/1.cf9186c516976805c18e.png",
+    "index.html": "/SurkovKostiantyn/react_onix_academy/index.html",
+    "main.cf40b6ff.css.map": "/SurkovKostiantyn/react_onix_academy/static/css/main.cf40b6ff.css.map",
+    "main.eb94c814.js.map": "/SurkovKostiantyn/react_onix_academy/static/js/main.eb94c814.js.map",
+    "787.70431f3b.chunk.js.map": "/SurkovKostiantyn/react_onix_academy/static/js/787.70431f3b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cf40b6ff.css",
+    "static/js/main.eb94c814.js"
+  ]
+}
