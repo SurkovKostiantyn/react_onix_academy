@@ -1,0 +1,35 @@
+@use '../common/var.scss' as *;
+@use '../common/mixins.scss' as *;
+
+#footer{
+  flex: 0 0 auto;
+  @include block(0 auto, 0);
+  text-align: center;
+  font: $linkFont;
+  color: $headerTextColor;
+  > a{
+    cursor: inherit;
+    display: inline-block;
+    height: 100%;
+    @include transition(background-color 0.5s);
+  }
+  #a_Github:before{
+    content: '\f09b';
+    font-family: $fontAwesome;
+    margin: 0 20px;
+  }
+  #a_Instagram:before{
+    content: '\f16d';
+    font-family: $fontAwesome;
+    margin: 0 20px;
+  }
+  #a_Telegram:before{
+    content: '\f2c6';
+    font-family: $fontAwesome;
+    margin: 0 20px;
+  }
+  &_text{
+    font: $footerFont;
+    margin: 10px auto;
+  }
+}

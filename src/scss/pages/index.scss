@@ -1,0 +1,23 @@
+@use '../common/var.scss' as *;
+@use '../common/mixins.scss' as *;
+
+#container{
+  flex: 1 0 auto;
+  @include block(0 auto, 20px 0);
+  width: 100%;
+  text-align: center;
+  z-index: 2;
+  @include transition(background-color 0.5s);
+  #container_Home,#container_Rules{
+    position: relative;
+    margin: 0 auto;
+    width: clamp(300px, 80%, 1000px);
+    > h1{
+      font: $textHeaderFont;
+      margin-bottom: 10px;
+    }
+    > p{
+      font: $textFont;
+    }
+  }
+}

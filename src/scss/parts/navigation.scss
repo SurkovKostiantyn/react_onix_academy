@@ -1,0 +1,34 @@
+@use '../common/var.scss' as *;
+@use '../common/mixins.scss' as *;
+
+#nav{
+    @include block(0 auto, 0);
+    text-align: center;
+    font: $linkFont;
+    color: $headerTextColor;
+    > .active{
+        @include linearTextColor;
+    }
+    > a{
+        cursor: inherit;
+        display: inline-block;
+        height: 100%;
+        padding: 0 10px;
+        @include transition(background-color 0.5s);
+    }
+    #a_Home:before{
+        content: '\f015';
+        font-family: $fontAwesome;
+        margin-right: 10px;
+    }
+    #a_Play:before{
+        content: '\f11b';
+        font-family: $fontAwesome;
+        margin-right: 10px;
+    }
+    #a_Rules:before{
+        content: '\f05a';
+        font-family: $fontAwesome;
+        margin-right: 10px;
+    }
+}

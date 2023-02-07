@@ -1,0 +1,22 @@
+//sudo npm install -g sass
+//sass --watch src/scss:dist/css
+//sass --watch src/scss:dist/css --style compressed
+@use 'common/var.scss';
+
+@import 'common/reset.scss';
+@import 'common/classes.scss';
+
+@import 'parts/header.scss';
+@import 'parts/navigation.scss';
+@import 'pages/index.scss';
+@import 'parts/gamefield.scss';
+@import 'parts/footer.scss';
+@import 'other/firework.scss';
+
+#root{
+  background-color: var.$mainBgColor;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
