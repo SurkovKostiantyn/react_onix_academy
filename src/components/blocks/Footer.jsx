@@ -1,3 +1,4 @@
+import FooterLink from '../links/FooterLink';
 function Footer(){
     return(
         <footer>
@@ -6,19 +7,19 @@ function Footer(){
                     <h4>
                         Contact the Publisher
                     </h4>
-                    <p><a href="mailto:kskrua@gmail.com" className="hoverable">mike@runo.com</a></p>
-                    <p><a href="tel:+1111111" className="hoverable">+944 450 904 505</a></p>
+                    <p><FooterLink href="mailto:kskrua@gmail.com" className="hoverable" innerHTML="mike@runo.com"/></p>
+                    <p><FooterLink href="tel:123456" className="hoverable" innerHTML="0123 456 78 90"/></p>
                 </div>
                 <div className="footer-body-blocks">
                     <h4>
                         Exploratory
                     </h4>
                     <ul>
-                        <li><a href="/" className="hoverable">About</a></li>
-                        <li><a href="/" className="hoverable">Partners</a></li>
-                        <li><a href="/" className="hoverable">Job Opportunities</a></li>
-                        <li><a href="/" className="hoverable">Advertise</a></li>
-                        <li><a href="/" className="hoverable">Membership</a></li>
+                        <li><FooterLink href="/" className="hoverable" innerHTML="About us"/></li>
+                        <li><FooterLink href="/" className="hoverable" innerHTML="Partners"/></li>
+                        <li><FooterLink href="/" className="hoverable" innerHTML="Job Opportunities"/></li>
+                        <li><FooterLink href="https://ru.wikipedia.org/wiki/Свинка_Пеппа" className="hoverable" innerHTML="Svinka Peppa"/></li>
+                        <li><FooterLink href="/" className="hoverable" innerHTML="Membership"/></li>
                     </ul>
                 </div>
                 <div className="footer-body-blocks">
@@ -33,11 +34,11 @@ function Footer(){
                     <h4>
                         Connections
                     </h4>
-                    <a href="/" className="fa-brands hoverable fa-facebook"> </a>
-                    <a href="/" className="fa-brands hoverable fa-twitter"> </a>
-                    <a href="/" className="fa-brands hoverable fa-youtube"> </a>
-                    <a href="/" className="fa-brands hoverable fa-pinterest"> </a>
-                    <a href="/" className="fa-brands hoverable fa-behance-square"> c,e</a>
+                    <FooterLink href="/" className="fa-brands hoverable fa-facebook" />
+                    <FooterLink href="/" className="fa-brands hoverable fa-twitter" />
+                    <FooterLink href="/" className="fa-brands hoverable fa-youtube" />
+                    <FooterLink href="/" className="fa-brands hoverable fa-pinterest" />
+                    <FooterLink href="/" className="fa-brands hoverable fa-behance-square" />
                 </div>
             </div>
             <div className="footer-bottom">

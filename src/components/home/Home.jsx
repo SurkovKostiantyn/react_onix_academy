@@ -5,13 +5,6 @@ import ContentNews  from "./ContentNews";
 import ContentBelow from "./ContentBelow";
 import Footer from '../blocks/Footer';
 
-let AddCommonJSFile = () => {
-        const script = document.createElement("script");
-        script.src = "/assets/js/common.js";
-        script.async = true;
-        document.body.appendChild(script);
-    }
-
 let Home = () =>{
     return(
         [
@@ -20,7 +13,6 @@ let Home = () =>{
             <ContentNews key={3}/>,
             <ContentBelow key={4}/>,
             <Footer key={5}/>,
-            <AddCommonJSFile key={6}/>,
         ]
     )
 }
