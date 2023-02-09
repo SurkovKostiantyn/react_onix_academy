@@ -1,0 +1,32 @@
+$logoColor: #F8F9FA;
+$whiteColor: #FFF;
+$menuColor: #E5E5E5;
+$hBodyTextColor: #495057;
+$hBodyTextColor2: #6C757D;
+$bgGray: #343A40;
+$qabachoq: #D4A373;
+$line: #C4C4C4;
+$bgRelated: rgba(229, 229, 229, 0.3);
+
+$fontLora: 'Lora', serif;
+$fontRoboto: 'Roboto', sans-serif;
+$fontSpartan: 'Spartan', sans-serif;
+
+$screen-min: 320px;
+$screen-min-s: 400px;
+$screen-xxs: 565px;
+$screen-xs: 767px;
+$screen-sm: 991px;
+$screen-md: 1199px;
+$screen-lg: 1400px;
+
+// @media #{$tablets}{}
+$phones-mini: 'only screen and (max-width: #{$screen-min-s})';
+$phones: 'only screen and (max-width: #{$screen-min-s})';
+$phones-big: 'only screen and (max-width: #{$screen-xxs})';
+$tablets: 'only screen and (max-width: #{$screen-xs})';
+$tablets-big: 'only screen and (max-width: #{$screen-sm})';
+$desktop: 'only screen and (max-width: #{$screen-md})';
+$full-hd: 'only screen and (max-width: #{$screen-lg})';
+
+$sizes: $full-hd, $desktop, $tablets-big, $tablets, $phones-big, $phones, $phones-mini;

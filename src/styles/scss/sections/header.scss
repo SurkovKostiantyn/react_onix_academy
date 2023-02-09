@@ -1,0 +1,101 @@
+//noinspection ALL
+.banner {
+  margin: 0 auto;
+  max-height: 600px;
+
+  &-block {
+    position: relative;
+    max-height: 600px;
+    //@media #{$tablets}{
+    //  display: none;
+    //}
+
+    img {
+      width: 100%;
+      max-height: 600px;
+    }
+
+    &-p{
+      @include adaptiveFont(700, 36px, 46px, $fontLora);
+      position: absolute;
+      top: 50%;
+      left: max(5%, calc((100% - 1300px) / 2));
+      @include translate(0, -50%);
+      color: $whiteColor;
+      @media #{$full-hd}{
+        left: 70px;
+      }
+      //@media #{$tablets}{
+      //  display: none;
+      //}
+      @media #{$phones} {
+        left: min(20px, 5%);
+      }
+    }
+    & .singleNewsHeader{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      @include translate(-50%, -50%);
+      text-align: center;
+      & p.big-text{
+        word-wrap: normal;
+        display:block;
+        @include adaptiveFont(700, 36px, 46px, $fontLora);
+        color: $whiteColor;
+      }
+      & p.small-text{
+        display:block;
+        font: 400 12px/20px $fontLora;
+        color: $menuColor;
+        margin-top: 13px;
+        @media #{$phones-big}{
+          display: none;
+        }
+      }
+    }
+
+    & .newsPage {
+      text-align: center;
+      top: 50%;
+      left: 50%;
+      @include translate(-50%, -50%);
+    }
+  }
+}
+
+//noinspection ALL
+.navbar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  padding: 29px 0;
+  background: transparentize(#000, 0.8);
+  @include transition(.4s);
+  z-index: 10;
+  @media #{$tablets}{
+    position: sticky;
+    top: 0;
+    background: transparentize(#000, 0.2);
+  }
+  @include flex-navbar;
+
+  &-logo {
+    @include adaptiveMarginLeft;
+    font: 700 20px/22px $fontSpartan;
+    color: $logoColor;
+  }
+
+  &-menu {
+    @include adaptiveMarginRight;
+    li {
+      display: inline-block;
+      margin-left: 23px;
+    }
+    &-item {
+      font: 700 12px/14px $fontRoboto;
+      color: $menuColor;
+      padding-bottom: 9px;
+    }
+  }
+}

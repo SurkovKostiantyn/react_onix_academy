@@ -1,0 +1,78 @@
+//noinspection ALL
+footer{
+  margin: 0 auto;
+  background: #212529;
+  .footer-body{
+    @include adaptivePadding(106px);
+    @include adaptiveMargin; // выдерживать отступ
+    @include flex;
+    column-gap: 20px;
+    @media #{$tablets-big} {
+      @include flex-footer-body;
+    }
+    &-blocks {
+      width: 300px;
+      @media #{$tablets-big} {
+        width: 220px;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      @media #{$phones-big} {
+        border-bottom: 1px solid $bgGray;
+      }
+      h4{
+        font: 700 18px/25px $fontLora;
+        color: $whiteColor;
+        margin-bottom: 15px;
+      }
+      p{
+        font: 400 12px/15px $fontLora;
+        color: $menuColor;
+        margin-bottom: 18px;
+      }
+      a.contact-info{
+        display: block;
+        font: 700 12px/15px $fontLora;
+        color: $menuColor;
+        margin-bottom: 18px;
+      }
+      p.lineHeight20{
+        line-height: 20px;
+      }
+      ul{
+        color: $menuColor;
+        font: 400 12px/15px $fontLora;
+        li{
+          margin-bottom: 18px;
+        }
+      }
+      .fa-brands {
+        margin-right: 18px;
+        color: $menuColor;
+        font-size: 20px;
+        margin-bottom: 18px;
+        @media #{$desktop} {
+          margin-right: 12px;
+        }
+      }
+    }
+  }
+
+  .footer-bottom{
+    width: 100%;
+    padding: 31px 0;
+    background: #343A40;
+    &-div{
+      @include adaptiveMargin; // выдерживать отступ
+      @include flex-footer-bottom;
+      p{
+        color: $menuColor;
+        font: 700 14px/18px $fontLora;
+      }
+      .normal{
+        font-weight: 400;
+        float: right; // da!
+      }
+    }
+  }
+}

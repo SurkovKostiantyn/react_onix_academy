@@ -1,0 +1,24 @@
+/**
+* description:
+* This is the stylesheet for pages articles (admin).
+*/
+
+// variables
+$black: #363839;
+$lightgray: #9c9e9f;
+$gray: #bdc1c6;
+$white: #fff;
+@import "common/variables.scss";
+//mixins
+
+body, html {
+  margin: 0;
+}
+
+@import "admin/elements.scss";
+
+@import 'admin/articles.scss';
+@import 'admin/login.scss';
+
+
+

@@ -1,0 +1,35 @@
+//noinspection ALL
+.active{
+  border-bottom: 2px solid #D4A373;
+  color: $whiteColor;
+}
+
+.cover{
+  object-fit: cover;
+}
+
+.quote{
+  display: block;
+  color: $qabachoq;
+  font: bold 36px/46px $fontLora;
+  margin: 25px 0;
+}
+
+.created{
+  display: block;
+  margin: min(55px, 4vw) 0 0 0;
+  font-weight: bold;
+}
+
+.strong{
+  font-weight: bold;
+}
+
+.navOpacity{
+  background: transparentize(#000, 0.1) !important;
+  @include transition(.4s);
+}
+
+.hoverable:hover{
+
+}

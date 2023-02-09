@@ -1,0 +1,59 @@
+//noinspection ALL
+.content-news {
+  margin: min(100px, 6vw) 0;
+
+  &-header {
+    @include adaptiveMargin;
+    padding-bottom: min(38px, 6vw);
+    position: relative;
+    @include flex-content-news-header;
+    color: $hBodyTextColor;
+
+    h3 {
+      font: 700 36px/46px $fontLora;
+    }
+
+    a {
+      font: 700 12px/25px $fontLora;
+      position: absolute;
+      bottom: min(38px, 6vw);
+      right: 0;
+    }
+  }
+
+  &-body {
+    @include adaptiveMargin;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
+    grid-gap: 50px 20px;
+    @media #{$phones-big} {
+      grid-gap: min(50px, 6vw) 20px;
+    }
+    &-item {
+      img {
+        object-fit: cover;
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
+
+//noinspection ALL
+.content-below{
+  background: $bgGray url("../images/Image2.png")  no-repeat center center / cover;
+  text-align: center;
+  @include flex-content-below;
+  @include adaptivePadding(224px);
+  &-text {
+    @include adaptiveMargin;
+    @include adaptiveFont(700, 36px, 46px, $fontLora);
+    color: $whiteColor;
+  }
+  &-small-text{
+    @include adaptiveMargin;
+    font: 400 12px/20px $fontLora;
+    color: $menuColor;
+    margin-top: 13px;
+  }
+}
