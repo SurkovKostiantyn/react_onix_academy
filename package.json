@@ -2,7 +2,7 @@
   "name": "react_onix_academy",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://SurkovKostiantyn.github.io/react_onix_academy/public",
+  "homepage": "https://SurkovKostiantyn.github.io/react_onix_academy/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
