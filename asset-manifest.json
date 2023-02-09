@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/react_onix_academy/public/static/css/main.e6d2c28b.css",
-    "main.js": "/react_onix_academy/public/static/js/main.e2690601.js",
-    "static/media/Image2.png": "/react_onix_academy/public/static/media/Image2.b4d1509fbfb523845694.png",
-    "static/media/Image.png": "/react_onix_academy/public/static/media/Image.0729105898f6e0b2f456.png",
-    "static/media/BlogImage6.png": "/react_onix_academy/public/static/media/BlogImage6.c54be2b4aaedd5864961.png",
-    "static/media/BlogImage.png": "/react_onix_academy/public/static/media/BlogImage.b3ddda6f1913d08eaddf.png",
-    "static/media/BlogImage2.png": "/react_onix_academy/public/static/media/BlogImage2.364d499461931998f7c5.png",
-    "static/media/BlogImage4.png": "/react_onix_academy/public/static/media/BlogImage4.ba6e2e3a6465c9062daf.png",
-    "static/media/BlogImage5.png": "/react_onix_academy/public/static/media/BlogImage5.e6cce79661838759c0a5.png",
-    "static/media/BlogImage7.png": "/react_onix_academy/public/static/media/BlogImage7.db080beb84dcba608099.png",
-    "static/media/BlogImage3.png": "/react_onix_academy/public/static/media/BlogImage3.254dbcad58aa6c95d442.png",
-    "static/media/BlogImage8.png": "/react_onix_academy/public/static/media/BlogImage8.bba6de7663bcdb06cccd.png",
-    "static/media/slick.svg": "/react_onix_academy/public/static/media/slick.7ba97953187dc2907930.svg",
-    "static/media/slick.eot": "/react_onix_academy/public/static/media/slick.a4e97f5a2a64f0ab1323.eot",
-    "static/media/slick.ttf": "/react_onix_academy/public/static/media/slick.c94f7671dcc99dce43e2.ttf",
-    "static/media/slick.woff": "/react_onix_academy/public/static/media/slick.295183786cd8a1389865.woff",
-    "index.html": "/react_onix_academy/public/index.html",
-    "main.e6d2c28b.css.map": "/react_onix_academy/public/static/css/main.e6d2c28b.css.map",
-    "main.e2690601.js.map": "/react_onix_academy/public/static/js/main.e2690601.js.map"
+    "main.css": "/react_onix_academy/static/css/main.68c8cd81.css",
+    "main.js": "/react_onix_academy/static/js/main.8c78b8d0.js",
+    "static/media/Image2.png": "/react_onix_academy/static/media/Image2.b4d1509fbfb523845694.png",
+    "static/media/Image.png": "/react_onix_academy/static/media/Image.0729105898f6e0b2f456.png",
+    "static/media/BlogImage6.png": "/react_onix_academy/static/media/BlogImage6.c54be2b4aaedd5864961.png",
+    "static/media/BlogImage.png": "/react_onix_academy/static/media/BlogImage.b3ddda6f1913d08eaddf.png",
+    "static/media/BlogImage2.png": "/react_onix_academy/static/media/BlogImage2.364d499461931998f7c5.png",
+    "static/media/BlogImage4.png": "/react_onix_academy/static/media/BlogImage4.ba6e2e3a6465c9062daf.png",
+    "static/media/BlogImage5.png": "/react_onix_academy/static/media/BlogImage5.e6cce79661838759c0a5.png",
+    "static/media/BlogImage7.png": "/react_onix_academy/static/media/BlogImage7.db080beb84dcba608099.png",
+    "static/media/BlogImage3.png": "/react_onix_academy/static/media/BlogImage3.254dbcad58aa6c95d442.png",
+    "static/media/BlogImage8.png": "/react_onix_academy/static/media/BlogImage8.bba6de7663bcdb06cccd.png",
+    "static/media/slick.svg": "/react_onix_academy/static/media/slick.7ba97953187dc2907930.svg",
+    "static/media/slick.eot": "/react_onix_academy/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/react_onix_academy/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/react_onix_academy/static/media/slick.295183786cd8a1389865.woff",
+    "index.html": "/react_onix_academy/index.html",
+    "main.68c8cd81.css.map": "/react_onix_academy/static/css/main.68c8cd81.css.map",
+    "main.8c78b8d0.js.map": "/react_onix_academy/static/js/main.8c78b8d0.js.map"
   },
   "entrypoints": [
-    "static/css/main.e6d2c28b.css",
-    "static/js/main.e2690601.js"
+    "static/css/main.68c8cd81.css",
+    "static/js/main.8c78b8d0.js"
   ]
 }
