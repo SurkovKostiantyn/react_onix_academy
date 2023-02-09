@@ -15,7 +15,7 @@
 https://surkovkostiantyn.github.io/react_onix_academy/
 
 ## problems:
-**How to add js files?**
+**How to add js files?** [DOM Method used](https://betterprogramming.pub/4-ways-of-adding-external-js-files-in-reactjs-823f85de3668)
 > Uncaught SyntaxError: Unexpected token '<'
 
 ## to do:
