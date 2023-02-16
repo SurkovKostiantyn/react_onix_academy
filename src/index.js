@@ -1,10 +1,6 @@
-import React from 'react';
-import * as ReactDOMClient from 'react-dom/client';
-import './styles/index.css';
-import Home from './components/home/Home';
+import ReactDOMClient from 'react-dom/client';
+import Home from './components/pages/Home';
 
-ReactDOMClient.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <Home />
-  </React.StrictMode>
-);
+ReactDOMClient
+    .createRoot(document.getElementById('root'))
+    .render( <Home /> );

@@ -1,12 +1,25 @@
+import Link from "../links/Link";
+import UnorderedList from "../lists/UnorderedList";
+
 
 let Nav = () =>{
     return(
         <nav className="navbar" id="navbar">
-            <a href="index.html" className="navbar-logo hoverable">RUNO</a>
-            <ul className="navbar-menu">
-                <li><a className="navbar-menu-item hoverable active" href="index.html">Home</a></li>
-                <li><a className="navbar-menu-item hoverable" href="news.html">News</a></li>
-            </ul>
+            <Link href={"index.html"} className={"navbar-logo hoverable"} innerHTML={"RUNO"} />
+
+            <UnorderedList
+                className="navbar-menu"
+                list={
+                    [
+                       <Link href={"index.html"}
+                           className={"navbar-menu-item hoverable active"}
+                           innerHTML={"Home"} />,
+                       <Link href={"news.html"}
+                           className={"navbar-menu-item hoverable"}
+                           innerHTML={"News"}/>
+                    ]
+                }
+            />
         </nav>
     )
 }
