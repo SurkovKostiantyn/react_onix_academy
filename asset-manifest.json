@@ -1,15 +1,17 @@
 {
   "files": {
-    "main.css": "/react_onix_academy/static/css/main.68c8cd81.css",
-    "main.js": "/react_onix_academy/static/js/main.6cb67d47.js",
+    "main.css": "/react_onix_academy/static/css/main.c54225b2.css",
+    "main.js": "/react_onix_academy/static/js/main.7c39b9e7.js",
     "static/media/Image2.png": "/react_onix_academy/static/media/Image2.b4d1509fbfb523845694.png",
     "static/media/Image.png": "/react_onix_academy/static/media/Image.0729105898f6e0b2f456.png",
+    "static/media/Image4.jpg": "/react_onix_academy/static/media/Image4.be14403b2c55c5de529f.jpg",
     "static/media/BlogImage6.png": "/react_onix_academy/static/media/BlogImage6.c54be2b4aaedd5864961.png",
     "static/media/BlogImage.png": "/react_onix_academy/static/media/BlogImage.b3ddda6f1913d08eaddf.png",
     "static/media/BlogImage2.png": "/react_onix_academy/static/media/BlogImage2.364d499461931998f7c5.png",
     "static/media/BlogImage4.png": "/react_onix_academy/static/media/BlogImage4.ba6e2e3a6465c9062daf.png",
     "static/media/BlogImage5.png": "/react_onix_academy/static/media/BlogImage5.e6cce79661838759c0a5.png",
     "static/media/BlogImage7.png": "/react_onix_academy/static/media/BlogImage7.db080beb84dcba608099.png",
+    "static/media/Image3.jpg": "/react_onix_academy/static/media/Image3.f7aa8174f8a025052f6d.jpg",
     "static/media/BlogImage3.png": "/react_onix_academy/static/media/BlogImage3.254dbcad58aa6c95d442.png",
     "static/media/BlogImage8.png": "/react_onix_academy/static/media/BlogImage8.bba6de7663bcdb06cccd.png",
     "static/media/slick.svg": "/react_onix_academy/static/media/slick.7ba97953187dc2907930.svg",
@@ -17,11 +19,11 @@
     "static/media/slick.ttf": "/react_onix_academy/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/react_onix_academy/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/react_onix_academy/index.html",
-    "main.68c8cd81.css.map": "/react_onix_academy/static/css/main.68c8cd81.css.map",
-    "main.6cb67d47.js.map": "/react_onix_academy/static/js/main.6cb67d47.js.map"
+    "main.c54225b2.css.map": "/react_onix_academy/static/css/main.c54225b2.css.map",
+    "main.7c39b9e7.js.map": "/react_onix_academy/static/js/main.7c39b9e7.js.map"
   },
   "entrypoints": [
-    "static/css/main.68c8cd81.css",
-    "static/js/main.6cb67d47.js"
+    "static/css/main.c54225b2.css",
+    "static/js/main.7c39b9e7.js"
   ]
 }
