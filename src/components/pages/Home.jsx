@@ -1,4 +1,4 @@
-import '../../styles/main.css';
+import '../../assets/styles/main.css';
 import Nav from "../blocks/Nav";
 import Banner from '../blocks/Banner';
 import ContentNews  from "../blocks/ContentNews";

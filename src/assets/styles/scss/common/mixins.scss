@@ -1,5 +1,5 @@
 @use 'sass:math';
-@import 'variables.scss';
+@import 'variables';
 
 @mixin adaptiveFont($font-weight, $font-size, $line-height, $font-family){
   font-weight: $font-weight;

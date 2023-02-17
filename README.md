@@ -16,7 +16,7 @@
 ### `npm run eject` - eject project
 ### `npm run build fails to minify` - [read more](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 ```cmd
-  sass --watch src/styles/scss/main.scss src/styles/main.css --style compressed --no-source-map
+  sass --watch src/assets/styles/scss/main.scss src/assets/styles/main.css --style compressed --no-source-map
 ```
 
 ## gh pages:
