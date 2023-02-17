@@ -3,10 +3,8 @@ import Slider from "react-slick";
 import JustALittleTag from '../elements/JustALittleTag'
 import Image from '../elements/Image'
 
-import Image1 from '../../assets/images/Image.png'
-import Image2 from '../../assets/images/Image2.png'
-import Image3 from '../../assets/images/Image3.jpg'
-import Image4 from '../../assets/images/Image4.jpg'
+import getImagesList from "../functions/getImagesList";
+const ImagesList = getImagesList('Banner');
 
 export default class Banner extends Component {
     render() {
@@ -19,7 +17,6 @@ export default class Banner extends Component {
             infinite: true,
             speed: 500
     };
-    const Images = [Image1, Image2, Image3, Image4];
     const text = [ // TODO: make it dynamic
         "Richird Norton photorealistic rendering as real photos",
         "Lorem ipsum dolor sit amet, consectetur adipisicing",
@@ -30,9 +27,9 @@ export default class Banner extends Component {
         <div className="banner slick" id="banner">
             <Slider {...settings}>
                 {
-                    Images.map((x,i) =>
+                    ImagesList.map((x,i) =>
                     <div className="banner-block" key={`banner${i}`}>
-                        <Image src={Images[i]} alt={i}/>
+                        <Image src={ImagesList[i]} alt={i}/>
                         <JustALittleTag tag="p" className="banner-block-p" text={text[i]}/>
                     </div>)
                 }

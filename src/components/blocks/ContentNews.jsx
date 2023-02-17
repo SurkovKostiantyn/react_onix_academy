@@ -2,15 +2,10 @@ import Link from "../links/Link";
 import JustALittleTag from "../elements/JustALittleTag";
 import LinksNewsBlock from "../links/LinksNewsBlock";
 
-import Image1 from '../../assets/images/BlogImage.png';
-import Image2 from '../../assets/images/BlogImage2.png';
-import Image3 from '../../assets/images/BlogImage3.png';
-import Image4 from '../../assets/images/BlogImage4.png';
-import Image5 from '../../assets/images/BlogImage5.png';
-import Image6 from '../../assets/images/BlogImage6.png';
-import Image7 from '../../assets/images/BlogImage7.png';
-import Image8 from '../../assets/images/BlogImage8.png';
 import Image from "../elements/Image";
+
+import getImagesList from "../functions/getImagesList";
+const ImagesList = getImagesList('BlogImages');
 
 const ContentNews = () => {
     // ContentNewsBody loop
@@ -26,7 +21,6 @@ const ContentNews = () => {
 }
 
 const ContentNewsBody = () => {
-    const Images = [Image1, Image2, Image3, Image4, Image5, Image6, Image7,Image8];
     const header = [
         "Richird Norton photorealistic",
         "Lorem ipsum dolor sit amet",
@@ -49,13 +43,13 @@ const ContentNewsBody = () => {
     ]
     return(
         <div className="content-news-body">
-            {Images.map((x,i) =>
+            {ImagesList.map((x,i) =>
                 <LinksNewsBlock
                     key={`LNB${i}`}
                     href="single.html"
                     className="content-news-body-item scaleable"
                     itemsList={[
-                        <Image src={Images[i]} alt={i} key={`img${i}`}/>,
+                        <Image src={ImagesList[i]} alt={i} key={`img${i}`}/>,
                         <JustALittleTag tag="p" key={`tag${i}`}
                                         className="date"
                                         text="08.08.2021"/>,
