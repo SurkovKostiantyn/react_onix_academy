@@ -27,6 +27,26 @@ const ContentNews = () => {
 
 const ContentNewsBody = () => {
     const Images = [Image1, Image2, Image3, Image4, Image5, Image6, Image7,Image8];
+    const header = [
+        "Richird Norton photorealistic",
+        "Lorem ipsum dolor sit amet",
+        "Aperiam consequatur, dolor",
+        "Architecto beatae consequuntur",
+        "Richird Norton photorealistic",
+        "Lorem ipsum dolor sit amet",
+        "Aperiam consequatur, dolor",
+        "Architecto beatae consequuntur",
+        ]
+    const text = [ // TODO: make it dynamic
+        "Richird Norton photorealistic rendering as real photos",
+        "Lorem ipsum dolor sit amet, consectetur adipisicing",
+        "Aperiam consequatur, dolor earum illum placeat voluptate!",
+        "Architecto beatae consequuntur libero molestiae, perferendis",
+        "Richird Norton photorealistic rendering as real photos",
+        "Lorem ipsum dolor sit amet, consectetur adipisicing",
+        "Aperiam consequatur, dolor earum illum placeat voluptate!",
+        "Architecto beatae consequuntur libero molestiae, perferendis",
+    ]
     return(
         <div className="content-news-body">
             {Images.map((x,i) =>
@@ -41,11 +61,10 @@ const ContentNewsBody = () => {
                                         text="08.08.2021"/>,
                         <JustALittleTag tag="p" key={`tag2${i}`}
                                         className="title"
-                                        text="Lorem ipsum dolor sit amet, consectetur."/>,
+                                        text={header[i]}/>,
                         <JustALittleTag tag="p" key={`tag3${i}`}
                                         className="text"
-                                        text="Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                        Esse id nisi tempora ut voluptate voluptatem!"/>,
+                                        text={text[i]}/>,
                     ]
                     }/>
             )}

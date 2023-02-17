@@ -16,52 +16,28 @@ export default class Banner extends Component {
             autoplay: false,
             autoplaySpeed: 2500,
             draggable: false,
-        };
-
-        return (
-            <div className="banner slick" id="banner">
-                <Slider {...settings}>
-                    <div className="banner-block">
-                        <Image src={Image1} alt="1"/>
-                        <JustALittleTag tag="p" className="banner-block-p"
-                                        text="Richird Norton photorealistic rendering as real photos"/>
-                    </div>
-                    <div className="banner-block">
-                        <Image src={Image2} alt="2"/>
-                        <JustALittleTag tag={'p'} className={'banner-block-p'}
-                                        text="Lorem ipsum dolor sit amet, consectetur adipisicing"/>
-                    </div>
-                    <div className="banner-block">
-                        <Image src={Image3} alt="3"/>
-                        <JustALittleTag tag={'p'} className={'banner-block-p'}
-                                        text="Aperiam consequatur, dolor earum illum placeat voluptate!"/>
-                    </div>
-                    <div className="banner-block">
-                        <Image src={Image4} alt="4"/>
-                        <JustALittleTag tag={'p'} className={'banner-block-p'}
-                                        text="Architecto beatae consequuntur libero molestiae, perferendis"/>
-                    </div>
-                </Slider>
-            </div>
-        );
+            infinite: true,
+            speed: 500
+    };
+    const Images = [Image1, Image2, Image3, Image4];
+    const text = [ // TODO: make it dynamic
+        "Richird Norton photorealistic rendering as real photos",
+        "Lorem ipsum dolor sit amet, consectetur adipisicing",
+        "Aperiam consequatur, dolor earum illum placeat voluptate!",
+        "Architecto beatae consequuntur libero molestiae, perferendis"
+    ]
+    return (
+        <div className="banner slick" id="banner">
+            <Slider {...settings}>
+                {
+                    Images.map((x,i) =>
+                    <div className="banner-block" key={`banner${i}`}>
+                        <Image src={Images[i]} alt={i}/>
+                        <JustALittleTag tag="p" className="banner-block-p" text={text[i]}/>
+                    </div>)
+                }
+            </Slider>
+        </div>
+    );
     }
 }
-
-// const BannerBlock = () =>{
-//     const Images = [Image1, Image2, Image3, Image4];
-//     const text = [
-//         "Richird Norton photorealistic rendering as real photos",
-//         "Lorem ipsum dolor sit amet, consectetur adipisicing",
-//         "Aperiam consequatur, dolor earum illum placeat voluptate!",
-//         "Architecto beatae consequuntur libero molestiae, perferendis"
-//     ]
-//     return(
-//         Images.map((x,i) =>
-//             <div className="banner-block" key={`banner${i}`}>
-//                 <Image src={Images[i]} alt={i}/>
-//                 <JustALittleTag tag="p" className="banner-block-p"
-//                                 text={text[i]}/>
-//             </div>
-//         )
-//     )
-// }
