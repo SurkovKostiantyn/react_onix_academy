@@ -1,7 +1,6 @@
 import Link from "../links/Link";
 import UnorderedList from "../lists/UnorderedList";
 
-
 let Nav = () =>{
     return(
         <nav className="navbar" id="navbar">
