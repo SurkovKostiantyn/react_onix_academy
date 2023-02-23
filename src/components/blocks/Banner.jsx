@@ -28,7 +28,7 @@ export default class Banner extends Component {
             <Slider {...settings}>
                 {
                     ImagesList.map((x,i) =>
-                    <div className="banner-block" key={`banner${i}`}>
+                    <div className="banner-block">
                         <Image src={ImagesList[i]} alt={i}/>
                         <Text className="banner-block-p" text={text[i]}/>
                     </div>)
