@@ -5,6 +5,10 @@
 - [x] В react компоненті батьківський тег має бути лише один
 - [x] Не впевнений що тобі потрібна папка slick-carousel на перший погляд вона не використовується в проекті
 ##  hometask 2:
+### сделяль:
+- [x] this.state -> this.props
+- [x] array of news -> array of objects
+- [x] add key to lists
 
 
 ## Commands:
