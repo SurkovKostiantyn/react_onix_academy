@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
-import JustALittleTag from '../elements/JustALittleTag'
+import Text from '../elements/Text'
 import Image from '../elements/Image'
 
 import getImagesList from "../functions/getImagesList";
@@ -30,7 +30,7 @@ export default class Banner extends Component {
                     ImagesList.map((x,i) =>
                     <div className="banner-block" key={`banner${i}`}>
                         <Image src={ImagesList[i]} alt={i}/>
-                        <JustALittleTag tag="p" className="banner-block-p" text={text[i]}/>
+                        <Text className="banner-block-p" text={text[i]}/>
                     </div>)
                 }
             </Slider>
