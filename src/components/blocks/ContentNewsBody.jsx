@@ -11,30 +11,24 @@ class NewsClass {
         this.text = text;
         this.image = image;
     }
-    changeHeader(newHeader) {
-        this.header = newHeader;
-    }
-    changeDate(newDate) {
-        this.date = newDate;
-    }
-    changeText(newText) {
-        this.text = newText;
-    }
-    changeImage(newImage) {
-        this.image = newImage;
-    }
-    getHeader() {
-        return this.header;
-    }
-    getDate() {
-        return this.date;
-    }
-    getText() {
-        return this.text;
-    }
     getImage() {
         return (
             <Image src={this.image} alt={this.image.replace(/(\.img)|(\.png)|(\.jpg)|(\.jpeg)|(\.svg)/g, '')} />
+        )
+    }
+    getTitle() {
+        return (
+            <Text className="title" text={this.header}/>
+        )
+    }
+    getDate() {
+        return (
+            <Text className="date" text={this.date}/>
+        )
+    }
+    getText() {
+        return (
+            <Text className="text" text={this.text}/>
         )
     }
 }
@@ -112,14 +106,8 @@ const ContentNewsBody = () => {
                 <LinksNewsBlock
                     href="single.html"
                     className="content-news-body-item scaleable"
-                    itemsList={
-                        <>
-                            {newsListOfObjects[i].getImage()},
-                            <Text className="date" text={newsListOfObjects[i].getDate()}/>,
-                            <Text className="title" text={newsListOfObjects[i].getHeader()}/>,
-                            <Text className="text" text={newsListOfObjects[i].getText()}/>,
-                        </>
-                    }/>
+                    itemsList={newsListOfObjects[i]}
+                />
             )}
         </div>
     )
