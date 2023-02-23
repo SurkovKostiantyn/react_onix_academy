@@ -1,5 +1,6 @@
 import Link from "../links/Link";
-import JustALittleTag from "../elements/JustALittleTag";
+import Text from "../elements/Text";
+import Header from "../elements/Text";
 import LinksNewsBlock from "../links/LinksNewsBlock";
 
 import Image from "../elements/Image";
@@ -12,7 +13,7 @@ const ContentNews = () => {
     return(
         <div className="content-news">
             <div className="content-news-header">
-                <JustALittleTag tag="h3" text="News"/>
+                <Header tag="3" text="News"/>
                 <Link href="news.html" className="hoverable" innerHTML="View all" />
             </div>
             <ContentNewsBody/>
@@ -45,20 +46,13 @@ const ContentNewsBody = () => {
         <div className="content-news-body">
             {ImagesList.map((x,i) =>
                 <LinksNewsBlock
-                    key={`LNB${i}`}
                     href="single.html"
                     className="content-news-body-item scaleable"
                     itemsList={[
-                        <Image src={ImagesList[i]} alt={i} key={`img${i}`}/>,
-                        <JustALittleTag tag="p" key={`tag${i}`}
-                                        className="date"
-                                        text="08.08.2021"/>,
-                        <JustALittleTag tag="p" key={`tag2${i}`}
-                                        className="title"
-                                        text={header[i]}/>,
-                        <JustALittleTag tag="p" key={`tag3${i}`}
-                                        className="text"
-                                        text={text[i]}/>,
+                        <Image src={ImagesList[i]} alt={i} />,
+                        <Text className="date" text="08.08.2021"/>,
+                        <Text className="title" text={header[i]}/>,
+                        <Text className="text" text={text[i]}/>,
                     ]
                     }/>
             )}
