@@ -5,7 +5,7 @@ export default class UnorderedList extends Component{
         const {className, list } = this.props;
         return(
             <ul className={className}>
-                {list.map(el=> <li>{el}</li>)}
+                {list.map(el=> <li key={el.getKeyValue()} > {el.getLink()}</li>)}
             </ul>
         )
     }

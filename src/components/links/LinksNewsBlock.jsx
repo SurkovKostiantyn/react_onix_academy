@@ -6,6 +6,7 @@ export default class LinksNewsBlock extends Component{
         return(
             // itemsList receive array of objects
             // each object has 4 properties: img, date, title and text
+
             <a href={href} className={className}>
                 {itemsList.getImage()}
                 {itemsList.getDate()}
