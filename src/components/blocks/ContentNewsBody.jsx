@@ -153,12 +153,12 @@ export default class ContentNewsBody extends Component {
                     )}
                 </div>
                 <div className="buttons-block">
-                    <Button className="btn" onClick={this.funcSortByDateASC} innerHTML = "SORT" />
-                    <Button className="btn" onClick={this.funcSortByDateASCCustom} innerHTML = "CUSTOM SORT" />
-                    <button className="btn" onClick={this.funcSortByDateDESC} > RSORT </button>
-                    <button className="btn" onClick={this.funcRemoveLast} > DEL LAST </button>
-                    <button className="btn" onClick={this.funcRemoveFirst} > DEL FIRST </button>
-                    <button className="btn" onClick={this.funcAddElement} > ADD ELEMENT </button>
+                    <Button className="btn" onClick={this.funcSortByDateASC} innerHTML ={"SORT"} />
+                    <Button className="btn" onClick={this.funcSortByDateASCCustom} innerHTML ={"CUSTOM SORT"}/>
+                    <Button className="btn" onClick={this.funcSortByDateDESC}  innerHTML={'RSORT'} />
+                    <Button className="btn" onClick={this.funcRemoveLast}  innerHTML={'DEL LAST'} />
+                    <Button className="btn" onClick={this.funcRemoveFirst}  innerHTML={'DEL FIRST'} />
+                    <Button className="btn" onClick={this.funcAddElement}  innerHTML={'ADD ELEMENT'} />
                 </div>
             </>
         )
