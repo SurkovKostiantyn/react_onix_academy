@@ -1,17 +1,16 @@
 import { Component } from "react";
+import Image from "../elements/Image";
 
 export default class LinksNewsBlock extends Component{
     render(){
         const {href,className,itemsList} = this.props;
-        return(
-            // itemsList receive array of objects
-            // each object has 4 properties: img, date, title and text
 
+        return(
             <a href={href} className={className}>
-                {itemsList.getImage()}
-                {itemsList.getDate()}
-                {itemsList.getTitle()}
-                {itemsList.getText()}
+                <Image src={itemsList.img} alt={itemsList.img.replace(/(\.img)|(\.png)|(\.jpg)|(\.jpeg)|(\.svg)/g, '')} />
+                {itemsList.date}
+                {itemsList.title}
+                {itemsList.text}
             </a>
         )
     }
