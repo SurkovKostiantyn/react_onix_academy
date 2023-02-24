@@ -41,7 +41,7 @@
 
 //noinspection ALL
 .content-below{
-  background: $bgGray url("../images/Image2.png")  no-repeat center center / cover;
+  background: $bgGray url("../images/Banner/Image2.png")  no-repeat center center / cover;
   text-align: center;
   @include flex-content-below;
   @include adaptivePadding(224px);

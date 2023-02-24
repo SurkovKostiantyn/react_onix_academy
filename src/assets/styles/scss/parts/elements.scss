@@ -35,3 +35,27 @@ a.hoverable:hover{
   @include transition(.2s);
 }
 
+
+.buttons-block{
+  @include adaptiveMargin;
+  margin: 40px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  button{
+    margin: 0;
+    padding: 8px 15px;
+    border: none;
+    background: transparent;
+    font: 400 12px/15px 'Lora', serif;
+    color: $hBodyTextColor2;
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    &:hover{
+      color: transparentize(#D4A373, 0.1);
+      @include transition(.2s);
+    }
+  }
+}
