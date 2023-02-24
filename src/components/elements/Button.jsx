@@ -2,9 +2,9 @@ import {Component} from "react";
 
 export default class Button extends Component{
     render(){
-        const {className, innerHTML} = this.props;
+        const {className, innerHTML, onClick} = this.props;
         return(
-            <button className={className} onClick={() => console.log('onClick')}>
+            <button className={className} onClick={onClick}>
                 {innerHTML}
             </button>
         )
