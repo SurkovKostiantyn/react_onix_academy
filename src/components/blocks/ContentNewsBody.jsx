@@ -64,7 +64,6 @@ let NewsList = [
     },
 ];
 
-
 export default class ContentNewsBody extends Component {
     constructor() {
         super();
@@ -74,30 +73,37 @@ export default class ContentNewsBody extends Component {
     }
 
     funcSortByDateASC = () => {
-        this.setState({
-            list: this.state.list.sort((a, b) => {
-                return new Date(b.date) - new Date(a.date);
-            })
+        this.setState(({list}) =>{
+            return{
+                list: [...list].sort((a, b) => {
+                    return new Date(b.date) - new Date(a.date);
+                })
+            }
         });
     }
     funcSortByDateDESC = () => {
-        this.setState({
-            list: this.state.list.sort((a, b) => {
-                return new Date(b.date) - new Date(a.date);
-            }).reverse()
+        this.setState(({list}) => {
+            return{
+                list: [...list].sort((a, b) => {
+                    return new Date(b.date) - new Date(a.date);
+                }).reverse()
+            }
         });
     }
     funcRemoveLast = () => {
-        this.setState({
-            list: this.state.list.slice(0, -1)
+        this.setState(({ list }) => {
+            return {
+                list: list.slice(0, -1)
+            };
         });
     }
     funcRemoveFirst = () => {
-        this.setState({
-            list: this.state.list.slice(1)
+        this.setState(({ list }) => {
+            return {
+                list: list.slice(1)
+            };
         });
     }
-
     funcSortByDateASCCustom = () => {
         // custom sort without sort() method
         let arr = this.state.list;
@@ -115,7 +121,6 @@ export default class ContentNewsBody extends Component {
             list: arr
         });
     }
-
     funcAddElement = () => {
         let arr = this.state.list;
 
