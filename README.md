@@ -9,6 +9,11 @@
 - [x] this.state -> this.props
 - [x] array of news -> array of objects
 - [x] add key to lists
+##  hometask 3:
+### сделяль:
+- [x] solved issues from hometask 2
+- [x] change structure of project
+- [x] add eslint
 
 
 ## Commands:
@@ -18,6 +23,7 @@
 ### `npm test` - run tests
 ### `npm run build` - build project
 ### `npm run eject` - eject project
+### `npm run lint` - run eslint
 ### `npm run build fails to minify` - [read more](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 ```cmd
   sass --watch src/assets/styles/scss/main.scss src/assets/styles/main.css --style compressed --no-source-map
