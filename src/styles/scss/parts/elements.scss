@@ -25,7 +25,7 @@ span.double{
   margin-bottom: 25px;
 }
 //noinspection ALL
-a.scaleable:hover{
+a.scalable:hover{
   @include scale(1.05);
   @include transition(.2s);
 }

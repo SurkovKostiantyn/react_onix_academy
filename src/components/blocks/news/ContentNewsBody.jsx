@@ -65,8 +65,8 @@ let NewsList = [
 ];
 
 export default class ContentNewsBody extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             list: NewsList,
         };
@@ -145,7 +145,7 @@ export default class ContentNewsBody extends Component {
                     {list.map((x,i) =>
                         <LinksNewsBlock
                             href="single.html"
-                            className="content-news-body-item scaleable"
+                            className="content-news-body-item scalable"
                             itemsList={x}
                             key={i}
                         />
