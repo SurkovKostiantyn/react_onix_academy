@@ -5,8 +5,8 @@ export default class UnorderedList extends Component{
         return(
             <ul className={className}>
                 {
-                    list.map(item =>
-                    <li key={item.id}>
+                    list.map((item,i) =>
+                    <li key={i}>
                         {renderItem(item)}
                     </li>
                 )}
