@@ -106,7 +106,7 @@ export default class ContentNewsBody extends Component {
     }
     funcSortByDateASCCustom = () => {
         // custom sort without sort() method
-        let arr = this.state.list;
+        let {list: arr} = this.state;
         let arrLength = arr.length;
         for (let i = 0; i < arrLength; i++) {
             for (let j = 0; j < arrLength - 1; j++) {
@@ -117,9 +117,7 @@ export default class ContentNewsBody extends Component {
                 }
             }
         }
-        this.setState({
-            list: arr
-        });
+        this.setState({list: arr});
     }
     funcAddElement = () => {
         let { list: arr } = this.state;
@@ -131,18 +129,14 @@ export default class ContentNewsBody extends Component {
             let year = date.getFullYear();
             return `${month}/${day}/${year}`;
         }
-
-        arr.push({
+        const newArr = [...arr, {
             title: 'Richird Norton photorealistic',
             date: getDateFormat(),
             text: "Richird Norton photorealistic rendering as real photos",
-            img: imagesList[Math.floor(Math.random() * 8)],
-        });
-        this.setState({
-            list: arr
-        });
+            img: imagesList[Math.floor(Math.random() * 8)]
+        }];
+        this.setState({list: newArr});
     }
-
     render() {
         const { list } = this.state;
         return (
