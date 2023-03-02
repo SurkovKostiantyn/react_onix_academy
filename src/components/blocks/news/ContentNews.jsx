@@ -1,7 +1,7 @@
 
-import Link from "../links/Link";
-import ContentNewsBody from "../blocks/ContentNewsBody";
-import Header from "../elements/Text";
+import Link from "../../links/Link";
+import ContentNewsBody from "./ContentNewsBody";
+import Header from "../../elements/Text";
 
 const ContentNews = () => {
     // ContentNewsBody loop

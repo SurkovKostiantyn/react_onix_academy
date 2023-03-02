@@ -1,8 +1,8 @@
 import { Component} from "react";
-import LinksNewsBlock from "../links/LinksNewsBlock";
-import Button from "../elements/Button";
+import LinksNewsBlock from "../../links/LinksNewsBlock";
+import Button from "../../elements/Button";
 
-import getImagesList from "../functions/getImagesList";
+import getImagesList from "../../functions/getImagesList";
 let imagesList = getImagesList('BlogImages'); // что бы не писать ручками путь к картинкам
 
 let NewsList = [

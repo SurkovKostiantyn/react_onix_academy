@@ -1,5 +1,5 @@
 import { Component } from "react";
-import Text from "../elements/Text";
+import Text from "./../../elements/Text";
 
 export default class ContentBelow extends Component {
     render() {
