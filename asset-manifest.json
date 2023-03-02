@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/react_onix_academy/static/css/main.6a4e4f0e.css",
-    "main.js": "/react_onix_academy/static/js/main.b89bc136.js",
+    "main.css": "/react_onix_academy/static/css/main.02580175.css",
+    "main.js": "/react_onix_academy/static/js/main.0f56b8b9.js",
     "static/media/bg.png": "/react_onix_academy/static/media/bg.60cfd2a41cd80f83f712.png",
     "static/media/Image2.png": "/react_onix_academy/static/media/Image2.b4d1509fbfb523845694.png",
     "static/media/Image1.png": "/react_onix_academy/static/media/Image1.0729105898f6e0b2f456.png",
@@ -24,11 +24,11 @@
     "static/media/slick.ttf": "/react_onix_academy/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/react_onix_academy/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/react_onix_academy/index.html",
-    "main.6a4e4f0e.css.map": "/react_onix_academy/static/css/main.6a4e4f0e.css.map",
-    "main.b89bc136.js.map": "/react_onix_academy/static/js/main.b89bc136.js.map"
+    "main.02580175.css.map": "/react_onix_academy/static/css/main.02580175.css.map",
+    "main.0f56b8b9.js.map": "/react_onix_academy/static/js/main.0f56b8b9.js.map"
   },
   "entrypoints": [
-    "static/css/main.6a4e4f0e.css",
-    "static/js/main.b89bc136.js"
+    "static/css/main.02580175.css",
+    "static/js/main.0f56b8b9.js"
   ]
 }
