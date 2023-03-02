@@ -3,29 +3,13 @@ import Text from "../elements/Text";
 import Header from "../elements/Text";
 import UnorderedList from "../lists/UnorderedList";
 
-class FooterClass{
-    constructor(href, className, innerHTML, id){
-        this.href = href;
-        this.className = className;
-        this.innerHTML = innerHTML;
-        this.key = id;
-    }
-    getLink(){
-        return(
-            <Link href={this.href} className={this.className} innerHTML={this.innerHTML} />
-        )
-    }
-    getKeyValue(){
-        return this.key;
-    }
-}
-
+// звичайний масив з обʼєктами
 let linksListObjectsFooter = [
-    new FooterClass('blabla', 'hoverable', 'About us', 'footerLink1'),
-    new FooterClass('bleble', 'hoverable', 'Partners', 'footerLink2'),
-    new FooterClass('bloblo', 'hoverable', 'Job Opportunities', 'footerLink3'),
-    new FooterClass('blibli', 'hoverable', 'Svinka Pepa', 'footerLink4'),
-    new FooterClass('blybly', 'hoverable', 'Membership', 'footerLink5')
+    {href: 'blabla', className: 'hoverable', innerHTML: 'About us',        },
+    {href: 'bleble', className: 'hoverable', innerHTML: 'Partners',        },
+    {href: 'bloblo', className: 'hoverable', innerHTML: 'Job Опортунитиз', },
+    {href: 'blibli', className: 'hoverable', innerHTML: 'Svinka Pepa',     },
+    {href: 'blybly', className: 'hoverable', innerHTML: 'Membership',      }
 ];
 
 const Footer = () =>{
@@ -45,7 +29,12 @@ const Footer = () =>{
                 </div>
                 <div className="footer-body-blocks">
                     <Header headerLevel={'4'} text={'Exploratory'}/>
-                    <UnorderedList list={linksListObjectsFooter}/>
+                    <UnorderedList list={linksListObjectsFooter}
+                                   renderItem={({href, className,innerHTML}) =>
+                                   (
+                                       <Link href={href} className={className} innerHTML={innerHTML}/>
+                                   )}
+                   />
                 </div>
                 <div className="footer-body-blocks">
                     <Header headerLevel={'h4'} text={'Headquarter'}/>
