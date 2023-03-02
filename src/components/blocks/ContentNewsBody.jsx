@@ -122,7 +122,7 @@ export default class ContentNewsBody extends Component {
         });
     }
     funcAddElement = () => {
-        let arr = this.state.list;
+        let { list: arr } = this.state;
 
         function getDateFormat() {
             let date = new Date();
