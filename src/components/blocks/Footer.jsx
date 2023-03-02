@@ -32,7 +32,10 @@ const Footer = () =>{
                     <UnorderedList list={linksListObjectsFooter}
                                    renderItem={({href, className,innerHTML}) =>
                                    (
-                                       <Link href={href} className={className} innerHTML={innerHTML}/>
+                                       <Link href={href}
+                                             className={className}
+                                             innerHTML={innerHTML}
+                                       />
                                    )}
                    />
                 </div>

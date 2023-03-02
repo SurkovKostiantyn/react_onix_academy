@@ -14,7 +14,10 @@ let Nav = () =>{
                            className="navbar-menu"
                            renderItem={({href, className,innerHTML}) =>
                                (
-                                   <Link href={href} className={className} innerHTML={innerHTML}/>
+                                   <Link href={href}
+                                         className={className}
+                                         innerHTML={innerHTML}
+                                   />
                                )}
             />
         </nav>
