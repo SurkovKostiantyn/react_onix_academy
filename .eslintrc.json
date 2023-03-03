@@ -17,6 +17,7 @@
     "no-trailing-spaces": 0,
     "comma-dangle": 0,
     "radix": 0,
+    "react/require-default-props": "warn",
     "max-len": [
       2,
       {
