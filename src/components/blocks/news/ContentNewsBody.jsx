@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import { nanoid } from 'nanoid';
 import LinksNewsBlock from '../../links/LinksNewsBlock';
 import Button from '../../elements/Button';
 
@@ -136,13 +137,13 @@ export default class ContentNewsBody extends Component {
   funcAddElement = () => {
     const { list: arr } = this.state;
 
-    function getDateFormat() {
+    const getDateFormat = () => {
       const date = new Date();
       const day = date.getDate();
       const month = date.getMonth() + 1;
       const year = date.getFullYear();
       return `${month}/${day}/${year}`;
-    }
+    };
     const newArr = [...arr, {
       title: 'Richird Norton photorealistic',
       date: getDateFormat(),
@@ -162,7 +163,7 @@ export default class ContentNewsBody extends Component {
               href="single.html"
               className="content-news-body-item scalable"
               itemsList={x}
-              key={x.id}
+              key={nanoid()}
             />
           ))}
         </div>
