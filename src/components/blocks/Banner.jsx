@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+// import { useInView } from 'react-intersection-observer';
 import Slider from 'react-slick';
 import Text from '../elements/Text';
 import Image from '../elements/Image';
@@ -37,28 +38,25 @@ const listOfBanners = [
 
 export default class Banner extends Component {
   render() {
-    const settings = {
-      arrows: false,
-      dots: true,
-      autoplay: false,
-      autoplaySpeed: 2500,
-      draggable: false,
-      infinite: true,
-      speed: 500
-    };
-    // https://stackoverflow.com/a/70312839
     return (
       <div className="banner slick" id="banner">
-        {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-        <Slider {...settings}>
+        <Slider
+          arrows={false}
+          dots
+          autoplay={false}
+          autoplaySpeed={2500}
+          draggable={false}
+          infinite
+          speed={500}
+        >
           {
-                    listOfBanners.map((x, i) => (
-                      <div className="banner-block" key={listOfBanners[i].image}>
-                        <Image src={listOfBanners[i].image} />
-                        <Text className="banner-block-p" text={listOfBanners[i].text} />
-                      </div>
-                    ))
-                }
+            listOfBanners.map((x, i) => (
+              <div className="banner-block" key={listOfBanners[i].image}>
+                <Image src={listOfBanners[i].image} />
+                <Text className="banner-block-p" text={listOfBanners[i].text} />
+              </div>
+            ))
+          }
         </Slider>
       </div>
     );
