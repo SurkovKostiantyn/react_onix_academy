@@ -1,4 +1,7 @@
-//noinspection ALL
+@use '../common/variables' as *;
+@use '../common/mixins' as *;
+
+
 .content-news {
   margin: min(100px, 6vw) 0;
 
@@ -39,9 +42,9 @@
   }
 }
 
-//noinspection ALL
+
 .content-below{
-  background: $bgGray url("../images/Banner/Image2.png")  no-repeat center center / cover;
+  background: $bgGray url("/src/assets/images/Banner/Image2.png")  no-repeat center center / cover;
   text-align: center;
   @include flex-content-below;
   @include adaptivePadding(224px);

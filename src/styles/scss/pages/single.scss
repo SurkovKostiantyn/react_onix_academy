@@ -1,4 +1,6 @@
-//noinspection ALL
+@use '../common/variables' as * ;
+@use '../common/mixins' as * ;
+
 .content-single{
   @include adaptiveMargin2;
   font: 400 14px/25px $fontLora;
@@ -7,7 +9,7 @@
   word-break: normal;
   border-bottom: 0.5px solid $line;
 }
-//noinspection ALL
+
  .content-author{
   @include adaptiveMargin2;
   margin: 0 auto;
@@ -38,7 +40,7 @@
   }
 }
 
-//noinspection ALL
+
 .content-related{
   background-color: $bgRelated;
   margin: 0 auto;

@@ -1,4 +1,6 @@
-//noinspection ALL
+@use '../common/variables' as *;
+@use '../common/mixins' as *;
+
 .banner {
   margin: 0 auto;
   max-height: 600px;
@@ -64,7 +66,7 @@
   }
 }
 
-//noinspection ALL
+
 .navbar {
   width: 100%;
   position: fixed;

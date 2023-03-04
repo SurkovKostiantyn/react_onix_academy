@@ -1,4 +1,6 @@
-//noinspection ALL
+@use '../common/variables' as *;
+@use '../common/mixins' as *;
+
 footer{
   margin: 0 auto;
   background: #212529;

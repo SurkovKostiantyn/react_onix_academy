@@ -20,5 +20,5 @@ Link.defaultProps = {
 Link.propTypes = {
   className: PropTypes.string,
   href: PropTypes.string.isRequired,
-  innerHTML: PropTypes.string,
+  innerHTML: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
 };
