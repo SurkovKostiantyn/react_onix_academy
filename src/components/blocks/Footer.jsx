@@ -1,3 +1,4 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from '../links/Link';
 import Text from '../elements/Text';
 import Header from '../elements/Header';
@@ -66,11 +67,31 @@ function Footer() {
         </div>
         <div className="footer-body-blocks">
           <Header headerLevel="h4" text="Connections" />
-          <Link href="https://blabla" className="fa-brands hoverable fa-facebook" />
-          <Link href="https://bleble" className="fa-brands hoverable fa-twitter" />
-          <Link href="https://bloblo" className="fa-brands hoverable fa-youtube" />
-          <Link href="https://blibli" className="fa-brands hoverable fa-pinterest" />
-          <Link href="https://blybly" className="fa-brands hoverable fa-behance-square" />
+          <Link
+            href="https://blabla"
+            className="fa-brands hoverable"
+            innerHTML={<FontAwesomeIcon icon="fa-brands fa-facebook" />}
+          />
+          <Link
+            href="https://bleble"
+            className="fa-brands hoverable"
+            innerHTML={<FontAwesomeIcon icon="fa-brands fa-twitter" />}
+          />
+          <Link
+            href="https://bloblo"
+            className="fa-brands hoverable"
+            innerHTML={<FontAwesomeIcon icon="fa-brands fa-youtube" />}
+          />
+          <Link
+            href="https://blibli"
+            className="fa-brands hoverable"
+            innerHTML={<FontAwesomeIcon icon="fa-brands fa-pinterest" />}
+          />
+          <Link
+            href="https://blybly"
+            className="fa-brands hoverable"
+            innerHTML={<FontAwesomeIcon icon="fa-brands fa-behance-square" />}
+          />
         </div>
       </div>
       <div className="footer-bottom">
