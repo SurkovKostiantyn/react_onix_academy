@@ -23,7 +23,6 @@
   <script>
       setTimeout(() => {
         const header = document.getElementById('banner');
-        //console.log(header);
         const nav = document.getElementById('navbar');
         const callback = ([entry]) => {
           const { isIntersecting } = entry;
@@ -36,6 +35,6 @@
         };
         const observer = new IntersectionObserver(callback, options);
         observer.observe(header);
-      }, 100)
+      }, 300)
   </script>
 </html>
