@@ -15,11 +15,12 @@ export default class Button extends Component {
 
 Button.defaultProps = {
   className: '',
-  onClick: () => {},
+  // onClick: () => {}
+  onClick: null
 };
 
 Button.propTypes = {
   className: PropTypes.string,
   innerHTML: PropTypes.string.isRequired,
-  onClick: PropTypes.string
+  onClick: PropTypes.oneOfType([PropTypes.func, PropTypes.string])
 };

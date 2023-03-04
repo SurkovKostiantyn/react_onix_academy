@@ -3,21 +3,20 @@ import PropTypes from 'prop-types';
 
 export default class Header extends Component {
   render() {
-    const { headerLevel, className, text } = this.props;
-    const Tag = headerLevel || 'h4';
+    const { HeaderLevel, className, text } = this.props;
     return (
-      <Tag className={className}>{text}</Tag>
+      <HeaderLevel className={className}>{text}</HeaderLevel>
     );
   }
 }
 
-Header.propTypes = {
-  headerLevel: PropTypes.string,
-  className: PropTypes.string,
-  text: PropTypes.string.isRequired
+Header.defaultProps = {
+  HeaderLevel: 'h4',
+  className: '',
 };
 
-Header.defaultProps = {
-  headerLevel: 'h4',
-  className: '',
+Header.propTypes = {
+  HeaderLevel: PropTypes.string,
+  className: PropTypes.string,
+  text: PropTypes.string.isRequired
 };

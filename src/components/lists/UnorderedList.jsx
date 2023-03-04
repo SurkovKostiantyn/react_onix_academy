@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
+import { nanoid } from 'nanoid';
 
 export default class UnorderedList extends Component {
   render() {
@@ -7,12 +8,12 @@ export default class UnorderedList extends Component {
     return (
       <ul className={className}>
         {
-                    list.map((item) => (
-                      <li key={item}>
-                        {renderItem(item)}
-                      </li>
-                    ))
-}
+          list.map((item) => (
+            <li key={nanoid()}>
+              {renderItem(item)}
+            </li>
+          ))
+        }
       </ul>
     );
   }
@@ -24,6 +25,6 @@ UnorderedList.defaultProps = {
 
 UnorderedList.propTypes = {
   className: PropTypes.string,
-  renderItem: PropTypes.func.isRequired,
-  list: PropTypes.arrayOf(PropTypes.object).isRequired,
+  renderItem: PropTypes.oneOfType([PropTypes.func, PropTypes.element]).isRequired,
+  list: PropTypes.arrayOf(PropTypes.string).isRequired,
 };

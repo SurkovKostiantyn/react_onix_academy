@@ -14,10 +14,11 @@ export default class Link extends Component {
 
 Link.defaultProps = {
   className: '',
+  innerHTML: '',
 };
 
 Link.propTypes = {
   className: PropTypes.string,
   href: PropTypes.string.isRequired,
-  innerHTML: PropTypes.string.isRequired,
+  innerHTML: PropTypes.string,
 };

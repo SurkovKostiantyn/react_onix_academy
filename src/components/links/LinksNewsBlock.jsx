@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import PropTypes from 'prop-types';
 import Image from '../elements/Image';
 import Text from '../elements/Text';
 
@@ -17,3 +18,19 @@ export default class LinksNewsBlock extends Component {
     );
   }
 }
+
+LinksNewsBlock.defaultProps = {
+  className: '',
+  href: '#',
+};
+
+LinksNewsBlock.propTypes = {
+  className: PropTypes.string,
+  href: PropTypes.string,
+  itemsList: PropTypes.shape({
+    img: PropTypes.string.isRequired,
+    date: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    text: PropTypes.string.isRequired,
+  }).isRequired,
+};

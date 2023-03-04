@@ -54,7 +54,7 @@ export default class Banner extends Component {
           {
                     listOfBanners.map((x, i) => (
                       <div className="banner-block" key={listOfBanners[i].image}>
-                        <Image src={listOfBanners[i].image} alt={i} />
+                        <Image src={listOfBanners[i].image} />
                         <Text className="banner-block-p" text={listOfBanners[i].text} />
                       </div>
                     ))

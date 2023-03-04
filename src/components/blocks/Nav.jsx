@@ -9,7 +9,7 @@ const linksListObjectsNav = [
 function Nav() {
   return (
     <nav className="navbar" id="navbar">
-      <Link href="index.html" className="navbar-logo hoverable" innerHTML="RUNO" />
+      <Link href="https://index.html" className="navbar-logo hoverable" innerHTML="RUNO" />
       <UnorderedList
         list={linksListObjectsNav}
         className="navbar-menu"

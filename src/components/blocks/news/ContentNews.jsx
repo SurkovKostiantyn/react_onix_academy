@@ -2,7 +2,7 @@ import Link from '../../links/Link';
 import ContentNewsBody from './ContentNewsBody';
 import Header from '../../elements/Text';
 
-function ContentNews() {
+export default function ContentNews() {
   // ContentNewsBody loop
   return (
     <div className="content-news">
@@ -14,5 +14,3 @@ function ContentNews() {
     </div>
   );
 }
-
-export default ContentNews;

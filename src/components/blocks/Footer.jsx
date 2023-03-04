@@ -56,11 +56,11 @@ function Footer() {
         </div>
         <div className="footer-body-blocks">
           <Header headerLevel="h4" text="Connections" />
-          <Link href="blabla" className="fa-brands hoverable fa-facebook" />
-          <Link href="bleble" className="fa-brands hoverable fa-twitter" />
-          <Link href="bloblo" className="fa-brands hoverable fa-youtube" />
-          <Link href="blibli" className="fa-brands hoverable fa-pinterest" />
-          <Link href="blybly" className="fa-brands hoverable fa-behance-square" />
+          <Link href="https://blabla" className="fa-brands hoverable fa-facebook" />
+          <Link href="https://bleble" className="fa-brands hoverable fa-twitter" />
+          <Link href="https://bloblo" className="fa-brands hoverable fa-youtube" />
+          <Link href="https://blibli" className="fa-brands hoverable fa-pinterest" />
+          <Link href="https://blybly" className="fa-brands hoverable fa-behance-square" />
         </div>
       </div>
       <div className="footer-bottom">
