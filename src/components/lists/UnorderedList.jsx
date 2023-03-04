@@ -11,8 +11,7 @@ export default class UnorderedList extends Component {
         {
           list.map((item) => (
             <li key={item.id}>
-              {' '}
-              {/* тут я не знаю как сделать key */}
+              {/* тут я не знаю как задать key, с генераторами не вышло (nanoid)  */}
               {renderItem(item)}
             </li>
           ))
@@ -30,6 +29,6 @@ UnorderedList.propTypes = {
   className: PropTypes.string,
   renderItem: PropTypes.oneOfType([PropTypes.func, PropTypes.element]).isRequired,
   // list: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.object])).isRequired,
-  // тут у меня не получается сделать проверку на типы, т.к. в list могут быть разные типы данных
+  // не выходит выполнить чек на типы, т.к. в list приходят объекты у которых могут быть разные проперти
   list: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
 };
