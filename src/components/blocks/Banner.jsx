@@ -39,6 +39,7 @@ const listOfBanners = [
 export default class Banner extends Component {
   render() {
     return (
+      // eslint-disable-next-line no-console
       <div className="banner slick" id="banner">
         <Slider
           arrows={false}
