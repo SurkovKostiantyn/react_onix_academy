@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+// TODO:
+// научиться юзать react-intersection-observer
+// нужно связать баннер в вьюпорте с fixed nav, чтобы при скролле nav менял фон.
+// так как это не parent-child компоненты, то не знаю как это сделать
 // import { useInView } from 'react-intersection-observer';
 import Slider from 'react-slick';
 import Text from '../elements/Text';
@@ -39,7 +43,6 @@ const listOfBanners = [
 export default class Banner extends Component {
   render() {
     return (
-      // eslint-disable-next-line no-console
       <div className="banner slick" id="banner">
         <Slider
           arrows={false}
