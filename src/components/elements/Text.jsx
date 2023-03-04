@@ -17,5 +17,5 @@ Text.defaultProps = {
 
 Text.propTypes = {
   className: PropTypes.string,
-  text: PropTypes.string,
+  text: PropTypes.node,
 };

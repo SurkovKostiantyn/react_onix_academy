@@ -1,15 +1,18 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
-import { nanoid } from 'nanoid';
 
 export default class UnorderedList extends Component {
   render() {
     const { className, list, renderItem } = this.props;
+    // eslint-disable-next-line no-console
+    list.forEach((item) => { console.log(`item: ${typeof item}`); });
     return (
       <ul className={className}>
         {
           list.map((item) => (
-            <li key={nanoid()}>
+            <li key={item.id}>
+              {' '}
+              {/* тут я не знаю как сделать key */}
               {renderItem(item)}
             </li>
           ))
@@ -26,5 +29,7 @@ UnorderedList.defaultProps = {
 UnorderedList.propTypes = {
   className: PropTypes.string,
   renderItem: PropTypes.oneOfType([PropTypes.func, PropTypes.element]).isRequired,
-  list: PropTypes.arrayOf(PropTypes.string).isRequired,
+  // list: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.object])).isRequired,
+  // тут у меня не получается сделать проверку на типы, т.к. в list могут быть разные типы данных
+  list: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
 };

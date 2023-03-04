@@ -8,6 +8,7 @@ const imagesList = getImagesList('BlogImages'); // что бы не писать
 
 const NewsList = [
   {
+    id: 0,
     title: 'Richird Norton photorealistic',
     date: '08/02/2021',
     text: 'Richird Norton photorealistic rendering as real photos',
@@ -15,6 +16,7 @@ const NewsList = [
         
   },
   {
+    id: 1,
     title: 'Lorem ipsum dolor sit amet',
     date: '07/09/2021',
     text: 'Lorem ipsum dolor sit amet, consectetur adipisicing',
@@ -22,6 +24,7 @@ const NewsList = [
         
   },
   {
+    id: 2,
     title: 'Aperiam consequatur, dolor',
     date: '03/08/2021',
     text: 'Aperiam consequatur, dolor earum illum placeat voluptate!',
@@ -29,6 +32,7 @@ const NewsList = [
         
   },
   {
+    id: 3,
     title: 'Architecto beatae consequuntur',
     date: '10/16/2021',
     text: 'Architecto beatae consequuntur libero molestiae, perferendis',
@@ -36,6 +40,7 @@ const NewsList = [
         
   },
   {
+    id: 4,
     title: 'Richird Norton photorealistic',
     date: '11/07/2019',
     text: 'Richird Norton photorealistic rendering as real photos',
@@ -43,6 +48,7 @@ const NewsList = [
         
   },
   {
+    id: 5,
     title: 'Lorem ipsum dolor sit amet',
     date: '04/11/2021',
     text: 'Lorem ipsum dolor sit amet, consectetur adipisicing',
@@ -50,6 +56,7 @@ const NewsList = [
         
   },
   {
+    id: 6,
     title: 'Aperiam consequatur, dolor',
     date: '12/22/2021',
     text: 'Aperiam consequatur, dolor earum illum placeat voluptate!',
@@ -57,6 +64,7 @@ const NewsList = [
         
   },
   {
+    id: 7,
     title: 'Architecto beatae consequuntur',
     date: '05/09/2021',
     text: 'Architecto beatae consequuntur libero molestiae, perferendis',
@@ -154,7 +162,7 @@ export default class ContentNewsBody extends Component {
               href="single.html"
               className="content-news-body-item scalable"
               itemsList={x}
-              key={x}
+              key={x.id}
             />
           ))}
         </div>

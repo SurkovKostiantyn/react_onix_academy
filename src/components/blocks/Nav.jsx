@@ -2,8 +2,12 @@ import Link from '../links/Link';
 import UnorderedList from '../lists/UnorderedList';
 
 const linksListObjectsNav = [
-  { href: 'index.html', className: 'navbar-menu-item hoverable active', innerHTML: 'Home' },
-  { href: 'news.html', className: 'navbar-menu-item hoverable', innerHTML: 'News' }
+  {
+    id: 0, href: 'index.html', className: 'navbar-menu-item hoverable active', innerHTML: 'Home' 
+  },
+  {
+    id: 1, href: 'news.html', className: 'navbar-menu-item hoverable', innerHTML: 'News' 
+  }
 ];
 
 function Nav() {

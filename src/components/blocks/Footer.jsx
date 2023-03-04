@@ -5,11 +5,21 @@ import UnorderedList from '../lists/UnorderedList';
 
 // звичайний масив з обʼєктами
 const linksListObjectsFooter = [
-  { href: 'blabla', className: 'hoverable', innerHTML: 'About us', },
-  { href: 'bleble', className: 'hoverable', innerHTML: 'Partners', },
-  { href: 'bloblo', className: 'hoverable', innerHTML: 'Job Опортунитиз', },
-  { href: 'blibli', className: 'hoverable', innerHTML: 'Svinka Pepa', },
-  { href: 'blybly', className: 'hoverable', innerHTML: 'Membership', }
+  {
+    id: 0, href: 'blabla', className: 'hoverable', innerHTML: 'About us', 
+  },
+  {
+    id: 1, href: 'bleble', className: 'hoverable', innerHTML: 'Partners', 
+  },
+  {
+    id: 2, href: 'bloblo', className: 'hoverable', innerHTML: 'Job Опортунитиз', 
+  },
+  {
+    id: 3, href: 'blibli', className: 'hoverable', innerHTML: 'Svinka Pepa', 
+  },
+  {
+    id: 4, href: 'blybly', className: 'hoverable', innerHTML: 'Membership', 
+  }
 ];
 
 function Footer() {
