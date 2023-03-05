@@ -46,7 +46,7 @@ export default class Banner extends Component {
       <div className="banner slick" id="banner">
         <Slider
           arrows={false}
-          dots
+          dots={false}
           autoplay={false}
           autoplaySpeed={2500}
           draggable={false}

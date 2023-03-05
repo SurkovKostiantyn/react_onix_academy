@@ -1,3 +1,4 @@
+import { Component } from 'react';
 import Link from '../links/Link';
 import UnorderedList from '../lists/UnorderedList';
 
@@ -10,23 +11,23 @@ const linksListObjectsNav = [
   }
 ];
 
-function Nav() {
-  return (
-    <nav className="navbar" id="navbar">
-      <Link href="https://index.html" className="navbar-logo hoverable" innerHTML="RUNO" />
-      <UnorderedList
-        list={linksListObjectsNav}
-        className="navbar-menu"
-        renderItem={({ href, className, innerHTML }) => (
-          <Link
-            href={href}
-            className={className}
-            innerHTML={innerHTML}
-          />
-        )}
-      />
-    </nav>
-  );
+export default class Nav extends Component {
+  render() {
+    return (
+      <nav className="navbar" id="navbar">
+        <Link href="https://index.html" className="navbar-logo hoverable" innerHTML="RUNO" />
+        <UnorderedList
+          list={linksListObjectsNav}
+          className="navbar-menu"
+          renderItem={({ href, className, innerHTML }) => (
+            <Link
+              href={href}
+              className={className}
+              innerHTML={innerHTML}
+            />
+          )}
+        />
+      </nav>
+    );
+  }
 }
-
-export default Nav;
