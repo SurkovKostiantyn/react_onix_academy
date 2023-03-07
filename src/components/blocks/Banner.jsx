@@ -5,6 +5,7 @@ import React, { Component } from 'react';
 // так как это не parent-child компоненты, то не знаю как это сделать
 // import { useInView } from 'react-intersection-observer';
 import Slider from 'react-slick';
+import PropTypes from 'prop-types';
 import Text from '../elements/Text';
 import Image from '../elements/Image';
 
@@ -42,8 +43,9 @@ const listOfBanners = [
 
 export default class Banner extends Component {
   render() {
+    const { RefProp } = this.props;
     return (
-      <div className="banner slick" id="banner">
+      <div className="banner slick" id="banner" ref={RefProp}>
         <Slider
           arrows={false}
           dots={false}
@@ -66,3 +68,7 @@ export default class Banner extends Component {
     );
   }
 }
+
+Banner.propTypes = {
+  RefProp: PropTypes.shape({ current: PropTypes.instanceOf(Element) }).isRequired
+};

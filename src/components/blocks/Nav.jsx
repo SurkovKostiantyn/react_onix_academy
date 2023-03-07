@@ -12,9 +12,20 @@ const linksListObjectsNav = [
 ];
 
 export default class Nav extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isInView: false,
+    };
+  }
+
   render() {
+    const { isInView } = this.state;
+
+    const navClass = `navbar${isInView ? ' navbar--scrolled' : ''}`;
+
     return (
-      <nav className="navbar" id="navbar">
+      <nav className={navClass} id="navbar">
         <Link href="https://index.html" className="navbar-logo hoverable" innerHTML="RUNO" />
         <UnorderedList
           list={linksListObjectsNav}

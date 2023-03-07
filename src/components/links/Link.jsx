@@ -1,5 +1,5 @@
-import { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Component } from 'react';
 
 export default class Link extends Component {
   render() {
