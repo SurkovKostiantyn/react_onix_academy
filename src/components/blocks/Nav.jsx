@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import PropTypes from 'prop-types';
 import Link from '../links/Link';
 import UnorderedList from '../lists/UnorderedList';
 
@@ -12,18 +13,9 @@ const linksListObjectsNav = [
 ];
 
 export default class Nav extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isInView: false,
-    };
-  }
-
   render() {
-    const { isInView } = this.state;
-
-    const navClass = `navbar${isInView ? ' navbar--scrolled' : ''}`;
-
+    const { isInView } = this.props;
+    const navClass = `navbar${isInView ? ' navOpacity' : ''}`;
     return (
       <nav className={navClass} id="navbar">
         <Link href="https://index.html" className="navbar-logo hoverable" innerHTML="RUNO" />
@@ -42,3 +34,7 @@ export default class Nav extends Component {
     );
   }
 }
+
+Nav.propTypes = {
+  isInView: PropTypes.bool.isRequired
+};

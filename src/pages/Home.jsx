@@ -10,9 +10,9 @@ export default class Home extends Component {
   constructor() {
     super();
     this.state = {
-      isInView: null,
-      BannerRef: React.createRef()
+      isInView: false,
     };
+    this.BannerRef = React.createRef();
   }
 
   componentDidMount() {
@@ -30,16 +30,16 @@ export default class Home extends Component {
     const observer = new IntersectionObserver(callback, options);
 
     observer.observe(
-      this.BannerRef
+      this.BannerRef.current
     );
   }
 
   render() {
-    const { isInView, BannerRef } = this.state;
+    const { isInView } = this.state;
     return (
       <>
         <Nav isInView={isInView} />
-        <Banner RefProp={BannerRef} />
+        <Banner RefProp={this.BannerRef} />
         <ContentNews />
         <ContentBelow />
         <Footer />
