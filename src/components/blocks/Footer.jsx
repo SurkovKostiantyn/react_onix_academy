@@ -1,4 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { nanoid } from 'nanoid';
 import Link from '../links/Link';
 import Text from '../elements/Text';
 import Header from '../elements/Header';
@@ -7,19 +8,19 @@ import UnorderedList from '../lists/UnorderedList';
 // звичайний масив з обʼєктами
 const linksListObjectsFooter = [
   {
-    id: 0, href: 'blabla', className: 'hoverable', innerHTML: 'About us', 
+    id: 0, href: 'blabla', className: 'hoverable', innerHTML: 'About us', key: nanoid()
   },
   {
-    id: 1, href: 'bleble', className: 'hoverable', innerHTML: 'Partners', 
+    id: 1, href: 'bleble', className: 'hoverable', innerHTML: 'Partners', key: nanoid()
   },
   {
-    id: 2, href: 'bloblo', className: 'hoverable', innerHTML: 'Job Опортунитиз', 
+    id: 2, href: 'bloblo', className: 'hoverable', innerHTML: 'Job Опортунитиз', key: nanoid()
   },
   {
-    id: 3, href: 'blibli', className: 'hoverable', innerHTML: 'Svinka Pepa', 
+    id: 3, href: 'blibli', className: 'hoverable', innerHTML: 'Svinka Pepa', key: nanoid()
   },
   {
-    id: 4, href: 'blybly', className: 'hoverable', innerHTML: 'Membership', 
+    id: 4, href: 'blybly', className: 'hoverable', innerHTML: 'Membership', key: nanoid()
   }
 ];
 
@@ -35,7 +36,7 @@ function Footer() {
               className="hoverable"
               innerHTML="mike@runo.com"
             />
-)}
+          )}
           />
           <Text text={(
             <Link
@@ -43,7 +44,7 @@ function Footer() {
               lassName="hoverable"
               innerHTML="0123 456 78 90"
             />
-)}
+            )}
           />
         </div>
         <div className="footer-body-blocks">

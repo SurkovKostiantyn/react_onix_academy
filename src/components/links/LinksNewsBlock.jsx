@@ -5,15 +5,23 @@ import Text from '../elements/Text';
 
 export default class LinksNewsBlock extends Component {
   render() {
-    const { href, className, itemsList } = this.props;
+    const {
+      href, className, itemsList, draggable, onDragStart, onDragEnd, onDragEnter
+    } = this.props;
 
     return (
-      <a href={href} className={className}>
+      <a
+        href={href}
+        className={className}
+        draggable={draggable}
+        onDragStart={onDragStart}
+        onDragEnter={onDragEnter}
+        onDragEnd={onDragEnd}
+      >
         <Image src={itemsList.img} alt={itemsList.img.replace(/(\.img)|(\.png)|(\.jpg)|(\.jpeg)|(\.svg)/g, '')} />
         <Text className="date" text={itemsList.date} />
         <Text className="title" text={itemsList.title} />
         <Text className="text" text={itemsList.text} />
-
       </a>
     );
   }
@@ -33,4 +41,8 @@ LinksNewsBlock.propTypes = {
     title: PropTypes.string.isRequired,
     text: PropTypes.string.isRequired,
   }).isRequired,
+  draggable: PropTypes.bool.isRequired,
+  onDragStart: PropTypes.func.isRequired,
+  onDragEnd: PropTypes.func.isRequired,
+  onDragEnter: PropTypes.func.isRequired,
 };
