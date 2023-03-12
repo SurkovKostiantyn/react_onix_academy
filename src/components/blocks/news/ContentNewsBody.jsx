@@ -170,7 +170,7 @@ export default class ContentNewsBody extends Component {
   };
 
   render() {
-    const { list, isDrageable } = this.state;
+    const { list, isDrageable, dragOverItem } = this.state;
     return (
       <>
         <div className="content-news-body">
@@ -184,6 +184,7 @@ export default class ContentNewsBody extends Component {
               onDragStart={() => this.funcOnDragStart(x.id)}
               onDragEnter={() => this.funcOnDragEnter(x.id)}
               onDragEnd={this.funcOnDragEnd}
+              style={x.id === dragOverItem ? { opacity: 0.5 } : {}}
             />
           ))}
         </div>

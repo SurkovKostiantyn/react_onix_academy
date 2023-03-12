@@ -40,10 +40,14 @@
       }
     }
     &-item[draggable="true"] {
-      cursor: grab;
+      cursor: grab !important;
+      cursor: -webkit-grab !important;
+      cursor: -moz-grab !important;
       position: relative;
       &:active {
-        cursor: grabbing;
+        cursor: grabbing !important;
+        cursor: -webkit-grabbing !important;
+        cursor: -moz-grabbing !important;
         > * {
           color: $qabachoq !important;
         }

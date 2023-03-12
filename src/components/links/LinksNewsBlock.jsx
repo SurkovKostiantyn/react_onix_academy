@@ -6,7 +6,7 @@ import Text from '../elements/Text';
 export default class LinksNewsBlock extends Component {
   render() {
     const {
-      href, className, itemsList, draggable, onDragStart, onDragEnd, onDragEnter
+      href, className, itemsList, draggable, onDragStart, onDragEnd, onDragEnter, style
     } = this.props;
 
     return (
@@ -17,6 +17,7 @@ export default class LinksNewsBlock extends Component {
         onDragStart={onDragStart}
         onDragEnter={onDragEnter}
         onDragEnd={onDragEnd}
+        style={style}
       >
         <Image src={itemsList.img} alt={itemsList.img.replace(/(\.img)|(\.png)|(\.jpg)|(\.jpeg)|(\.svg)/g, '')} />
         <Text className="date" text={itemsList.date} />
@@ -30,6 +31,7 @@ export default class LinksNewsBlock extends Component {
 LinksNewsBlock.defaultProps = {
   className: '',
   href: '#',
+  style: null,
 };
 
 LinksNewsBlock.propTypes = {
@@ -45,4 +47,7 @@ LinksNewsBlock.propTypes = {
   onDragStart: PropTypes.func.isRequired,
   onDragEnd: PropTypes.func.isRequired,
   onDragEnter: PropTypes.func.isRequired,
+  style: PropTypes.shape({
+    opacity: PropTypes.number,
+  })
 };
