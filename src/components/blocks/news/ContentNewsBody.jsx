@@ -1,5 +1,6 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 import { nanoid } from 'nanoid';
+import { any } from 'prop-types';
 import LinksNewsBlock from '../../links/LinksNewsBlock';
 import Button from '../../elements/Button';
 
@@ -14,7 +15,7 @@ const NewsList = [
     date: '08/02/2021',
     text: 'Richird Norton photorealistic rendering as real photos',
     img: imagesList[0],
-        
+    key: nanoid(),
   },
   {
     id: 1,
@@ -22,7 +23,7 @@ const NewsList = [
     date: '07/09/2021',
     text: 'Lorem ipsum dolor sit amet, consectetur adipisicing',
     img: imagesList[1],
-        
+    key: nanoid(),
   },
   {
     id: 2,
@@ -30,7 +31,7 @@ const NewsList = [
     date: '03/08/2021',
     text: 'Aperiam consequatur, dolor earum illum placeat voluptate!',
     img: imagesList[2],
-        
+    key: nanoid(),
   },
   {
     id: 3,
@@ -38,7 +39,7 @@ const NewsList = [
     date: '10/16/2021',
     text: 'Architecto beatae consequuntur libero molestiae, perferendis',
     img: imagesList[3],
-        
+    key: nanoid(),
   },
   {
     id: 4,
@@ -46,7 +47,7 @@ const NewsList = [
     date: '11/07/2019',
     text: 'Richird Norton photorealistic rendering as real photos',
     img: imagesList[4],
-        
+    key: nanoid(),
   },
   {
     id: 5,
@@ -54,7 +55,7 @@ const NewsList = [
     date: '04/11/2021',
     text: 'Lorem ipsum dolor sit amet, consectetur adipisicing',
     img: imagesList[5],
-        
+    key: nanoid(),
   },
   {
     id: 6,
@@ -62,7 +63,7 @@ const NewsList = [
     date: '12/22/2021',
     text: 'Aperiam consequatur, dolor earum illum placeat voluptate!',
     img: imagesList[6],
-        
+    key: nanoid(),
   },
   {
     id: 7,
@@ -70,7 +71,7 @@ const NewsList = [
     date: '05/09/2021',
     text: 'Architecto beatae consequuntur libero molestiae, perferendis',
     img: imagesList[7],
-        
+    key: nanoid(),
   },
 ];
 
@@ -79,59 +80,73 @@ export default class ContentNewsBody extends Component {
     super(props);
     this.state = {
       list: NewsList,
+      isDrageable: false,
+      dragItem: React.useRef < any > null,
+      dragOverItem: React.useRef < any > null,
     };
   }
 
+  funcSetDragable = () => {
+    this.setState(({ isDrageable }) => ({ isDrageable: !isDrageable }));
+  };
+
+  funcOnDragStart = (id) => {
+    this.setState({ dragItem: id });
+  };
+
+  funcOnDragEnter = (id) => {
+    this.setState({ dragOverItem: id });
+  };
+
+  funcOnDragEnd = () => {
+    const { list, dragItem, dragOverItem } = this.state;
+    const dragItemIndex = list.findIndex((item) => item.id === dragItem);
+    const dragOverItemIndex = list.findIndex((item) => item.id === dragOverItem);
+    const newList = [...list];
+    newList.splice(dragItemIndex, 1);
+    newList.splice(dragOverItemIndex, 0, list[dragItemIndex]);
+    this.setState({ list: newList });
+  };
+
   funcSortByDateASC = () => {
-    this.setState(({ list }) => {
-      return {
-        list: [...list].sort((a, b) => {
-          return new Date(b.date) - new Date(a.date);
-        })
-      };
-    });
+    this.setState(({ list }) => ({
+      list: [...list].sort((a, b) => new Date(a.date) - new Date(b.date))
+    }));
   };
 
   funcSortByDateDESC = () => {
-    this.setState(({ list }) => {
-      return {
-        list: [...list].sort((a, b) => {
-          return new Date(b.date) - new Date(a.date);
-        }).reverse()
-      };
-    });
+    this.setState(({ list }) => ({
+      list: [...list].sort((a, b) => new Date(a.date) - new Date(b.date)).reverse()
+    }));
   };
 
   funcRemoveLast = () => {
-    this.setState(({ list }) => {
-      return {
-        list: list.slice(0, -1)
-      };
-    });
+    this.setState(({ list }) => ({ list: [...list].slice(0, -1) }));
   };
 
   funcRemoveFirst = () => {
-    this.setState(({ list }) => {
-      return {
-        list: list.slice(1)
-      };
-    });
+    this.setState(({ list }) => ({ list: [...list].slice(1) }));
   };
 
   funcSortByDateASCCustom = () => {
     // custom sort without sort() method
-    const { list: arr } = this.state;
-    const arrLength = arr.length;
-    for (let i = 0; i < arrLength; i += 1) {
-      for (let j = 0; j < arrLength - 1; j += 1) {
-        if (new Date(arr[j].date) < new Date(arr[j + 1].date)) {
-          const temp = arr[j];
-          arr[j] = arr[j + 1];
-          arr[j + 1] = temp;
+    const doCustomSort = (list) => {
+      const copyOfListArray = [...list];
+      const arrLength = copyOfListArray.length;
+      for (let i = 0; i < arrLength; i += 1) {
+        for (let j = 0; j < arrLength - 1; j += 1) {
+          if (new Date(copyOfListArray[j].date) > new Date(copyOfListArray[j + 1].date)) {
+            const temp = copyOfListArray[j];
+            copyOfListArray[j] = copyOfListArray[j + 1];
+            copyOfListArray[j + 1] = temp;
+          }
         }
       }
-    }
-    this.setState({ list: arr });
+      return copyOfListArray;
+    };
+    this.setState(({ list }) => ({
+      list: (doCustomSort([list]))
+    }));
   };
 
   funcAddElement = () => {
@@ -148,13 +163,14 @@ export default class ContentNewsBody extends Component {
       title: 'Richird Norton photorealistic',
       date: getDateFormat(),
       text: 'Richird Norton photorealistic rendering as real photos',
-      img: imagesList[Math.floor(Math.random() * 8)]
+      img: imagesList[Math.floor(Math.random() * 8)],
+      key: nanoid(),
     }];
     this.setState({ list: newArr });
   };
 
   render() {
-    const { list } = this.state;
+    const { list, isDrageable } = this.state;
     return (
       <>
         <div className="content-news-body">
@@ -163,7 +179,11 @@ export default class ContentNewsBody extends Component {
               href="single.html"
               className="content-news-body-item scalable"
               itemsList={x}
-              key={nanoid()}
+              key={x.key}
+              draggable={isDrageable}
+              onDragStart={() => this.funcOnDragStart(x.id)}
+              onDragEnter={() => this.funcOnDragEnter(x.id)}
+              onDragEnd={this.funcOnDragEnd}
             />
           ))}
         </div>
@@ -174,6 +194,7 @@ export default class ContentNewsBody extends Component {
           <Button className="btn" onClick={this.funcRemoveLast} innerHTML="DEL LAST" />
           <Button className="btn" onClick={this.funcRemoveFirst} innerHTML="DEL FIRST" />
           <Button className="btn" onClick={this.funcAddElement} innerHTML="ADD ELEMENT" />
+          <Button className="btn" onClick={this.funcSetDragable} innerHTML={['DragOFF', 'DragON'][+isDrageable]} />
         </div>
       </>
     );

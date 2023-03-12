@@ -39,6 +39,16 @@
         height: auto;
       }
     }
+    &-item[draggable="true"] {
+      cursor: grab;
+      position: relative;
+      &:active {
+        cursor: grabbing;
+        > * {
+          color: $qabachoq !important;
+        }
+      }
+    }
   }
 }
 
