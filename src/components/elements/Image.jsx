@@ -4,6 +4,9 @@ import PropTypes from 'prop-types';
 const defaultImage = 'https://via.placeholder.com/310x280';
 
 export default class Image extends Component {
+  onImageLoad = () => {
+  };
+
   onImageError = (event) => {
     const e = event;
     e.target.src = defaultImage;
@@ -19,6 +22,7 @@ export default class Image extends Component {
         className={className}
         alt={alt}
         onError={this.onImageError}
+        onLoad={this.onImageLoad}
       />
     );
   }
