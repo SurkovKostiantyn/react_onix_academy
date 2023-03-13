@@ -70,7 +70,8 @@ const NewsList = [
     title: 'Architecto beatae consequuntur',
     date: '05/09/2021',
     text: 'Architecto beatae consequuntur libero molestiae, perferendis',
-    img: imagesList[7],
+    // img: imagesList[7],
+    img: 'https://error.example/blablabla.jpg',
     key: nanoid(),
   },
 ];
