@@ -81,31 +81,56 @@ export default class ContentNewsBody extends Component {
     this.state = {
       list: NewsList,
       isDrageable: false,
-      dragItem: React.useRef < any > null,
-      dragOverItem: React.useRef < any > null,
+      isActive: null,
+      isSelected: null,
     };
+    this.dragItem = React.useRef < any > null;
+    this.dragOverItem = React.useRef < any > null;
   }
+
+  componentDidMount() {
+    this.setState({ list: NewsList });
+
+    window.addEventListener('scroll', this.funcOnScroll);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.funcOnScroll);
+  }
+
+  funcOnScroll = () => {
+    // TODO: сделать функцию, которая будет проверять, находится ли элемент в зоне видимости
+    // TODO: селектить елемент только при нажатой кнопке
+    // this.setState(({ list, isSelected }) => ({ isSelected: (isSelected + 1) % list.length }));
+  };
 
   funcSetDragable = () => {
     this.setState(({ isDrageable }) => ({ isDrageable: !isDrageable }));
   };
 
   funcOnDragStart = (id) => {
-    this.setState({ dragItem: id });
+    this.dragItem = id;
+    // console.log('funcOnDragStart', this.dragItem);
   };
 
   funcOnDragEnter = (id) => {
-    this.setState({ dragOverItem: id });
+    this.dragOverItem = id;
+    this.setState({ isActive: this.dragOverItem });
+    // console.log('funcOnDragEnter', this.dragOverItem);
   };
 
   funcOnDragEnd = () => {
-    const { list, dragItem, dragOverItem } = this.state;
-    const dragItemIndex = list.findIndex((item) => item.id === dragItem);
-    const dragOverItemIndex = list.findIndex((item) => item.id === dragOverItem);
+    const { list } = this.state;
+    const dragItemIndex = list.findIndex((item) => item.id === this.dragItem);
+    const dragOverItemIndex = list.findIndex((item) => item.id === this.dragOverItem);
     const newList = [...list];
     newList.splice(dragItemIndex, 1);
     newList.splice(dragOverItemIndex, 0, list[dragItemIndex]);
-    this.setState({ list: newList });
+    this.dragOverItem = null;
+    this.dragItem = null;
+    setTimeout(() => {
+      this.setState({ isActive: null, list: newList });
+    }, 200);
   };
 
   funcSortByDateASC = () => {
@@ -145,7 +170,7 @@ export default class ContentNewsBody extends Component {
       return copyOfListArray;
     };
     this.setState(({ list }) => ({
-      list: (doCustomSort([list]))
+      list: (doCustomSort(list))
     }));
   };
 
@@ -170,7 +195,9 @@ export default class ContentNewsBody extends Component {
   };
 
   render() {
-    const { list, isDrageable, dragOverItem } = this.state;
+    const {
+      list, isDrageable, isActive, isSelected 
+    } = this.state;
     return (
       <>
         <div className="content-news-body">
@@ -181,10 +208,11 @@ export default class ContentNewsBody extends Component {
               itemsList={x}
               key={x.key}
               draggable={isDrageable}
-              onDragStart={() => this.funcOnDragStart(x.id)}
-              onDragEnter={() => this.funcOnDragEnter(x.id)}
-              onDragEnd={this.funcOnDragEnd}
-              style={x.id === dragOverItem ? { opacity: 0.5 } : {}}
+              onDragStart={isDrageable ? () => this.funcOnDragStart(x.id) : () => {}}
+              onDragEnter={isDrageable ? () => this.funcOnDragEnter(x.id) : () => {}}
+              onDragEnd={isDrageable ? this.funcOnDragEnd : () => {}}
+              onDragOver={(e) => e.preventDefault()}
+              style={(x.id === isActive || x.id === isSelected) ? { opacity: 0.5 } : {}}
             />
           ))}
         </div>

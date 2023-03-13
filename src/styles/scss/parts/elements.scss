@@ -42,6 +42,7 @@ a.hoverable:hover{
   margin: 40px auto;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   button{
