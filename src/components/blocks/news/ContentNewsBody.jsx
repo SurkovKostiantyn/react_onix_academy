@@ -83,6 +83,7 @@ export default class ContentNewsBody extends Component {
       isDrageable: false,
       isActive: null,
       isSelected: null,
+      isKeyPressed: false
     };
     this.dragItem = React.useRef < any > null;
     this.dragOverItem = React.useRef < any > null;
@@ -92,16 +93,23 @@ export default class ContentNewsBody extends Component {
     this.setState({ list: NewsList });
 
     window.addEventListener('scroll', this.funcOnScroll);
+    document.addEventListener('keyup', this.handleKeyUp);
   }
 
   componentWillUnmount() {
     window.removeEventListener('scroll', this.funcOnScroll);
   }
 
-  funcOnScroll = () => {
+  handleKeyUp = (event) => {
     // TODO: сделать функцию, которая будет проверять, находится ли элемент в зоне видимости
-    // TODO: селектить елемент только при нажатой кнопке
-    // this.setState(({ list, isSelected }) => ({ isSelected: (isSelected + 1) % list.length }));
+    switch (event.keyCode) {
+      case 16: // shift
+        this.setState(({ isKeyPressed }) => ({ isKeyPressed: !isKeyPressed }));
+        this.setState(({ list, isSelected }) => ({ isSelected: (isSelected + 1) % list.length }));
+        break;
+      default:
+        break;
+    }
   };
 
   funcSetDragable = () => {
