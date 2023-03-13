@@ -91,13 +91,11 @@ export default class ContentNewsBody extends Component {
 
   componentDidMount() {
     this.setState({ list: NewsList });
-
-    window.addEventListener('scroll', this.funcOnScroll);
     document.addEventListener('keyup', this.handleKeyUp);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('scroll', this.funcOnScroll);
+    window.removeEventListener('keyup', this.handleKeyUp);
   }
 
   handleKeyUp = (event) => {
