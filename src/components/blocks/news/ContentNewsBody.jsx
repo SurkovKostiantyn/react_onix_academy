@@ -211,7 +211,7 @@ export default class ContentNewsBody extends Component {
               onDragStart={isDrageable ? () => this.funcOnDragStart(x.id) : () => {}}
               onDragEnter={isDrageable ? () => this.funcOnDragEnter(x.id) : () => {}}
               onDragEnd={isDrageable ? this.funcOnDragEnd : () => {}}
-              onDragOver={(e) => e.preventDefault()}
+              onDragOver={isDrageable ? (e) => e.preventDefault() : () => {}}
               style={(x.id === isActive || x.id === isSelected) ? { opacity: 0.5 } : {}}
             />
           ))}
