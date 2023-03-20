@@ -4,26 +4,27 @@ import PropTypes from 'prop-types';
 const defaultImage = 'https://via.placeholder.com/310x280';
 
 export default class Image extends Component {
-  onImageLoad = () => {
-  };
+  constructor() {
+    super();
+    this.state = {
+      isLoaded: true,
+    };
+  }
 
-  onImageError = (event) => {
-    const e = event;
-    // console.log(e.target);
-    e.target.src = defaultImage;
+  onImageError = () => {
+    this.setState({ isLoaded: false });
   };
 
   render() {
     const { src, className, alt } = this.props;
-
+    const { isLoaded } = this.state;
     // TODO need to add error handling
     return (
       <img
-        src={src || defaultImage}
+        src={isLoaded ? src : defaultImage}
         className={className}
         alt={alt}
         onError={this.onImageError}
-        onLoad={this.onImageLoad}
       />
     );
   }
