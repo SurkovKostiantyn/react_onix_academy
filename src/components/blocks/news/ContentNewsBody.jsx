@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { nanoid } from 'nanoid';
-import { any } from 'prop-types';
 import LinksNewsBlock from '../../links/LinksNewsBlock';
 import Button from '../../elements/Button';
 
@@ -86,8 +85,8 @@ export default class ContentNewsBody extends Component {
       isSelected: null,
       isKeyPressed: false
     };
-    this.dragItem = React.useRef < any > null;
-    this.dragOverItem = React.useRef < any > null;
+    this.dragItem = null;
+    this.dragOverItem = null;
   }
 
   componentDidMount() {
@@ -118,27 +117,39 @@ export default class ContentNewsBody extends Component {
 
   funcOnDragStart = (id) => {
     this.dragItem = id;
-    // console.log('funcOnDragStart', this.dragItem);
+    // eslint-disable-next-line no-console
+    console.log('dragItem', this.dragItem);
   };
 
   funcOnDragEnter = (id) => {
     this.dragOverItem = id;
+    if (this.dragItem === this.dragOverItem) return;
+    // eslint-disable-next-line no-console
+    console.log('dragOverItem', this.dragOverItem);
     this.setState({ isActive: this.dragOverItem });
-    // console.log('funcOnDragEnter', this.dragOverItem);
+    // this.funcSwitchItems(this.dragItem, this.dragOverItem);
   };
 
   funcOnDragEnd = () => {
+    this.funcSwitchItems(this.dragItem, this.dragOverItem);
+    this.dragOverItem = null;
+    this.dragItem = null;
+    setTimeout(() => {
+      this.setState({ isActive: null });
+    }, 200);
+  };
+
+  // eslint-disable-next-line react/no-unused-class-component-methods
+  funcSwitchItems = (draggedItem, staticItem) => {
     const { list } = this.state;
-    const dragItemIndex = list.findIndex((item) => item.id === this.dragItem);
-    const dragOverItemIndex = list.findIndex((item) => item.id === this.dragOverItem);
+    const dragItemIndex = list.findIndex((item) => item.id === draggedItem);
+    const dragOverItemIndex = list.findIndex((item) => item.id === staticItem);
     const newList = [...list];
     newList.splice(dragItemIndex, 1);
     newList.splice(dragOverItemIndex, 0, list[dragItemIndex]);
     this.dragOverItem = null;
     this.dragItem = null;
-    setTimeout(() => {
-      this.setState({ isActive: null, list: newList });
-    }, 400);
+    this.setState({ list: newList });
   };
 
   funcSortByDateASC = () => {
@@ -182,7 +193,7 @@ export default class ContentNewsBody extends Component {
     }));
   };
 
-  funcAddElement = () => {
+  funcAddElement = (empty = false) => {
     const { list: arr } = this.state;
 
     const getDateFormat = () => {
@@ -192,7 +203,7 @@ export default class ContentNewsBody extends Component {
       const year = date.getFullYear();
       return `${month}/${day}/${year}`;
     };
-    const newArr = [...arr, {
+    const newArr = empty ? [] : [...arr, {
       title: 'Richird Norton photorealistic',
       date: getDateFormat(),
       text: 'Richird Norton photorealistic rendering as real photos',
@@ -200,6 +211,17 @@ export default class ContentNewsBody extends Component {
       key: nanoid(),
     }];
     this.setState({ list: newArr });
+  };
+
+  funcGetStyle = (isActive, isSelected, id) => {
+    let opacity = 1;
+    if (isActive === id || isSelected === id) {
+      opacity = 0.5;
+    }
+    if (this.dragItem === id) {
+      opacity = 0.0;
+    }
+    return opacity;
   };
 
   render() {
@@ -220,7 +242,7 @@ export default class ContentNewsBody extends Component {
               onDragEnter={isDrageable ? () => this.funcOnDragEnter(x.id) : () => {}}
               onDragEnd={isDrageable ? this.funcOnDragEnd : () => {}}
               onDragOver={isDrageable ? (e) => e.preventDefault() : () => {}}
-              style={(x.id === isActive || x.id === isSelected) ? { opacity: 0.5 } : {}}
+              style={{ opacity: this.funcGetStyle(isActive, isSelected, x.id) }}
             />
           ))}
         </div>

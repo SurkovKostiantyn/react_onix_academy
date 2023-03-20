@@ -40,7 +40,7 @@ export default class Home extends Component {
     return (
       <>
         <Nav isInView={isInView} />
-        <Banner RefProp={this.BannerRef} />
+        <Banner refProp={this.BannerRef} />
         <ContentNews />
         <ContentBelow />
         <ApiBlock />
