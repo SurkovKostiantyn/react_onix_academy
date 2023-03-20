@@ -102,7 +102,8 @@ export default class ContentNewsBody extends Component {
   handleKeyUp = (event) => {
     // TODO: сделать функцию, которая будет проверять, находится ли элемент в зоне видимости
     switch (event.keyCode) {
-      case 16: // shift
+      // key 'W' code is
+      case 87:
         this.setState(({ isKeyPressed }) => ({ isKeyPressed: !isKeyPressed }));
         this.setState(({ list, isSelected }) => ({ isSelected: (isSelected + 1) % list.length }));
         break;
@@ -137,7 +138,7 @@ export default class ContentNewsBody extends Component {
     this.dragItem = null;
     setTimeout(() => {
       this.setState({ isActive: null, list: newList });
-    }, 200);
+    }, 400);
   };
 
   funcSortByDateASC = () => {

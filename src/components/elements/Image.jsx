@@ -9,6 +9,7 @@ export default class Image extends Component {
 
   onImageError = (event) => {
     const e = event;
+    // console.log(e.target);
     e.target.src = defaultImage;
   };
 

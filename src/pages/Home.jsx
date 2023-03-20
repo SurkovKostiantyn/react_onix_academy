@@ -2,6 +2,7 @@ import '../styles/main.css';
 import React, { Component } from 'react';
 import Nav from '../components/blocks/Nav';
 import Banner from '../components/blocks/Banner';
+import ApiBlock from '../components/blocks/ApiBlock';
 import ContentNews from '../components/blocks/news/ContentNews';
 import ContentBelow from '../components/blocks/news/ContentBelow';
 import Footer from '../components/blocks/Footer';
@@ -42,6 +43,7 @@ export default class Home extends Component {
         <Banner RefProp={this.BannerRef} />
         <ContentNews />
         <ContentBelow />
+        <ApiBlock />
         <Footer />
       </>
     );

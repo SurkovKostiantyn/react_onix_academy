@@ -61,3 +61,33 @@ a.hoverable:hover{
     }
   }
 }
+
+.block_api{
+  @include adaptiveMargin;
+  margin: 40px auto;
+  font: 400 15px/15px 'Lora', serif !important;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  &_grid{
+    padding: 6px;
+    display: grid;
+    grid-template-columns: 20px 3fr 6fr;
+    grid-template-rows: auto;
+    gap: 10px;
+    color: $hBodyTextColor;
+    &:nth-child(2n-3){
+      background-color: $qabachoq;
+      color: $whiteColor;
+    }
+    > p {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &:nth-child(2){
+        align-items: center;
+        justify-content: flex-start;
+      }
+    }
+  }
+}
