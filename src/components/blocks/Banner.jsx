@@ -38,9 +38,9 @@ const listOfBanners = [
 
 export default class Banner extends Component {
   render() {
-    const { RefProp } = this.props;
+    const { refProp } = this.props;
     return (
-      <div className="banner slick" id="banner" ref={RefProp}>
+      <div className="banner slick" id="banner" ref={refProp}>
         <Slider
           arrows={false}
           dots={false}
@@ -65,5 +65,5 @@ export default class Banner extends Component {
 }
 
 Banner.propTypes = {
-  RefProp: PropTypes.shape({ current: PropTypes.instanceOf(Element) }).isRequired
+  refProp: PropTypes.shape({ current: PropTypes.instanceOf(Element) }).isRequired
 };
