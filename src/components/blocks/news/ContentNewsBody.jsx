@@ -117,29 +117,23 @@ export default class ContentNewsBody extends Component {
 
   funcOnDragStart = (id) => {
     this.dragItem = id;
-    // eslint-disable-next-line no-console
-    console.log('dragItem', this.dragItem);
   };
 
   funcOnDragEnter = (id) => {
     this.dragOverItem = id;
     if (this.dragItem === this.dragOverItem) return;
-    // eslint-disable-next-line no-console
-    console.log('dragOverItem', this.dragOverItem);
     this.setState({ isActive: this.dragOverItem });
-    // this.funcSwitchItems(this.dragItem, this.dragOverItem);
+    this.funcSwitchItems(this.dragItem, this.dragOverItem);
   };
 
   funcOnDragEnd = () => {
-    this.funcSwitchItems(this.dragItem, this.dragOverItem);
     this.dragOverItem = null;
     this.dragItem = null;
     setTimeout(() => {
       this.setState({ isActive: null });
-    }, 200);
+    }, 100);
   };
 
-  // eslint-disable-next-line react/no-unused-class-component-methods
   funcSwitchItems = (draggedItem, staticItem) => {
     const { list } = this.state;
     const dragItemIndex = list.findIndex((item) => item.id === draggedItem);
@@ -147,8 +141,6 @@ export default class ContentNewsBody extends Component {
     const newList = [...list];
     newList.splice(dragItemIndex, 1);
     newList.splice(dragOverItemIndex, 0, list[dragItemIndex]);
-    this.dragOverItem = null;
-    this.dragItem = null;
     this.setState({ list: newList });
   };
 
