@@ -21,6 +21,6 @@ Button.defaultProps = {
 
 Button.propTypes = {
   className: PropTypes.string,
-  innerHTML: PropTypes.string.isRequired,
+  innerHTML: PropTypes.oneOfType([PropTypes.element, PropTypes.string]).isRequired,
   onClick: PropTypes.oneOfType([PropTypes.func, PropTypes.string])
 };

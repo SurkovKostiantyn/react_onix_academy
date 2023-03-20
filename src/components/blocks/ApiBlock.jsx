@@ -1,4 +1,8 @@
 import { Component } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faArrowLeftLong, faArrowRightLong
+} from '@fortawesome/free-solid-svg-icons';
 import Text from '../elements/Text';
 import Button from '../elements/Button';
 
@@ -50,9 +54,17 @@ export default class ApiBlock extends Component {
   funcGetButtonsBlock = (page) => {
     return (
       <div className="buttons-block">
-        <Button innerHTML="PREV" onClick={() => this.funcPrevPage(page)} className="btn" />
+        <Button
+          innerHTML={<FontAwesomeIcon icon={faArrowLeftLong} />}
+          onClick={() => this.funcPrevPage(page)}
+          className="btn btn_big"
+        />
         <Text text={(this.funcGetPage(page))} />
-        <Button innerHTML="NEXT" onClick={() => this.funcNextPage(page)} className="btn" />
+        <Button
+          innerHTML={<FontAwesomeIcon icon={faArrowRightLong} />}
+          onClick={() => this.funcNextPage(page)}
+          className="btn btn_big"
+        />
       </div>
     );
   };
