@@ -29,14 +29,13 @@ export default class ApiBlock extends Component {
             arrayFromAPI: arrayOfItems
           });
           this.maxPages = Math.ceil(arrayOfItems.length / 10);
-        },
-        (error) => {
-          this.setState({
-            isLoaded: false,
-            error
-          });
         }
-      );
+      ).catch((error) => {
+        this.setState({
+          isLoaded: false,
+          error
+        });
+      });
   }
 
   funcNextPage = (page) => {
