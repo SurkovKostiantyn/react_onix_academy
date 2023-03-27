@@ -129,9 +129,7 @@ export default class ContentNewsBody extends Component {
   funcOnDragEnd = () => {
     this.dragOverItem = null;
     this.dragItem = null;
-    setTimeout(() => {
-      this.setState({ isActive: null });
-    }, 100);
+    this.setState({ isActive: null });
   };
 
   funcSwitchItems = (draggedItem, staticItem) => {
