@@ -17,7 +17,7 @@ const NewsList = [
     key: nanoid(),
   },
   {
-    id: 1,
+    id: 14,
     title: 'Lorem ipsum dolor sit amet',
     date: '07/09/2021',
     text: 'Lorem ipsum dolor sit amet, consectetur adipisicing',
@@ -33,7 +33,7 @@ const NewsList = [
     key: nanoid(),
   },
   {
-    id: 3,
+    id: 13,
     title: 'Architecto beatae consequuntur',
     date: '10/16/2021',
     text: 'Architecto beatae consequuntur libero molestiae, perferendis',
@@ -136,8 +136,8 @@ export default class ContentNewsBody extends Component {
 
   funcSwitchItems = (draggedItem, staticItem) => {
     const { list } = this.state;
-    const dragItemIndex = list.findIndex((item) => item.id === draggedItem);
-    const dragOverItemIndex = list.findIndex((item) => item.id === staticItem);
+    const dragItemIndex = list.findIndex((item) => item.id === draggedItem); // который тащим
+    const dragOverItemIndex = list.findIndex((item) => item.id === staticItem); // над которым висит
     const newList = [...list];
     newList.splice(dragItemIndex, 1);
     newList.splice(dragOverItemIndex, 0, list[dragItemIndex]);
@@ -185,7 +185,7 @@ export default class ContentNewsBody extends Component {
     }));
   };
 
-  funcAddElement = (empty = false) => {
+  funcAddElement = () => {
     const { list: arr } = this.state;
 
     const getDateFormat = () => {
@@ -195,7 +195,8 @@ export default class ContentNewsBody extends Component {
       const year = date.getFullYear();
       return `${month}/${day}/${year}`;
     };
-    const newArr = empty ? [] : [...arr, {
+    const newArr = [...arr, {
+      id: Math.max(...arr.map((x) => x.id)) + 1,
       title: 'Richird Norton photorealistic',
       date: getDateFormat(),
       text: 'Richird Norton photorealistic rendering as real photos',
@@ -205,15 +206,15 @@ export default class ContentNewsBody extends Component {
     this.setState({ list: newArr });
   };
 
-  funcGetStyle = (isActive, isSelected, id) => {
-    let opacity = 1;
+  funcGetClassName = (isActive, isSelected, id) => {
+    let className = 'content-news-body-item scalable';
     if (isActive === id || isSelected === id) {
-      opacity = 0.5;
+      className += ' drag-active';
     }
     if (this.dragItem === id) {
-      opacity = 0.0;
+      className += ' drag-dragged';
     }
-    return opacity;
+    return className;
   };
 
   render() {
@@ -226,7 +227,9 @@ export default class ContentNewsBody extends Component {
           {list.map((x) => (
             <LinksNewsBlock
               href="single.html"
-              className="content-news-body-item scalable"
+              className={
+               this.funcGetClassName(isActive, isSelected, x.id)
+              }
               itemsList={x}
               key={x.key}
               draggable={isDrageable}
@@ -234,7 +237,6 @@ export default class ContentNewsBody extends Component {
               onDragEnter={isDrageable ? () => this.funcOnDragEnter(x.id) : () => {}}
               onDragEnd={isDrageable ? this.funcOnDragEnd : () => {}}
               onDragOver={isDrageable ? (e) => e.preventDefault() : () => {}}
-              style={{ opacity: this.funcGetStyle(isActive, isSelected, x.id) }}
             />
           ))}
         </div>

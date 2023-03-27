@@ -25,6 +25,7 @@ export default class Image extends Component {
         className={className}
         alt={alt}
         onError={this.onImageError}
+        draggable="false"
       />
     );
   }
