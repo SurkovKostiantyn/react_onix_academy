@@ -36,7 +36,20 @@
       img {
         object-fit: cover;
         width: 100%;
-        height: auto;
+        height: 320px;
+        opacity: 1;
+        @include border-radius(10px);
+        @include animate(opacityIn, 1.5s, 1, forwards);
+        @include keyframes(opacityIn){
+          0%,50%{
+            opacity: 0;
+            filter: grayscale(100%);
+          }
+          100%{
+            opacity: 1;
+            filter: grayscale(0%);
+          }
+        }
       }
     }
     &-item[draggable="true"] {

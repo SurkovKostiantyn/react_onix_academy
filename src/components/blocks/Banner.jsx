@@ -43,12 +43,15 @@ export default class Banner extends Component {
       <div className="banner slick" id="banner" ref={refProp}>
         <Slider
           arrows={false}
-          dots={false}
-          autoplay={false}
+          dots
+          autoplay
           autoplaySpeed={2500}
-          draggable={false}
+          draggable
           infinite
           speed={500}
+          slidesToShow={1}
+          slidesToScroll={1}
+
         >
           {
             listOfBanners.map((x, i) => (

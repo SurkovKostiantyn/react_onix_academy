@@ -6,7 +6,7 @@ import Text from '../elements/Text';
 export default class LinksNewsBlock extends Component {
   render() {
     const {
-      href, className, itemsList, draggable, onDragStart, onDragEnd, onDragEnter, onDragOver, style
+      href, className, itemsList, draggable, onDragStart, onDragEnd, onDragEnter, onDragOver,
     } = this.props;
 
     return (
@@ -18,12 +18,12 @@ export default class LinksNewsBlock extends Component {
         onDragEnter={onDragEnter}
         onDragEnd={onDragEnd}
         onDragOver={onDragOver}
-        style={style}
       >
-        <Image src={itemsList.img} alt={itemsList.img.replace(/(\.img)|(\.png)|(\.jpg)|(\.jpeg)|(\.svg)/g, '')} />
-        <Text className="date" text={itemsList.date} />
-        <Text className="title" text={itemsList.title} />
-        <Text className="text" text={itemsList.text} />
+        <Image
+          src={itemsList.download_url}
+          alt={itemsList.author}
+        />
+        <Text className="title" text={itemsList.author} />
       </a>
     );
   }
@@ -32,24 +32,18 @@ export default class LinksNewsBlock extends Component {
 LinksNewsBlock.defaultProps = {
   className: '',
   href: '#',
-  style: null,
 };
 
 LinksNewsBlock.propTypes = {
   className: PropTypes.string,
   href: PropTypes.string,
   itemsList: PropTypes.shape({
-    img: PropTypes.string.isRequired,
-    date: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    text: PropTypes.string.isRequired,
+    download_url: PropTypes.string.isRequired,
+    author: PropTypes.string.isRequired,
   }).isRequired,
   draggable: PropTypes.bool.isRequired,
   onDragStart: PropTypes.func.isRequired,
   onDragEnd: PropTypes.func.isRequired,
   onDragEnter: PropTypes.func.isRequired,
   onDragOver: PropTypes.func.isRequired,
-  style: PropTypes.shape({
-    opacity: PropTypes.number,
-  })
 };

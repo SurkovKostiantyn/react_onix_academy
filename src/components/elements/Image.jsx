@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 const defaultImage = 'https://via.placeholder.com/310x280';
 
 export default class Image extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       isLoaded: true,
     };

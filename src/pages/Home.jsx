@@ -43,7 +43,6 @@ export default class Home extends Component {
         <Banner refProp={this.BannerRef} />
         <ContentNews />
         <ContentBelow />
-        <ApiBlock />
         <Footer />
       </>
     );

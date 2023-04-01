@@ -1,26 +1,24 @@
 import { Component } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faArrowLeftLong, faArrowRightLong
-} from '@fortawesome/free-solid-svg-icons';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import {
+//   faArrowLeftLong, faArrowRightLong
+// } from '@fortawesome/free-solid-svg-icons';
 import Text from '../elements/Text';
-import Button from '../elements/Button';
+// import Button from '../elements/Button';
+import Image from '../elements/Image';
 
 export default class ApiBlock extends Component {
   constructor(props) {
     super(props);
     this.state = {
       arrayFromAPI: [],
-      page: 0,
       isLoaded: false,
       error: null
     };
-    this.maxPages = 1;
   }
 
   componentDidMount() {
-    fetch('https://jsonplaceholder.typicode.com/posts')
-    // fetch('https://pokeapi.co/api/v2/pokemon')
+    fetch('https://picsum.photos/v2/list?page=6&limit=30')
       .then((response) => response.json())
       .then(
         (arrayOfItems) => {
@@ -28,7 +26,7 @@ export default class ApiBlock extends Component {
             isLoaded: true,
             arrayFromAPI: arrayOfItems
           });
-          this.maxPages = Math.ceil(arrayOfItems.length / 10);
+          console.log(arrayOfItems);
         }
       ).catch((error) => {
         this.setState({
@@ -38,39 +36,9 @@ export default class ApiBlock extends Component {
       });
   }
 
-  funcNextPage = (page) => {
-    this.setState({ page: (page + 1) % this.maxPages });
-  };
-
-  funcPrevPage = (page) => {
-    this.setState({ page: (page - 1) < 0 ? this.maxPages - 1 : (page - 1) });
-  };
-
-  funcGetPage = (page) => {
-    return `Page ${page + 1} of ${this.maxPages}`;
-  };
-
-  funcGetButtonsBlock = (page) => {
-    return (
-      <div className="buttons-block">
-        <Button
-          innerHTML={<FontAwesomeIcon icon={faArrowLeftLong} />}
-          onClick={() => this.funcPrevPage(page)}
-          className="btn btn_big"
-        />
-        <Text text={(this.funcGetPage(page))} />
-        <Button
-          innerHTML={<FontAwesomeIcon icon={faArrowRightLong} />}
-          onClick={() => this.funcNextPage(page)}
-          className="btn btn_big"
-        />
-      </div>
-    );
-  };
-
   render() {
     const {
-      arrayFromAPI, page, isLoaded, error
+      arrayFromAPI, isLoaded, error
     } = this.state;
     if (error) {
       return (
@@ -83,20 +51,16 @@ export default class ApiBlock extends Component {
         <div>Loading...</div>
       );
     }
-    const currentBlock = [...arrayFromAPI].slice(page * 10, page * 10 + 10);
     return (
       <div className="block_api">
-        {this.funcGetButtonsBlock(page)}
         {
-          currentBlock.map((item) => (
+          arrayFromAPI.map((item) => (
             <div key={item.id} className="block_api_grid">
-              <Text text={item.id} />
-              <Text text={item.title} />
-              <Text text={item.body} />
+              <Text text={item.author} />
+              <Image src={item.download_url} />
             </div>
           ))
         }
-        {this.funcGetButtonsBlock(page)}
       </div>
     );
   }
