@@ -6,10 +6,13 @@ import UnorderedList from '../lists/UnorderedList';
 
 const linksListObjectsNav = [
   {
-    id: 0, href: 'index.html', className: 'navbar-menu-item hoverable active', innerHTML: 'Home', key: nanoid()
+    id: 0, href: '/', className: 'navbar-menu-item hoverable active', innerHTML: 'Home', key: nanoid()
   },
   {
-    id: 1, href: 'news.html', className: 'navbar-menu-item hoverable', innerHTML: 'News', key: nanoid()
+    id: 1, href: '/news', className: 'navbar-menu-item hoverable', innerHTML: 'News', key: nanoid()
+  },
+  {
+    id: 2, href: '/Customers', className: 'navbar-menu-item hoverable', innerHTML: 'Customers', key: nanoid()
   }
 ];
 
@@ -19,7 +22,7 @@ export default class Nav extends Component {
     const navClass = `navbar${isInView ? ' navOpacity' : ''}`;
     return (
       <nav className={navClass} id="navbar">
-        <Link href="https://index.html" className="navbar-logo hoverable" innerHTML="RUNO" />
+        <Link href="/" className="navbar-logo hoverable" innerHTML="RUNO" />
         <UnorderedList
           list={linksListObjectsNav}
           className="navbar-menu"

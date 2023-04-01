@@ -64,6 +64,28 @@ a.hoverable:hover{
 
 .btn-big{
   font: 500 18px/25px $fontLora !important;
+  position: relative;
+  padding: 6px 15px;
+  &:hover:before{
+    content: "";
+    position: absolute;
+    bottom: 4px;
+    width: calc(100% - 30px);
+    left: 50%;
+    @include transform(translateX(-50%));
+    height: 3px;
+    @include border-radius(3px);
+    background: transparentize($qabachoq, 0.3);
+    @include animate(linearBG, .5s, 1, forwards);
+    @include keyframes(linearBG){
+      0%{
+        width: 0;
+      }
+      100%{
+        width: calc(100% - 30px);
+      }
+    }
+  }
 }
 
 img {

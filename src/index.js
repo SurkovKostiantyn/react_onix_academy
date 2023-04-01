@@ -1,15 +1,34 @@
 import ReactDOMClient from 'react-dom/client';
-
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { library } from '@fortawesome/fontawesome-svg-core';
 
 import {
-  faTwitter, faFacebook, faYoutube, faPinterest, faBehanceSquare
+  faFacebook, faGithub, faInstagram, faTelegram
 } from '@fortawesome/free-brands-svg-icons';
 
 import Home from './pages/Home';
+import Header from './pages/Router';
+import Customers from './pages/Customers';
+import News from './pages/News';
+import NoPage from './pages/NoPage';
 
-library.add(faTwitter, faFacebook, faYoutube, faPinterest, faBehanceSquare);
+library.add(faFacebook, faGithub, faInstagram, faTelegram);
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Header />}>
+          <Route index element={<Home />} />
+          <Route path="customers" element={<Customers />} />
+          <Route path="news" element={<News />} />
+          <Route path="*" element={<NoPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
+}
 
 ReactDOMClient
   .createRoot(document.getElementById('root'))
-  .render(<Home />);
+  .render(<App />);

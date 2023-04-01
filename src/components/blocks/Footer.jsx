@@ -1,5 +1,4 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { nanoid } from 'nanoid';
 import Link from '../links/Link';
 import Text from '../elements/Text';
 import Header from '../elements/Header';
@@ -8,19 +7,34 @@ import UnorderedList from '../lists/UnorderedList';
 // звичайний масив з обʼєктами
 const linksListObjectsFooter = [
   {
-    id: 0, href: 'blabla', className: 'hoverable', innerHTML: 'About us', key: nanoid()
+    href: 'https://github.com/SurkovKostiantyn/react_onix_academy',
+    className: 'hoverable',
+    innerHTML: 'About us',
+    key: 1
   },
   {
-    id: 1, href: 'bleble', className: 'hoverable', innerHTML: 'Partners', key: nanoid()
+    href: 'https://github.com/SurkovKostiantyn/react_onix_academy',
+    className: 'hoverable',
+    innerHTML: 'Partners',
+    key: 2
   },
   {
-    id: 2, href: 'bloblo', className: 'hoverable', innerHTML: 'Job Опортунитиз', key: nanoid()
+    href: 'https://github.com/SurkovKostiantyn/react_onix_academy',
+    className: 'hoverable',
+    innerHTML: 'Job Опортунитиз',
+    key: 3
   },
   {
-    id: 3, href: 'blibli', className: 'hoverable', innerHTML: 'Svinka Pepa', key: nanoid()
+    href: 'https://github.com/SurkovKostiantyn/react_onix_academy',
+    className: 'hoverable',
+    innerHTML: 'Svinka Pepa',
+    key: 4
   },
   {
-    id: 4, href: 'blybly', className: 'hoverable', innerHTML: 'Membership', key: nanoid()
+    href: 'https://github.com/SurkovKostiantyn/react_onix_academy',
+    className: 'hoverable',
+    innerHTML: 'Membership',
+    key: 5
   }
 ];
 
@@ -69,35 +83,30 @@ function Footer() {
         <div className="footer-body-blocks">
           <Header headerLevel="h4" text="Connections" />
           <Link
-            href="https://blabla"
+            href="https://www.facebook.com/profile.php?id=100001909817025"
             className="fa-brands hoverable"
             innerHTML={<FontAwesomeIcon icon="fa-brands fa-facebook" />}
           />
           <Link
-            href="https://bleble"
+            href="https://www.instagram.com/constantin296/"
             className="fa-brands hoverable"
-            innerHTML={<FontAwesomeIcon icon="fa-brands fa-twitter" />}
+            innerHTML={<FontAwesomeIcon icon="fa-brands fa-instagram" />}
           />
           <Link
-            href="https://bloblo"
+            href="https://t.me/iplague"
             className="fa-brands hoverable"
-            innerHTML={<FontAwesomeIcon icon="fa-brands fa-youtube" />}
+            innerHTML={<FontAwesomeIcon icon="fa-brands fa-telegram" />}
           />
           <Link
-            href="https://blibli"
+            href="https://github.com/SurkovKostiantyn/react_onix_academy"
             className="fa-brands hoverable"
-            innerHTML={<FontAwesomeIcon icon="fa-brands fa-pinterest" />}
-          />
-          <Link
-            href="https://blybly"
-            className="fa-brands hoverable"
-            innerHTML={<FontAwesomeIcon icon="fa-brands fa-behance-square" />}
+            innerHTML={<FontAwesomeIcon icon="fa-brands fa-github" />}
           />
         </div>
       </div>
       <div className="footer-bottom">
         <div className="footer-bottom-div">
-          <Text text="2021 | RUNO Publisher Studio" />
+          <Text text="1990-2023 | Surkov Kostiantyn React Hometask" />
         </div>
       </div>
     </footer>
