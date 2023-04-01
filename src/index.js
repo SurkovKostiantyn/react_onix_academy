@@ -20,8 +20,8 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Header />}>
           <Route index element={<Home />} />
-          <Route path="customers" element={<Customers />} />
-          <Route path="news" element={<News />} />
+          <Route path="/customers" element={<Customers />} />
+          <Route path="/news" element={<News />} />
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>
