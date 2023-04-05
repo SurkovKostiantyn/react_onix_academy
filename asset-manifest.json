@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/react_onix_academy/static/css/main.a22daecd.css",
-    "main.js": "/react_onix_academy/static/js/main.fd665d3f.js",
+    "main.js": "/react_onix_academy/static/js/main.7c4a7c1c.js",
     "static/media/bg.png": "/react_onix_academy/static/media/bg.60cfd2a41cd80f83f712.png",
     "static/media/Image2.png": "/react_onix_academy/static/media/Image2.b4d1509fbfb523845694.png",
     "static/media/Image1.png": "/react_onix_academy/static/media/Image1.0729105898f6e0b2f456.png",
@@ -25,10 +25,10 @@
     "static/media/slick.woff": "/react_onix_academy/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/react_onix_academy/index.html",
     "main.a22daecd.css.map": "/react_onix_academy/static/css/main.a22daecd.css.map",
-    "main.fd665d3f.js.map": "/react_onix_academy/static/js/main.fd665d3f.js.map"
+    "main.7c4a7c1c.js.map": "/react_onix_academy/static/js/main.7c4a7c1c.js.map"
   },
   "entrypoints": [
     "static/css/main.a22daecd.css",
-    "static/js/main.fd665d3f.js"
+    "static/js/main.7c4a7c1c.js"
   ]
 }
