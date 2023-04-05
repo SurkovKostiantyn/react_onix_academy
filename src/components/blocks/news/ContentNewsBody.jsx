@@ -81,13 +81,13 @@ export default class ContentNewsBody extends Component {
 
   funcSortByDateASC = () => {
     this.setState(({ list }) => ({
-      list: [...list].sort((a, b) => new Date(a.date) - new Date(b.date))
+      list: [...list].sort((a, b) => a.author.localeCompare(b.author))
     }));
   };
 
   funcSortByDateDESC = () => {
     this.setState(({ list }) => ({
-      list: [...list].sort((a, b) => new Date(a.date) - new Date(b.date)).reverse()
+      list: [...list].sort((a, b) => b.author.localeCompare(a.author))
     }));
   };
 
@@ -97,10 +97,6 @@ export default class ContentNewsBody extends Component {
 
   funcRemoveFirst = () => {
     this.setState(({ list }) => ({ list: [...list].slice(1) }));
-  };
-
-  funcSortByDateASCCustom = () => {
-    // custom sort without sort() method
   };
 
   funcGetClassName = (idSelected, id) => {
@@ -116,9 +112,8 @@ export default class ContentNewsBody extends Component {
   funcDrawButtons = () => {
     return (
       <div className="buttons-block">
-        <Button className="btn btn-big" onClick={this.funcSortByDateASC} innerHTML="SORT" />
-        <Button className="btn btn-big" onClick={this.funcSortByDateASCCustom} innerHTML="CUSTOM SORT" />
-        <Button className="btn btn-big" onClick={this.funcSortByDateDESC} innerHTML="RSORT" />
+        <Button className="btn btn-big" onClick={this.funcSortByDateASC} innerHTML="SORT A-Z" />
+        <Button className="btn btn-big" onClick={this.funcSortByDateDESC} innerHTML="SORT Z-A" />
         <Button className="btn btn-big" onClick={this.funcRemoveLast} innerHTML="DEL LAST" />
         <Button className="btn btn-big" onClick={this.funcRemoveFirst} innerHTML="DEL FIRST" />
       </div>
