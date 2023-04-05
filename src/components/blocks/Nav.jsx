@@ -1,18 +1,20 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
-import { nanoid } from 'nanoid';
 import Link from '../links/Link';
 import UnorderedList from '../lists/UnorderedList';
 
 const linksListObjectsNav = [
   {
-    id: 0, href: '/', className: 'navbar-menu-item hoverable active', innerHTML: 'Home', key: nanoid()
+    key: 0, href: '/', className: 'navbar-menu-item hoverable active', innerHTML: 'Home'
   },
   {
-    id: 1, href: '/news', className: 'navbar-menu-item hoverable', innerHTML: 'News', key: nanoid()
+    key: 1, href: '/news', className: 'navbar-menu-item hoverable', innerHTML: 'News'
   },
   {
-    id: 2, href: '/Customers', className: 'navbar-menu-item hoverable', innerHTML: 'Customers', key: nanoid()
+    key: 2, href: '/Customers', className: 'navbar-menu-item hoverable', innerHTML: 'Customers'
+  },
+  {
+    key: 3, href: null, className: 'navbar-menu-item hoverable', innerHTML: <i className="fa-solid fa-toggle-on" />
   }
 ];
 

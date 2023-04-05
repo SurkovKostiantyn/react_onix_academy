@@ -1,4 +1,3 @@
-import '../styles/main.css';
 import React, { Component } from 'react';
 import ContentNews from '../components/blocks/news/ContentNews';
 import ContentBelow from '../components/blocks/news/ContentBelow';

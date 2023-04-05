@@ -12,9 +12,11 @@ import Customers from './pages/Customers';
 import News from './pages/News';
 import NoPage from './pages/NoPage';
 
+import './styles/main.css';
+
 library.add(faFacebook, faGithub, faInstagram, faTelegram);
 
-export default function App() {
+function App() {
   return (
     <BrowserRouter>
       <Routes>
