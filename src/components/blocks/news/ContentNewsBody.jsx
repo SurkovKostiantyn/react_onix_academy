@@ -44,11 +44,9 @@ export default class ContentNewsBody extends Component {
     // TODO: сделать функцию, которая будет проверять, находится ли элемент в зоне видимости
     const hotKey = {
       [KEY_W_CODE]: () => {
-        const { list, idSelected } = this.state;
-        const idSelectNext = (idSelected + 1) % list.length;
-        this.setState(
-          { idSelected: idSelectNext }
-        );
+        this.setState(({ list, idSelected }) => ({
+          idSelected: (idSelected + 1) % list.length
+        }));
       }
     };
     hotKey[event.keyCode]?.();
