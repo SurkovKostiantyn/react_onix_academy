@@ -35,3 +35,8 @@
 .hoverable:hover{
 
 }
+
+nav:has(button.dark) ~ *{
+    background: $hBodyTextColor;
+    color: $menuColor !important;
+}

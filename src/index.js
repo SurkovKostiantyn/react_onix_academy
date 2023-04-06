@@ -33,4 +33,6 @@ function App() {
 
 ReactDOMClient
   .createRoot(document.getElementById('root'))
-  .render(<App />);
+  .render(
+    <App />
+  );

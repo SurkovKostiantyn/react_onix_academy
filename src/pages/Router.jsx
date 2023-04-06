@@ -3,16 +3,17 @@ import React, { Component } from 'react';
 import Nav from '../components/blocks/Nav';
 import Banner from '../components/blocks/Banner';
 import Footer from '../components/blocks/Footer';
-import TestContext from '../components/context/TestContext';
+import ThemeContext from '../components/context/ThemeContext';
 
 export default class Layout extends Component {
   constructor(props) {
     super(props);
     this.state = {
       isInView: false,
-      myContext: this.context
+      theme: false
     };
     this.BannerRef = React.createRef();
+    this.toggleTheme = this.toggleTheme.bind(this);
   }
 
   componentDidMount() {
@@ -32,18 +33,24 @@ export default class Layout extends Component {
     observer.observe(
       this.BannerRef.current
     );
+    this.toggleTheme();
+  }
+
+  toggleTheme() {
+    this.setState((prevState) => ({
+      theme: !prevState.theme
+    }));
   }
 
   render() {
-    const { isInView, myContext } = this.state;
-    console.log('Layout: myContext = ', myContext);
+    const { isInView, theme } = this.state;
     return (
-      <TestContext.Provider value={myContext}>
-        <Nav isInView={isInView} />
+      <ThemeContext.Provider value={theme}>
+        <Nav isInView={isInView} toggleTheme={this.toggleTheme} />
         <Banner refProp={this.BannerRef} />
         <Outlet />
         <Footer />
-      </TestContext.Provider>
+      </ThemeContext.Provider>
     );
   }
 }

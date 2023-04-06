@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Link from '../links/Link';
 import UnorderedList from '../lists/UnorderedList';
-import TestContext from '../context/TestContext';
 import Button from '../elements/Button';
+import ThemeContext from '../context/ThemeContext';
 
 const linksListObjectsNav = [
   {
@@ -19,26 +19,20 @@ const linksListObjectsNav = [
 
 export default class Nav extends Component {
   render() {
-    const { isInView } = this.props;
+    const { isInView, toggleTheme } = this.props;
     const navClass = `navbar${isInView ? ' navOpacity' : ''}`;
     return (
       <nav className={navClass} id="navbar">
         <Link href="/" className="navbar-logo hoverable" innerHTML="RUNO" />
-        <TestContext.Consumer>
-          {(value) => (
+        <ThemeContext.Consumer>
+          {(theme) => (
             <Button
-              className="navbar-menu-button"
-              innerHTML={
-                value ? <i className="fas fa-sun" /> : <i className="fas fa-moon" />
-              }
-              onClick={() => {
-                // eslint-disable-next-line no-param-reassign
-                value = !value;
-                console.log(value);
-              }}
+              className={theme ? 'navbar-menu-button' : 'navbar-menu-button dark'}
+              innerHTML={theme ? <i className="fas fa-sun" /> : <i className="fas fa-moon" />}
+              onClick={toggleTheme}
             />
           )}
-        </TestContext.Consumer>
+        </ThemeContext.Consumer>
         <UnorderedList
           list={linksListObjectsNav}
           className="navbar-menu"
@@ -58,5 +52,6 @@ export default class Nav extends Component {
 }
 
 Nav.propTypes = {
-  isInView: PropTypes.bool.isRequired
+  isInView: PropTypes.bool.isRequired,
+  toggleTheme: PropTypes.func.isRequired
 };
