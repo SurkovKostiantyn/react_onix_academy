@@ -36,6 +36,7 @@ export default class Layout extends Component {
 
   render() {
     const { isInView, myContext } = this.state;
+    console.log('Layout: myContext = ', myContext);
     return (
       <TestContext.Provider value={myContext}>
         <Nav isInView={isInView} />
