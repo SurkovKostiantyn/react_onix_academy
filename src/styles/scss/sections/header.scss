@@ -98,5 +98,12 @@
       color: $menuColor;
       padding-bottom: 9px;
     }
+    &-button{
+      font-size: 26px;
+      background: none;
+      border: none;
+      outline: none;
+      color: $menuColor;
+    }
   }
 }
