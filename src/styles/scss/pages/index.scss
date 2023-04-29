@@ -2,7 +2,7 @@
 @use '../common/mixins' as *;
 
 
-.content-news {
+.content-home {
   margin: min(100px, 6vw) 0;
 
   &-header {
@@ -14,6 +14,7 @@
 
     h3 {
       font: 700 36px/46px $fontLora;
+      text-transform: capitalize !important;
     }
 
     a {
@@ -39,17 +40,6 @@
         height: 320px;
         opacity: 1;
         @include border-radius(10px);
-        @include animate(opacityIn, 1.5s, 1, forwards);
-        @include keyframes(opacityIn){
-          0%,50%{
-            opacity: 0;
-            filter: grayscale(100%);
-          }
-          100%{
-            opacity: 1;
-            filter: grayscale(0%);
-          }
-        }
       }
     }
     &-item[draggable="true"] {
@@ -68,7 +58,6 @@
     }
   }
 }
-
 
 .content-below{
   background: $bgGray url("/src/assets/images/Banner/Image2.png")  no-repeat center center / cover;

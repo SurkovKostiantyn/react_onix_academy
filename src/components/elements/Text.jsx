@@ -1,13 +1,7 @@
-import { Component } from 'react';
 import PropTypes from 'prop-types';
 
-export default class Text extends Component {
-  render() {
-    const { className, text } = this.props;
-    return (
-      <p className={className}>{text}</p>
-    );
-  }
+function Text({ className, text }) {
+  return <p className={className}>{text}</p>;
 }
 
 Text.defaultProps = {
@@ -19,3 +13,5 @@ Text.propTypes = {
   className: PropTypes.string,
   text: PropTypes.node,
 };
+
+export default Text;

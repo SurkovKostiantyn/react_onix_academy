@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import Link from '../links/Link';
 import UnorderedList from '../lists/UnorderedList';
@@ -17,41 +17,40 @@ const linksListObjectsNav = [
   },
 ];
 
-export default class Nav extends Component {
-  render() {
-    const { isInView, toggleTheme } = this.props;
-    const navClass = `navbar${isInView ? ' navOpacity' : ''}`;
-    return (
-      <nav className={navClass} id="navbar">
-        <Link href="/" className="navbar-logo hoverable" innerHTML="RUNO" />
-        <ThemeContext.Consumer>
-          {(theme) => (
-            <Button
-              className={theme ? 'navbar-menu-button' : 'navbar-menu-button dark'}
-              innerHTML={theme ? <i className="fas fa-sun" /> : <i className="fas fa-moon" />}
-              onClick={toggleTheme}
-            />
-          )}
-        </ThemeContext.Consumer>
-        <UnorderedList
-          list={linksListObjectsNav}
-          className="navbar-menu"
-          renderItem={({
-            href, className, innerHTML
-          }) => (
-            <Link
-              href={href}
-              className={className}
-              innerHTML={innerHTML}
-            />
-          )}
-        />
-      </nav>
-    );
-  }
+function Nav({ isInView, toggleTheme }) {
+  const navClass = `navbar${isInView ? ' navOpacity' : ''}`;
+
+  const theme = useContext(ThemeContext);
+
+  return (
+    <nav className={navClass} id="navbar">
+      <Link href="/" className="navbar-logo hoverable" innerHTML="RUNO" />
+      <Button
+        className={theme ? 'navbar-menu-button' : 'navbar-menu-button dark'}
+        onClick={toggleTheme}
+      >
+        <i className={`fas ${theme ? 'fa-sun' : 'fa-moon'}`} />
+      </Button>
+      <UnorderedList
+        list={linksListObjectsNav}
+        className="navbar-menu"
+        renderItem={({
+          href, className, innerHTML
+        }) => (
+          <Link
+            href={href}
+            className={className}
+            innerHTML={innerHTML}
+          />
+        )}
+      />
+    </nav>
+  );
 }
 
 Nav.propTypes = {
   isInView: PropTypes.bool.isRequired,
   toggleTheme: PropTypes.func.isRequired
 };
+
+export default Nav;

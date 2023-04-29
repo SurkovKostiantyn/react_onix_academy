@@ -1,15 +1,11 @@
 import PropTypes from 'prop-types';
-import { Component } from 'react';
 
-export default class Link extends Component {
-  render() {
-    const { href, className, innerHTML } = this.props;
-    return (
-      <a href={href} className={className}>
-        {innerHTML}
-      </a>
-    );
-  }
+function Link({ href, className, innerHTML }) {
+  return (
+    <a href={href} className={className}>
+      {innerHTML}
+    </a>
+  );
 }
 
 Link.defaultProps = {
@@ -23,3 +19,5 @@ Link.propTypes = {
   href: PropTypes.string,
   innerHTML: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
 };
+
+export default Link;

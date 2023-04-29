@@ -1,43 +1,35 @@
-import { Component } from 'react';
 import PropTypes from 'prop-types';
+import { useState } from 'react';
 
 const defaultImage = 'https://via.placeholder.com/310x280';
 
-export default class Image extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isLoaded: true,
-    };
-  }
+function Image({ src, className, alt }) {
+  const [isLoaded, setIsLoaded] = useState(true);
 
-  onImageError = () => {
-    this.setState({ isLoaded: false });
+  const onImageError = () => {
+    setIsLoaded(false);
   };
 
-  render() {
-    const { src, className, alt } = this.props;
-    const { isLoaded } = this.state;
-    // TODO need to add error handling
-    return (
-      <img
-        src={isLoaded ? src : defaultImage}
-        className={className}
-        alt={alt}
-        onError={this.onImageError}
-        draggable="false"
-      />
-    );
-  }
+  return (
+    <img
+      src={isLoaded ? src : defaultImage}
+      className={className}
+      alt={alt}
+      onError={onImageError}
+      draggable="false"
+    />
+  );
 }
 
 Image.defaultProps = {
-  alt: 'image',
   className: '',
+  alt: 'image',
 };
 
 Image.propTypes = {
-  alt: PropTypes.string,
   src: PropTypes.string.isRequired,
   className: PropTypes.string,
+  alt: PropTypes.string,
 };
+
+export default Image;

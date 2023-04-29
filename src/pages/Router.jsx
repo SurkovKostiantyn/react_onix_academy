@@ -1,25 +1,23 @@
 import { Outlet } from 'react-router-dom';
-import React, { Component } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Nav from '../components/blocks/Nav';
 import Banner from '../components/blocks/Banner';
 import Footer from '../components/blocks/Footer';
 import ThemeContext from '../components/context/ThemeContext';
 
-export default class Layout extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isInView: false,
-      theme: false
-    };
-    this.BannerRef = React.createRef();
-    this.toggleTheme = this.toggleTheme.bind(this);
-  }
+export default function Layout() {
+  const [isInView, setIsInView] = useState(false);
+  const [theme, setTheme] = useState(false);
+  const bannerRef = useRef();
 
-  componentDidMount() {
+  const toggleTheme = () => {
+    setTheme((prevTheme) => !prevTheme);
+  };
+
+  useEffect(() => {
     const callback = ([entry]) => {
       const { isIntersecting } = entry;
-      this.setState({ isInView: !isIntersecting });
+      setIsInView(!isIntersecting);
     };
 
     const options = {
@@ -30,27 +28,16 @@ export default class Layout extends Component {
 
     const observer = new IntersectionObserver(callback, options);
 
-    observer.observe(
-      this.BannerRef.current
-    );
-    this.toggleTheme();
-  }
+    observer.observe(bannerRef.current);
+    toggleTheme();
+  }, []);
 
-  toggleTheme() {
-    this.setState((prevState) => ({
-      theme: !prevState.theme
-    }));
-  }
-
-  render() {
-    const { isInView, theme } = this.state;
-    return (
-      <ThemeContext.Provider value={theme}>
-        <Nav isInView={isInView} toggleTheme={this.toggleTheme} />
-        <Banner refProp={this.BannerRef} />
-        <Outlet />
-        <Footer />
-      </ThemeContext.Provider>
-    );
-  }
+  return (
+    <ThemeContext.Provider value={theme}>
+      <Nav isInView={isInView} toggleTheme={toggleTheme} />
+      <Banner refProp={bannerRef} />
+      <Outlet />
+      <Footer />
+    </ThemeContext.Provider>
+  );
 }

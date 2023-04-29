@@ -40,3 +40,14 @@ nav:has(button.dark) ~ *{
     background: $hBodyTextColor;
     color: $menuColor !important;
 }
+
+.message{
+  @include adaptiveMargin;
+  margin: 40px auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  font: 400 48px/48px 'Lora', serif;
+}

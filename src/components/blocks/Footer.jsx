@@ -4,7 +4,6 @@ import Text from '../elements/Text';
 import Header from '../elements/Header';
 import UnorderedList from '../lists/UnorderedList';
 
-// звичайний масив з обʼєктами
 const linksListObjectsFooter = [
   {
     href: 'https://github.com/SurkovKostiantyn/react_onix_academy',
@@ -43,7 +42,9 @@ function Footer() {
     <footer>
       <div className="footer-body">
         <div className="footer-body-blocks">
-          <Header headerLevel="h4" text="Contact the Publisher" />
+          <Header headerLevel="h4">
+            Contact the Publisher
+          </Header>
           <Text text={(
             <Link
               href="mailto:kskrua@gmail.com"
@@ -62,7 +63,7 @@ function Footer() {
           />
         </div>
         <div className="footer-body-blocks">
-          <Header headerLevel="h4" text="Exploratory" />
+          <Header headerLevel="h4">Exploratory</Header>
           <UnorderedList
             list={linksListObjectsFooter}
             renderItem={({ href, className, innerHTML }) => (
@@ -75,13 +76,13 @@ function Footer() {
           />
         </div>
         <div className="footer-body-blocks">
-          <Header headerLevel="h4" text="Headquarter" />
+          <Header headerLevel="h4">Headquarters</Header>
           <Text className="lineHeight20" text="191 Middleville Road," />
           <Text className="lineHeight20" text="1NY 1001, Sydney," />
           <Text className="lineHeight20" text="Australia" />
         </div>
         <div className="footer-body-blocks">
-          <Header headerLevel="h4" text="Connections" />
+          <Header headerLevel="h4">Connections</Header>
           <Link
             href="https://www.facebook.com/profile.php?id=100001909817025"
             className="fa-brands hoverable"

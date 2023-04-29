@@ -18,7 +18,7 @@ library.add(faFacebook, faGithub, faInstagram, faTelegram);
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/">
       <Routes>
         <Route path="/" element={<Header />}>
           <Route index element={<Home />} />

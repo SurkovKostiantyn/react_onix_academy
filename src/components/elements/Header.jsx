@@ -1,22 +1,23 @@
-import { Component } from 'react';
 import PropTypes from 'prop-types';
 
-export default class Header extends Component {
-  render() {
-    const { HeaderLevel, className, text } = this.props;
-    return (
-      <HeaderLevel className={className}>{text}</HeaderLevel>
-    );
-  }
+function Header({ headerLevel, className, children }) {
+  const Tag = headerLevel;
+  return (
+    <Tag className={className}>
+      {children}
+    </Tag>
+  );
 }
 
 Header.defaultProps = {
-  HeaderLevel: 'h4',
+  headerLevel: 'h4',
   className: '',
 };
 
 Header.propTypes = {
-  HeaderLevel: PropTypes.string,
+  headerLevel: PropTypes.string,
   className: PropTypes.string,
-  text: PropTypes.string.isRequired
+  children: PropTypes.node.isRequired,
 };
+
+export default Header;

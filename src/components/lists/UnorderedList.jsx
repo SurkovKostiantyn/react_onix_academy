@@ -1,23 +1,20 @@
-import { Component } from 'react';
 import PropTypes from 'prop-types';
 
-export default class UnorderedList extends Component {
-  render() {
-    const {
-      className, list, renderItem
-    } = this.props;
-    return (
-      <ul className={className}>
-        {
-          list.map((item) => (
-            <li key={item.key}>
-              {renderItem(item)}
-            </li>
-          ))
-        }
-      </ul>
-    );
-  }
+export default function UnorderedList(props) {
+  const {
+    className, list, renderItem
+  } = props;
+  return (
+    <ul className={className}>
+      {
+        list.map((item) => (
+          <li key={item.key}>
+            {renderItem(item)}
+          </li>
+        ))
+      }
+    </ul>
+  );
 }
 
 UnorderedList.defaultProps = {

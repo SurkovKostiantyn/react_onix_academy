@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Slider from 'react-slick';
 import PropTypes from 'prop-types';
 import Text from '../elements/Text';
@@ -36,37 +36,33 @@ const listOfBanners = [
   }
 ];
 
-export default class Banner extends Component {
-  render() {
-    const { refProp } = this.props;
-    return (
-      <div className="banner slick" id="banner" ref={refProp}>
-        <Slider
-          arrows={false}
-          dots
-          autoplay
-          autoplaySpeed={2500}
-          draggable
-          infinite
-          speed={500}
-          slidesToShow={1}
-          slidesToScroll={1}
-
-        >
-          {
-            listOfBanners.map((x, i) => (
-              <div className="banner-block" key={listOfBanners[i].image}>
-                <Image src={listOfBanners[i].image} />
-                <Text className="banner-block-p" text={listOfBanners[i].text} />
-              </div>
-            ))
-          }
-        </Slider>
-      </div>
-    );
-  }
+function Banner({ refProp }) {
+  return (
+    <div className="banner slick" id="banner" ref={refProp}>
+      <Slider
+        arrows={false}
+        dots
+        autoplay
+        autoplaySpeed={2500}
+        draggable
+        infinite
+        speed={500}
+        slidesToShow={1}
+        slidesToScroll={1}
+      >
+        {listOfBanners.map((x, i) => (
+          <div className="banner-block" key={listOfBanners[i].image}>
+            <Image src={listOfBanners[i].image} />
+            <Text className="banner-block-p" text={listOfBanners[i].text} />
+          </div>
+        ))}
+      </Slider>
+    </div>
+  );
 }
 
 Banner.propTypes = {
   refProp: PropTypes.shape({ current: PropTypes.instanceOf(Element) }).isRequired
 };
+
+export default Banner;

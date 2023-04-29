@@ -1,32 +1,31 @@
-import { Component } from 'react';
 import PropTypes from 'prop-types';
 import Image from '../elements/Image';
 import Text from '../elements/Text';
 
-export default class LinksNewsBlock extends Component {
-  render() {
-    const {
-      href, className, itemsList, draggable, onDragStart, onDragEnd, onDragEnter, onDragOver,
-    } = this.props;
-
-    return (
-      <a
-        href={href}
-        className={className}
-        draggable={draggable}
-        onDragStart={onDragStart}
-        onDragEnter={onDragEnter}
-        onDragEnd={onDragEnd}
-        onDragOver={onDragOver}
-      >
-        <Image
-          src={itemsList.download_url}
-          alt={itemsList.author}
-        />
-        <Text className="title" text={itemsList.author} />
-      </a>
-    );
-  }
+function LinksNewsBlock({
+  href = '#',
+  className = '',
+  itemsList,
+  draggable,
+  onDragStart,
+  onDragEnd,
+  onDragEnter,
+  onDragOver,
+}) {
+  return (
+    <a
+      href={href}
+      className={className}
+      draggable={draggable}
+      onDragStart={onDragStart}
+      onDragEnter={onDragEnter}
+      onDragEnd={onDragEnd}
+      onDragOver={onDragOver}
+    >
+      <Image src={itemsList.download_url} alt={itemsList.author} />
+      <Text className="title" text={itemsList.author} />
+    </a>
+  );
 }
 
 LinksNewsBlock.defaultProps = {
@@ -47,3 +46,5 @@ LinksNewsBlock.propTypes = {
   onDragEnter: PropTypes.func.isRequired,
   onDragOver: PropTypes.func.isRequired,
 };
+
+export default LinksNewsBlock;
